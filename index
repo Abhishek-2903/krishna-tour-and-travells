@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Tour & Travel - Rishikesh & Haridwar</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    :root {
+      --primary: #1a5490;
+      --secondary: #ff6b35;
+      --accent: #f7b731;
+      --dark: #2c3e50;
+      --light: #ecf0f1;
+      --white: #ffffff;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      color: var(--dark);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+    
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* ==================== TOP BAR ==================== */
+    .top-bar {
+      background: linear-gradient(135deg, var(--primary) 0%, #0f3d5c 100%);
+      color: var(--white);
+      padding: 10px 0;
+      font-size: 0.9rem;
+    }
+    
+    .top-bar-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    
+    .contact-info {
+      display: flex;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+    
+    .contact-info span {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .contact-info i {
+      color: var(--accent);
+      font-size: 0.95rem;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 12px;
+    }
+    
+    .social-links a {
+      width: 32px;
+      height: 32px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+    }
+    
+    .social-links a:hover {
+      background: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    /* ==================== NAVBAR ==================== */
+    .navbar {
+      background: var(--white);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: all 0.3s;
+    }
+    
+    .navbar.scrolled {
+      box-shadow: 0 4px 30px rgba(0,0,0,0.15);
+    }
+    
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+    }
+    
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary);
+      font-family: 'Playfair Display', serif;
+    }
+    
+    .nav-logo i {
+      color: var(--secondary);
+    }
+    
+    .nav-menu {
+      list-style: none;
+      display: flex;
+      gap: 35px;
+    }
+    
+    .nav-menu a {
+      color: var(--dark);
+      font-weight: 500;
+      position: relative;
+      transition: color 0.3s;
+      padding: 5px 0;
+    }
+    
+    .nav-menu a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--secondary);
+      transition: width 0.3s;
+    }
+    
+    .nav-menu a:hover {
+      color: var(--secondary);
+    }
+    
+    .nav-menu a:hover::after {
+      width: 100%;
+    }
+    
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+    
+    .hamburger span {
+      width: 28px;
+      height: 3px;
+      background: var(--primary);
+      transition: all 0.3s;
+      border-radius: 2px;
+    }
+
+    /* ==================== HERO ==================== */
+    .hero {
+      position: relative;
+      height: 90vh;
+      background: linear-gradient(135deg, rgba(26,84,144,0.85) 0%, rgba(15,61,92,0.85) 100%),
+                  url('	https://www.sirohitourandtravel.com/images/about.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+      opacity: 0.3;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 750px;
+      color: var(--white);
+      animation: fadeInUp 1s ease;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .hero-badge {
+      display: inline-block;
+      background: rgba(247,183,49,0.2);
+      color: var(--accent);
+      padding: 8px 20px;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 20px;
+      border: 1px solid var(--accent);
+    }
+    
+    .hero h1 {
+      font-size: 3.8rem;
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+    
+    .hero p {
+      font-size: 1.3rem;
+      margin-bottom: 35px;
+      opacity: 0.95;
+      font-weight: 300;
+    }
+    
+    .hero-buttons {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    
+    .btn {
+      padding: 14px 35px;
+      font-weight: 600;
+      border-radius: 50px;
+      transition: all 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      border: 2px solid transparent;
+    }
+    
+    .btn-primary {
+      background: var(--secondary);
+      color: var(--white);
+    }
+    
+    .btn-primary:hover {
+      background: #ff5722;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(255,107,53,0.4);
+    }
+    
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid var(--white);
+    }
+    
+    .btn-secondary:hover {
+      background: var(--white);
+      color: var(--primary);
+    }
+
+    /* ==================== FEATURES ==================== */
+    .features {
+      padding: 80px 0;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    }
+    
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+    
+    .feature-card {
+      background: var(--white);
+      padding: 40px 30px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      transition: all 0.3s;
+      border: 2px solid transparent;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+      border-color: var(--secondary);
+    }
+    
+    .feature-icon {
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(135deg, var(--secondary) 0%, #ff8c5a 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 1.8rem;
+      color: var(--white);
+    }
+    
+    .feature-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+      color: var(--primary);
+    }
+    
+    .feature-card p {
+      color: #666;
+      font-size: 0.95rem;
+    }
+
+    /* ==================== SECTION HEADER ==================== */
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    
+    .section-badge {
+      display: inline-block;
+      background: rgba(26,84,144,0.1);
+      color: var(--primary);
+      padding: 8px 20px;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+    
+    .section-header h2 {
+      font-size: 2.8rem;
+      font-family: 'Playfair Display', serif;
+      color: var(--primary);
+      margin-bottom: 15px;
+    }
+    
+    .section-header p {
+      font-size: 1.1rem;
+      color: #666;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* ==================== SERVICES ==================== */
+    .services {
+      padding: 80px 0;
+    }
+    
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 35px;
+    }
+    
+    .service-card {
+      background: var(--white);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+      transition: all 0.3s;
+      position: relative;
+    }
+    
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, var(--secondary), var(--accent));
+      transform: scaleX(0);
+      transition: transform 0.3s;
+    }
+    
+    .service-card:hover::before {
+      transform: scaleX(1);
+    }
+    
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    }
+    
+    .service-icon {
+      background: linear-gradient(135deg, var(--primary) 0%, #0f3d5c 100%);
+      padding: 40px;
+      text-align: center;
+    }
+    
+    .service-icon i {
+      font-size: 3rem;
+      color: var(--accent);
+    }
+    
+    .service-content {
+      padding: 30px;
+      text-align: center;
+    }
+    
+    .service-content h3 {
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+      color: var(--primary);
+    }
+    
+    .service-content p {
+      color: #666;
+      margin-bottom: 20px;
+    }
+    
+    .service-link {
+      color: var(--secondary);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: gap 0.3s;
+    }
+    
+    .service-link:hover {
+      gap: 12px;
+    }
+
+    /* ==================== PLACES ==================== */
+    .places {
+      padding: 80px 0;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    }
+    
+    .places-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 35px;
+    }
+    
+    .place-card {
+      background: var(--white);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+      transition: all 0.3s;
+      position: relative;
+    }
+    
+    .place-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    }
+    
+    .place-image {
+      position: relative;
+      height: 250px;
+      overflow: hidden;
+    }
+    
+    .place-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+    
+    .place-card:hover .place-image img {
+      transform: scale(1.1);
+    }
+    
+    .place-badge {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: var(--secondary);
+      color: var(--white);
+      padding: 8px 15px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    
+    .place-content {
+      padding: 25px;
+    }
+    
+    .place-content h3 {
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin-bottom: 12px;
+      font-family: 'Playfair Display', serif;
+    }
+    
+    .place-content p {
+      color: #666;
+      margin-bottom: 15px;
+      font-size: 0.95rem;
+    }
+    
+    .place-meta {
+      display: flex;
+      gap: 20px;
+      padding-top: 15px;
+      border-top: 1px solid #eee;
+      font-size: 0.9rem;
+      color: #666;
+    }
+    
+    .place-meta span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    
+    .place-meta i {
+      color: var(--secondary);
+    }
+
+    /* ==================== CTA ==================== */
+    .cta {
+      padding: 80px 0;
+      background: linear-gradient(135deg, var(--primary) 0%, #0f3d5c 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .cta::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 500px;
+      height: 500px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 50%;
+    }
+    
+    .cta-content {
+      text-align: center;
+      color: var(--white);
+      position: relative;
+      z-index: 2;
+    }
+    
+    .cta h2 {
+      font-size: 2.8rem;
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 20px;
+    }
+    
+    .cta p {
+      font-size: 1.2rem;
+      margin-bottom: 35px;
+      opacity: 0.9;
+    }
+    
+    .cta-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .btn-light {
+      background: var(--white);
+      color: var(--primary);
+    }
+    
+    .btn-light:hover {
+      background: var(--accent);
+      color: var(--white);
+    }
+
+    /* ==================== CONTACT ==================== */
+    .contact {
+      padding: 80px 0;
+    }
+    
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 35px;
+      margin-top: 50px;
+    }
+    
+    .contact-card {
+      background: linear-gradient(135deg, var(--primary) 0%, #0f3d5c 100%);
+      padding: 40px 30px;
+      border-radius: 20px;
+      text-align: center;
+      color: var(--white);
+      transition: all 0.3s;
+    }
+    
+    .contact-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(26,84,144,0.3);
+    }
+    
+    .contact-icon {
+      width: 70px;
+      height: 70px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 1.8rem;
+    }
+    
+    .contact-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+    }
+    
+    .contact-card p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+    
+    .contact-card strong {
+      color: var(--accent);
+    }
+
+    /* ==================== FOOTER ==================== */
+    .footer {
+      background: #1a1a1a;
+      color: #aaa;
+      padding: 50px 0 20px;
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    
+    .footer-section h3 {
+      color: var(--white);
+      margin-bottom: 20px;
+      font-size: 1.3rem;
+    }
+    
+    .footer-section p {
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+    
+    .footer-links {
+      list-style: none;
+    }
+    
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+    
+    .footer-links a {
+      color: #aaa;
+      transition: color 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+    
+    .footer-bottom {
+      border-top: 1px solid #333;
+      padding-top: 20px;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    /* ==================== RESPONSIVE ==================== */
+    @media (max-width: 768px) {
+      .top-bar-content {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .contact-info {
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .nav-menu {
+        position: fixed;
+        top: 76px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 76px);
+        background: var(--white);
+        flex-direction: column;
+        padding: 40px 0;
+        transition: left 0.3s;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        gap: 0;
+      }
+      
+      .nav-menu li {
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+        border-bottom: 1px solid #eee;
+      }
+      
+      .nav-menu.active {
+        left: 0;
+      }
+      
+      .hamburger {
+        display: flex;
+      }
+      
+      .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 8px);
+      }
+      
+      .hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+      
+      .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+      }
+      
+      .hero {
+        height: 70vh;
+      }
+      
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero p {
+        font-size: 1.1rem;
+      }
+      
+      .hero-buttons {
+        flex-direction: column;
+      }
+      
+      .section-header h2 {
+        font-size: 2.2rem;
+      }
+      
+      .cta h2 {
+        font-size: 2.2rem;
+      }
+      
+      .cta-buttons {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="container top-bar-content">
+      <div class="contact-info">
+        <span><i class="fas fa-phone"></i> +91 98765 43210</span>
+        <span><i class="fas fa-envelope"></i> info@yourtourtravel.com</span>
+      </div>
+      <div class="social-links">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <div class="nav-logo">
+        <i class="fas fa-mountain-sun"></i>
+        <span>Krishna Tour and Travels</span>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#places">Places</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <i class="fas fa-star"></i> Trusted Travel Partner Since 2010
+        </div>
+        <h1>Discover Spiritual Rishikesh & Holy Haridwar</h1>
+        <p>Experience divine journeys, adventure, and tranquility in the heart of Uttarakhand</p>
+        <div class="hero-buttons">
+          <a href="#places" class="btn btn-primary">
+            Explore Destinations <i class="fas fa-arrow-right"></i>
+          </a>
+          <a href="#contact" class="btn btn-secondary">
+            <i class="fas fa-phone"></i> Book Now
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features">
+    <div class="container">
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3>Safe & Reliable</h3>
+          <p>100% verified drivers and well-maintained vehicles for your safety</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-hand-holding-dollar"></i>
+          </div>
+          <h3>Best Prices</h3>
+          <p>Affordable packages with no hidden charges and transparent pricing</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-clock"></i>
+          </div>
+          <h3>24/7 Support</h3>
+          <p>Round-the-clock customer service for hassle-free travel experience</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-map-location-dot"></i>
+          </div>
+          <h3>Expert Guides</h3>
+          <p>Local experts who know every spiritual and scenic spot in detail</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="services">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">What We Offer</div>
+        <h2>Our Premium Services</h2>
+        <p>Complete travel solutions for a memorable journey in Uttarakhand</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-map-marked-alt"></i>
+          </div>
+          <div class="service-content">
+            <h3>Local Sightseeing</h3>
+            <p>Explore all major temples, ashrams, and scenic spots with our guided tours</p>
+            <a href="#contact" class="service-link">
+              Learn More <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-hotel"></i>
+          </div>
+          <div class="service-content">
+            <h3>Hotel Booking</h3>
+            <p>Premium hotels, budget stays, and ashram accommodations at best rates</p>
+            <a href="#contact" class="service-link">
+              Learn More <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-plane-departure"></i>
+          </div>
+          <div class="service-content">
+            <h3>Airport Transfer</h3>
+            <p>Comfortable pickup and drop services from Dehradun Airport</p>
+            <a href="#contact" class="service-link">
+              Learn More <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-car-side"></i>
+          </div>
+          <div class="service-content">
+            <h3>Outstation Trips</h3>
+            <p>Visit nearby hill stations like Mussoorie, Auli, and Char Dham</p>
+            <a href="#contact" class="service-link">
+              Learn More <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-person-hiking"></i>
+          </div>
+          <div class="service-content">
+            <h3>Adventure Tours</h3>
+            <p>River rafting, camping, trekking, and bungee jumping experiences</p>
+            <a href="#contact" class="service-link">
+              Learn More <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-om"></i>
+          </div>
+          <div class="service-content">
+            <h3>Spiritual Tours</h3>
+            <p>Customized pilgrimage packages to temples and sacred sites</p>
+            <a href="#contact" class="service-link">
+              Learn More <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLACES -->
+  <section id="places" class="places">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">Popular Destinations</div>
+        <h2>Must-Visit Places</h2>
+        <p>Explore the divine beauty and spiritual essence of Rishikesh & Haridwar</p>
+      </div>
+      <div class="places-grid">
+        <div class="place-card">
+          <div class="place-image">
+            <img src="https://rajajijunglesafari.com/wp-content/uploads/lakshman-jhula-3.jpg" alt="Laxman Jhula Rishikesh">
+            <div class="place-badge">Iconic</div>
+          </div>
+          <div class="place-content">
+            <h3>Laxman Jhula</h3>
+            <p>Famous 450-feet iron suspension bridge over the Ganges, connecting two villages with stunning river views</p>
+            <div class="place-meta">
+              <span><i class="fas fa-map-marker-alt"></i> Rishikesh</span>
+              <span><i class="fas fa-star"></i> 4.8/5</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="place-card">
+          <div class="place-image">
+            <img src="http://www.haridwarhotelguide.com/images/har-ki-pauri.jpg" alt="Har Ki Pauri Haridwar">
+            <div class="place-badge">Sacred</div>
+          </div>
+          <div class="place-content">
+            <h3>Har Ki Pauri</h3>
+            <p>Most sacred ghat in Haridwar where devotees gather for the mesmerizing Ganga Aarti every evening</p>
+            <div class="place-meta">
+              <span><i class="fas fa-map-marker-alt"></i> Haridwar</span>
+              <span><i class="fas fa-star"></i> 4.9/5</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="place-card">
+          <div class="place-image">
+            <img src="https://cdn1.tripoto.com/media/filter/nl/img/2380291/Image/1698842113_ram_jhula_in_rishikesh.jpg.webp" alt="Ram Jhula Rishikesh">
+            <div class="place-badge">Historic</div>
+          </div>
+          <div class="place-content">
+            <h3>Ram Jhula</h3>
+            <p>Another iconic suspension bridge with temples, ashrams, and vibrant markets on both sides</p>
+            <div class="place-meta">
+              <span><i class="fas fa-map-marker-alt"></i> Rishikesh</span>
+              <span><i class="fas fa-star"></i> 4.7/5</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="place-card">
+          <div class="place-image">
+            <img src="	https://www.sirohitourandtravel.com/images/place/parmarth-niketan-ashram.jpg" alt="Parmarth Niketan Ashram">
+            <div class="place-badge">Peaceful</div>
+          </div>
+          <div class="place-content">
+            <h3>Parmarth Niketan</h3>
+            <p>Largest ashram in Rishikesh offering yoga classes, meditation, and the famous evening Ganga Aarti</p>
+            <div class="place-meta">
+              <span><i class="fas fa-map-marker-alt"></i> Rishikesh</span>
+              <span><i class="fas fa-star"></i> 4.8/5</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="place-card">
+          <div class="place-image">
+            <img src="	https://www.sirohitourandtravel.com/images/place/triveni-ghat.jpg" alt="Triveni Ghat Rishikesh">
+            <div class="place-badge">Spiritual</div>
+          </div>
+          <div class="place-content">
+            <h3>Triveni Ghat</h3>
+            <p>Sacred confluence where three holy rivers meet, perfect for morning yoga and evening aarti ceremonies</p>
+            <div class="place-meta">
+              <span><i class="fas fa-map-marker-alt"></i> Rishikesh</span>
+              <span><i class="fas fa-star"></i> 4.6/5</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="place-card">
+          <div class="place-image">
+            <img src="	https://www.sirohitourandtravel.com/images/place/beatels-ashram.jpg" alt="Beatles Ashram">
+            <div class="place-badge">Artistic</div>
+          </div>
+          <div class="place-content">
+            <h3>Beatles Ashram</h3>
+            <p>Historic Chaurasi Kutia adorned with vibrant graffiti, where The Beatles stayed in 1968</p>
+            <div class="place-meta">
+              <span><i class="fas fa-map-marker-alt"></i> Rishikesh</span>
+              <span><i class="fas fa-star"></i> 4.7/5</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="place-card">
+          <div class="place-image">
+            <img src="	https://blog.yatradham.org/wp-content/uploads/2023/10/Mansa-Devi-Temple.jpg" alt="Mansa Devi Temple">
+            <div class="place-badge">Divine</div>
+          </div>
+          <div class="place-content">
+            <h3>Mansa Devi Temple</h3>
+            <p>Hilltop temple accessible by cable car, offering panoramic views of Haridwar and the Ganges</p>
+            <div class="place-meta">
+              <span><i class="fas fa-map-marker-alt"></i> Haridwar</span>
+              <span><i class="fas fa-star"></i> 4.8/5</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="place-card">
+          <div class="place-image">
+            <img src="https://www.easeindiatrip.com/blog/wp-content/uploads/2024/12/Neelkanth-Mahadev-Temple-in-Rishikesh.jpg" alt="Neelkanth Mahadev Temple">
+            <div class="place-badge">Sacred</div>
+          </div>
+          <div class="place-content">
+            <h3>Neelkanth Mahadev</h3>
+            <p>Ancient Shiva temple nestled in mountains, surrounded by dense forests and natural beauty</p>
+            <div class="place-meta">
+              <span><i class="fas fa-map-marker-alt"></i> Rishikesh</span>
+              <span><i class="fas fa-star"></i> 4.9/5</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="place-card">
+          <div class="place-image">
+            <img src="https://media2.thrillophilia.com/images/photos/000/036/640/original/1583607619_corbett-national-park.jpg?width=975&height=600" alt="Rajaji National Park">
+            <div class="place-badge">Wildlife</div>
+          </div>
+          <div class="place-content">
+            <h3>Rajaji National Park</h3>
+            <p>Home to elephants, tigers, and diverse wildlife with excellent safari and trekking opportunities</p>
+            <div class="place-meta">
+              <span><i class="fas fa-map-marker-alt"></i> Haridwar</span>
+              <span><i class="fas fa-star"></i> 4.6/5</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Ready for Your Spiritual Journey?</h2>
+        <p>Book your tour package today and experience the divine beauty of Rishikesh & Haridwar</p>
+        <div class="cta-buttons">
+          <a href="#contact" class="btn btn-light">
+            <i class="fas fa-phone"></i> Call Now
+          </a>
+          <a href="#contact" class="btn btn-secondary">
+            <i class="fab fa-whatsapp"></i> WhatsApp Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">Get In Touch</div>
+        <h2>Contact Us</h2>
+        <p>We're here to help plan your perfect journey</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="contact-icon">
+            <i class="fas fa-phone-volume"></i>
+          </div>
+          <h3>Call or WhatsApp</h3>
+          <p><strong>+91 70179 00021</strong></p>
+          <p>Available 24/7</p>
+        </div>
+        
+        <div class="contact-card">
+          <div class="contact-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <h3>Email Us</h3>
+          <p><strong>Kunalgujjar7584@gmail.com</strong></p>
+          <p>Quick response guaranteed</p>
+        </div>
+        
+        <div class="contact-card">
+          <div class="contact-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <h3>Visit Our Office</h3>
+          <p><strong>Near Laxman Jhula</strong></p>
+          <p>Rishikesh, Uttarakhand</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Your Tour & Travel</h3>
+          <p>Your trusted travel partner in Rishikesh and Haridwar. We provide safe, comfortable, and memorable travel experiences to explore the spiritual heart of India.</p>
+          <div class="social-links" style="margin-top: 20px;">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+            <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
+            <li><a href="#places"><i class="fas fa-chevron-right"></i> Places</a></li>
+            <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Our Services</h3>
+          <ul class="footer-links">
+            <li><a href="#services"><i class="fas fa-chevron-right"></i> Local Sightseeing</a></li>
+            <li><a href="#services"><i class="fas fa-chevron-right"></i> Hotel Booking</a></li>
+            <li><a href="#services"><i class="fas fa-chevron-right"></i> Airport Transfer</a></li>
+            <li><a href="#services"><i class="fas fa-chevron-right"></i> Adventure Tours</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Contact Info</h3>
+          <ul class="footer-links">
+            <li><i class="fas fa-phone"></i> +91 70179 00021</li>
+            <li><i class="fas fa-envelope"></i> Kunalgujjar7584@gmail.com</li>
+            <li><i class="fas fa-map-marker-alt"></i> Near Laxman Jhula, Rishikesh</li>
+            <li><i class="fas fa-clock"></i> 24/7 Available</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>© 2025 Your Tour & Travel. All Rights Reserved. | Designed with <i class="fas fa-heart" style="color: #ff6b35;"></i> for travelers</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Navbar scroll effect
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Mobile menu toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
+
+    // Close menu on link click
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+      });
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Intersection Observer for fade-in animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // Observe all cards
+    document.querySelectorAll('.service-card, .place-card, .feature-card, .contact-card').forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(30px)';
+      card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(card);
+    });
+  </script>
+</body>
+</html>
