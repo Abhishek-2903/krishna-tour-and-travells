@@ -14,7 +14,7 @@
       padding: 0;
       box-sizing: border-box;
     }
-   
+  
     :root {
       --primary: #1a5490;
       --secondary: #ff6b35;
@@ -23,7 +23,7 @@
       --light: #ecf0f1;
       --white: #ffffff;
     }
-   
+  
     body {
       font-family: 'Poppins', sans-serif;
       line-height: 1.6;
@@ -31,16 +31,15 @@
       background: var(--white);
       overflow-x: hidden;
     }
-   
+  
     a { text-decoration: none; color: inherit; }
     img { max-width: 100%; display: block; }
-   
+  
     .container {
       width: 90%;
       max-width: 1200px;
       margin: 0 auto;
     }
-
     /* ==================== FLOATING BUTTONS ==================== */
     .floating-buttons {
       position: fixed;
@@ -51,7 +50,6 @@
       flex-direction: column;
       gap: 15px;
     }
-
     .float-btn {
       width: 60px;
       height: 60px;
@@ -66,26 +64,21 @@
       transition: all 0.3s;
       position: relative;
     }
-
     .float-btn:hover {
       transform: scale(1.1);
       box-shadow: 0 6px 20px rgba(0,0,0,0.3);
     }
-
     .whatsapp-btn {
       background: #25d366;
       animation: pulse 2s infinite;
     }
-
     .inquiry-btn {
       background: var(--secondary);
       animation: pulse-inquiry 2s infinite;
     }
-
     .inquiry-btn:hover {
       background: #ff5722;
     }
-
     .float-btn .tooltip {
       position: absolute;
       right: 70px;
@@ -100,25 +93,21 @@
       transition: all 0.3s;
       pointer-events: none;
     }
-
     .float-btn:hover .tooltip {
       opacity: 1;
       visibility: visible;
       right: 75px;
     }
-
     @keyframes pulse {
       0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
       70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
       100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
     }
-
     @keyframes pulse-inquiry {
       0% { box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.7); }
       70% { box-shadow: 0 0 0 15px rgba(255, 107, 53, 0); }
       100% { box-shadow: 0 0 0 0 rgba(255, 107, 53, 0); }
     }
-
     @media (max-width: 768px) {
       .floating-buttons {
         bottom: 15px;
@@ -134,7 +123,6 @@
         display: none;
       }
     }
-
     /* ==================== TOP BAR ==================== */
     .top-bar {
       background: linear-gradient(135deg, var(--primary) 0%, #0f3d5c 100%);
@@ -142,7 +130,7 @@
       padding: 10px 0;
       font-size: 0.9rem;
     }
-   
+  
     .top-bar-content {
       display: flex;
       justify-content: space-between;
@@ -150,29 +138,29 @@
       flex-wrap: wrap;
       gap: 15px;
     }
-   
+  
     .contact-info {
       display: flex;
       gap: 25px;
       flex-wrap: wrap;
     }
-   
+  
     .contact-info span {
       display: flex;
       align-items: center;
       gap: 8px;
     }
-   
+  
     .contact-info i {
       color: var(--accent);
       font-size: 0.95rem;
     }
-   
+  
     .social-links {
       display: flex;
       gap: 12px;
     }
-   
+  
     .social-links a {
       width: 32px;
       height: 32px;
@@ -183,12 +171,11 @@
       justify-content: center;
       transition: all 0.3s;
     }
-   
+  
     .social-links a:hover {
       background: var(--accent);
       transform: translateY(-3px);
     }
-
     /* ==================== NAVBAR ==================== */
     .navbar {
       background: var(--white);
@@ -198,18 +185,18 @@
       z-index: 1000;
       transition: all 0.3s;
     }
-   
+  
     .navbar.scrolled {
       box-shadow: 0 4px 30px rgba(0,0,0,0.15);
     }
-   
+  
     .nav-container {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 18px 0;
     }
-   
+  
     .nav-logo {
       display: flex;
       align-items: center;
@@ -219,17 +206,17 @@
       color: var(--primary);
       font-family: 'Playfair Display', serif;
     }
-   
+  
     .nav-logo i {
       color: var(--secondary);
     }
-   
+  
     .nav-menu {
       list-style: none;
       display: flex;
       gap: 35px;
     }
-   
+  
     .nav-menu a {
       color: var(--dark);
       font-weight: 500;
@@ -237,7 +224,7 @@
       transition: color 0.3s;
       padding: 5px 0;
     }
-   
+  
     .nav-menu a::after {
       content: '';
       position: absolute;
@@ -248,22 +235,22 @@
       background: var(--secondary);
       transition: width 0.3s;
     }
-   
+  
     .nav-menu a:hover {
       color: var(--secondary);
     }
-   
+  
     .nav-menu a:hover::after {
       width: 100%;
     }
-   
+  
     .hamburger {
       display: none;
       flex-direction: column;
       gap: 5px;
       cursor: pointer;
     }
-   
+  
     .hamburger span {
       width: 28px;
       height: 3px;
@@ -271,18 +258,17 @@
       transition: all 0.3s;
       border-radius: 2px;
     }
-
     /* ==================== HERO ==================== */
     .hero {
       position: relative;
       height: 90vh;
       background: linear-gradient(135deg, rgba(26,84,144,0.85) 0%, rgba(15,61,92,0.85) 100%),
-                  url('	https://www.ojashvi.com/images/best-rishikesh.jpg') center/cover no-repeat;
+                  url('https://www.ojashvi.com/images/best-rishikesh.jpg') center/cover no-repeat;
       display: flex;
       align-items: center;
       overflow: hidden;
     }
-   
+  
     .hero::before {
       content: '';
       position: absolute;
@@ -293,7 +279,7 @@
       background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
       opacity: 0.3;
     }
-   
+  
     .hero-content {
       position: relative;
       z-index: 2;
@@ -301,7 +287,7 @@
       color: var(--white);
       animation: fadeInUp 1s ease;
     }
-   
+  
     @keyframes fadeInUp {
       from {
         opacity: 0;
@@ -312,7 +298,7 @@
         transform: translateY(0);
       }
     }
-   
+  
     .hero-badge {
       display: inline-block;
       background: rgba(247,183,49,0.2);
@@ -324,27 +310,27 @@
       margin-bottom: 20px;
       border: 1px solid var(--accent);
     }
-   
+  
     .hero h1 {
       font-size: 3.8rem;
       font-family: 'Playfair Display', serif;
       margin-bottom: 20px;
       line-height: 1.2;
     }
-   
+  
     .hero p {
       font-size: 1.3rem;
       margin-bottom: 35px;
       opacity: 0.95;
       font-weight: 300;
     }
-   
+  
     .hero-buttons {
       display: flex;
       gap: 20px;
       flex-wrap: wrap;
     }
-   
+  
     .btn {
       padding: 14px 35px;
       font-weight: 600;
@@ -356,41 +342,40 @@
       cursor: pointer;
       border: 2px solid transparent;
     }
-   
+  
     .btn-primary {
       background: var(--secondary);
       color: var(--white);
     }
-   
+  
     .btn-primary:hover {
       background: #ff5722;
       transform: translateY(-3px);
       box-shadow: 0 10px 30px rgba(255,107,53,0.4);
     }
-   
+  
     .btn-secondary {
       background: transparent;
       color: var(--white);
       border: 2px solid var(--white);
     }
-   
+  
     .btn-secondary:hover {
       background: var(--white);
       color: var(--primary);
     }
-
     /* ==================== FEATURES ==================== */
     .features {
       padding: 80px 0;
       background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     }
-   
+  
     .features-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 30px;
     }
-   
+  
     .feature-card {
       background: var(--white);
       padding: 40px 30px;
@@ -400,13 +385,13 @@
       transition: all 0.3s;
       border: 2px solid transparent;
     }
-   
+  
     .feature-card:hover {
       transform: translateY(-10px);
       box-shadow: 0 15px 40px rgba(0,0,0,0.15);
       border-color: var(--secondary);
     }
-   
+  
     .feature-icon {
       width: 70px;
       height: 70px;
@@ -419,18 +404,17 @@
       font-size: 1.8rem;
       color: var(--white);
     }
-   
+  
     .feature-card h3 {
       font-size: 1.3rem;
       margin-bottom: 12px;
       color: var(--primary);
     }
-   
+  
     .feature-card p {
       color: #666;
       font-size: 0.95rem;
     }
-
     /* ==================== STATS COUNTERS ==================== */
     .stats {
       padding: 60px 0;
@@ -438,31 +422,27 @@
       color: var(--white);
       text-align: center;
     }
-
     .stats-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 30px;
     }
-
     .stat-item h3 {
       font-size: 2.8rem;
       font-weight: 700;
       font-family: 'Playfair Display', serif;
       margin-bottom: 8px;
     }
-
     .stat-item p {
       font-size: 1.1rem;
       opacity: 0.9;
     }
-
     /* ==================== SECTION HEADER ==================== */
     .section-header {
       text-align: center;
       margin-bottom: 60px;
     }
-   
+  
     .section-badge {
       display: inline-block;
       background: rgba(26,84,144,0.1);
@@ -473,32 +453,31 @@
       font-weight: 600;
       margin-bottom: 15px;
     }
-   
+  
     .section-header h2 {
       font-size: 2.8rem;
       font-family: 'Playfair Display', serif;
       color: var(--primary);
       margin-bottom: 15px;
     }
-   
+  
     .section-header p {
       font-size: 1.1rem;
       color: #666;
       max-width: 600px;
       margin: 0 auto;
     }
-
     /* ==================== SERVICES ==================== */
     .services {
       padding: 80px 0;
     }
-   
+  
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 35px;
     }
-   
+  
     .service-card {
       background: var(--white);
       border-radius: 20px;
@@ -507,7 +486,7 @@
       transition: all 0.3s;
       position: relative;
     }
-   
+  
     .service-card::before {
       content: '';
       position: absolute;
@@ -519,43 +498,43 @@
       transform: scaleX(0);
       transition: transform 0.3s;
     }
-   
+  
     .service-card:hover::before {
       transform: scaleX(1);
     }
-   
+  
     .service-card:hover {
       transform: translateY(-10px);
       box-shadow: 0 15px 40px rgba(0,0,0,0.15);
     }
-   
+  
     .service-icon {
       background: linear-gradient(135deg, var(--primary) 0%, #0f3d5c 100%);
       padding: 40px;
       text-align: center;
     }
-   
+  
     .service-icon i {
       font-size: 3rem;
       color: var(--accent);
     }
-   
+  
     .service-content {
       padding: 30px;
       text-align: center;
     }
-   
+  
     .service-content h3 {
       font-size: 1.4rem;
       margin-bottom: 12px;
       color: var(--primary);
     }
-   
+  
     .service-content p {
       color: #666;
       margin-bottom: 20px;
     }
-   
+  
     .service-link {
       color: var(--secondary);
       font-weight: 600;
@@ -564,23 +543,27 @@
       gap: 8px;
       transition: gap 0.3s;
     }
-   
+  
     .service-link:hover {
       gap: 12px;
     }
-
+    /* ==================== CAB SERVICES ==================== */
+    .cab-services {
+      padding: 80px 0;
+      background: #f8f9fa;
+    }
     /* ==================== PLACES ==================== */
     .places {
       padding: 80px 0;
       background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     }
-   
+  
     .places-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 35px;
     }
-   
+  
     .place-card {
       background: var(--white);
       border-radius: 20px;
@@ -589,29 +572,29 @@
       transition: all 0.3s;
       position: relative;
     }
-   
+  
     .place-card:hover {
       transform: translateY(-10px);
       box-shadow: 0 15px 40px rgba(0,0,0,0.2);
     }
-   
+  
     .place-image {
       position: relative;
       height: 250px;
       overflow: hidden;
     }
-   
+  
     .place-image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       transition: transform 0.5s;
     }
-   
+  
     .place-card:hover .place-image img {
       transform: scale(1.1);
     }
-   
+  
     .place-badge {
       position: absolute;
       top: 20px;
@@ -623,24 +606,24 @@
       font-size: 0.85rem;
       font-weight: 600;
     }
-   
+  
     .place-content {
       padding: 25px;
     }
-   
+  
     .place-content h3 {
       font-size: 1.5rem;
       color: var(--primary);
       margin-bottom: 12px;
       font-family: 'Playfair Display', serif;
     }
-   
+  
     .place-content p {
       color: #666;
       margin-bottom: 15px;
       font-size: 0.95rem;
     }
-   
+  
     .place-meta {
       display: flex;
       gap: 20px;
@@ -649,17 +632,16 @@
       font-size: 0.9rem;
       color: #666;
     }
-   
+  
     .place-meta span {
       display: flex;
       align-items: center;
       gap: 6px;
     }
-   
+  
     .place-meta i {
       color: var(--secondary);
     }
-
     /* ==================== CTA ==================== */
     .cta {
       padding: 80px 0;
@@ -667,7 +649,7 @@
       position: relative;
       overflow: hidden;
     }
-   
+  
     .cta::before {
       content: '';
       position: absolute;
@@ -678,55 +660,54 @@
       background: rgba(255,255,255,0.05);
       border-radius: 50%;
     }
-   
+  
     .cta-content {
       text-align: center;
       color: var(--white);
       position: relative;
       z-index: 2;
     }
-   
+  
     .cta h2 {
       font-size: 2.8rem;
       font-family: 'Playfair Display', serif;
       margin-bottom: 20px;
     }
-   
+  
     .cta p {
       font-size: 1.2rem;
       margin-bottom: 35px;
       opacity: 0.9;
     }
-   
+  
     .cta-buttons {
       display: flex;
       gap: 20px;
       justify-content: center;
       flex-wrap: wrap;
     }
-   
+  
     .btn-light {
       background: var(--white);
       color: var(--primary);
     }
-   
+  
     .btn-light:hover {
       background: var(--accent);
       color: var(--white);
     }
-
     /* ==================== CONTACT ==================== */
     .contact {
       padding: 80px 0;
     }
-   
+  
     .contact-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 35px;
       margin-top: 50px;
     }
-   
+  
     .contact-card {
       background: linear-gradient(135deg, var(--primary) 0%, #0f3d5c 100%);
       padding: 40px 30px;
@@ -735,12 +716,12 @@
       color: var(--white);
       transition: all 0.3s;
     }
-   
+  
     .contact-card:hover {
       transform: translateY(-10px);
       box-shadow: 0 15px 40px rgba(26,84,144,0.3);
     }
-   
+  
     .contact-icon {
       width: 70px;
       height: 70px;
@@ -752,28 +733,26 @@
       margin: 0 auto 20px;
       font-size: 1.8rem;
     }
-   
+  
     .contact-card h3 {
       font-size: 1.3rem;
       margin-bottom: 12px;
     }
-   
+  
     .contact-card p {
       font-size: 1.1rem;
       opacity: 0.9;
     }
-   
+  
     .contact-card strong {
       color: var(--accent);
     }
-
     .map-container {
       margin-top: 40px;
       border-radius: 15px;
       overflow: hidden;
       box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
-
     /* ==================== INQUIRY POPUP ==================== */
     .inquiry-popup {
       display: none;
@@ -788,7 +767,6 @@
       justify-content: center;
       padding: 20px;
     }
-
     .inquiry-form {
       background: white;
       padding: 40px;
@@ -798,12 +776,10 @@
       position: relative;
       animation: popupSlide 0.4s ease;
     }
-
     @keyframes popupSlide {
       from { transform: scale(0.8); opacity: 0; }
       to { transform: scale(1); opacity: 1; }
     }
-
     .close-popup {
       position: absolute;
       top: 15px;
@@ -812,29 +788,24 @@
       color: #aaa;
       cursor: pointer;
     }
-
     .close-popup:hover {
       color: var(--secondary);
     }
-
     .inquiry-form h3 {
       font-family: 'Playfair Display', serif;
       color: var(--primary);
       margin-bottom: 20px;
       text-align: center;
     }
-
     .form-group {
       margin-bottom: 20px;
     }
-
     .form-group label {
       display: block;
       margin-bottom: 8px;
       font-weight: 500;
       color: var(--dark);
     }
-
     .form-group input,
     .form-group select,
     .form-group textarea {
@@ -844,12 +815,10 @@
       border-radius: 8px;
       font-family: 'Poppins', sans-serif;
     }
-
     .form-group textarea {
       height: 100px;
       resize: vertical;
     }
-
     .submit-inquiry {
       background: var(--secondary);
       color: white;
@@ -861,45 +830,43 @@
       width: 100%;
       transition: all 0.3s;
     }
-
     .submit-inquiry:hover {
       background: #ff5722;
       transform: translateY(-2px);
     }
-
     /* ==================== FOOTER ==================== */
     .footer {
       background: #1a1a1a;
       color: #aaa;
       padding: 50px 0 20px;
     }
-   
+  
     .footer-content {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 40px;
       margin-bottom: 40px;
     }
-   
+  
     .footer-section h3 {
       color: var(--white);
       margin-bottom: 20px;
       font-size: 1.3rem;
     }
-   
+  
     .footer-section p {
       line-height: 1.8;
       margin-bottom: 15px;
     }
-   
+  
     .footer-links {
       list-style: none;
     }
-   
+  
     .footer-links li {
       margin-bottom: 10px;
     }
-   
+  
     .footer-links a {
       color: #aaa;
       transition: color 0.3s;
@@ -907,30 +874,29 @@
       align-items: center;
       gap: 8px;
     }
-   
+  
     .footer-links a:hover {
       color: var(--accent);
     }
-   
+  
     .footer-bottom {
       border-top: 1px solid #333;
       padding-top: 20px;
       text-align: center;
       font-size: 0.9rem;
     }
-
     /* ==================== RESPONSIVE ==================== */
     @media (max-width: 768px) {
       .top-bar-content {
         flex-direction: column;
         text-align: center;
       }
-     
+    
       .contact-info {
         flex-direction: column;
         gap: 10px;
       }
-     
+    
       .nav-menu {
         position: fixed;
         top: 76px;
@@ -944,58 +910,58 @@
         box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         gap: 0;
       }
-     
+    
       .nav-menu li {
         width: 100%;
         text-align: center;
         padding: 20px 0;
         border-bottom: 1px solid #eee;
       }
-     
+    
       .nav-menu.active {
         left: 0;
       }
-     
+    
       .hamburger {
         display: flex;
       }
-     
+    
       .hamburger.active span:nth-child(1) {
         transform: rotate(45deg) translate(8px, 8px);
       }
-     
+    
       .hamburger.active span:nth-child(2) {
         opacity: 0;
       }
-     
+    
       .hamburger.active span:nth-child(3) {
         transform: rotate(-45deg) translate(7px, -7px);
       }
-     
+    
       .hero {
         height: 70vh;
       }
-     
+    
       .hero h1 {
         font-size: 2.5rem;
       }
-     
+    
       .hero p {
         font-size: 1.1rem;
       }
-     
+    
       .hero-buttons {
         flex-direction: column;
       }
-     
+    
       .section-header h2 {
         font-size: 2.2rem;
       }
-     
+    
       .cta h2 {
         font-size: 2.2rem;
       }
-     
+    
       .cta-buttons {
         flex-direction: column;
       }
@@ -1003,7 +969,6 @@
   </style>
 </head>
 <body>
-
   <!-- FLOATING BUTTONS -->
   <div class="floating-buttons">
     <!-- Quick Inquiry Button -->
@@ -1011,17 +976,15 @@
       <i class="fas fa-edit"></i>
       <span class="tooltip">Quick Inquiry</span>
     </div>
-
     <!-- WhatsApp Button -->
-    <a href="https://wa.me/917017900021?text=Hello!%20I%20want%20to%20book%20a%20tour." 
-       target="_blank" 
-       class="float-btn whatsapp-btn" 
+    <a href="https://wa.me/917017900021?text=Hello!%20I%20want%20to%20book%20a%20tour."
+       target="_blank"
+       class="float-btn whatsapp-btn"
        aria-label="WhatsApp">
       <i class="fab fa-whatsapp"></i>
       <span class="tooltip">Chat on WhatsApp</span>
     </a>
   </div>
-
   <!-- TOP BAR -->
   <div class="top-bar">
     <div class="container top-bar-content">
@@ -1037,7 +1000,6 @@
       </div>
     </div>
   </div>
-
   <!-- NAVBAR -->
   <nav class="navbar">
     <div class="container nav-container">
@@ -1048,6 +1010,7 @@
       <ul class="nav-menu">
         <li><a href="#home">Home</a></li>
         <li><a href="#services">Services</a></li>
+        <li><a href="#cab-services">Cab Services</a></li>
         <li><a href="#places">Places</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -1058,7 +1021,6 @@
       </div>
     </div>
   </nav>
-
   <!-- HERO -->
   <section id="home" class="hero">
     <div class="container">
@@ -1079,7 +1041,6 @@
       </div>
     </div>
   </section>
-
   <!-- FEATURES -->
   <section class="features">
     <div class="container">
@@ -1115,7 +1076,6 @@
       </div>
     </div>
   </section>
-
   <!-- STATS COUNTERS -->
   <section class="stats">
     <div class="container">
@@ -1139,7 +1099,6 @@
       </div>
     </div>
   </section>
-
   <!-- SERVICES -->
   <section id="services" class="services">
     <div class="container">
@@ -1225,6 +1184,76 @@
     </div>
   </section>
 
+  <!-- CAB SERVICES -->
+  <section id="cab-services" class="cab-services">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">Special Offer</div>
+        <h2>Cab Services – Delhi to Rishikesh</h2>
+        <p>Affordable, safe & comfortable round trip packages</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-car"></i>
+          </div>
+          <div class="service-content">
+            <h3>Delhi ↔ Rishikesh (3 Days)</h3>
+            <p style="font-size: 1.1rem; color: var(--primary); font-weight: 600; margin-bottom: 8px;">
+              ₹11,000 <small style="color: #666; font-weight: normal;">(All Inclusive)</small>
+            </p>
+            <p>Complete round trip with 200 km/day running, tolls, driver allowance & fuel included.</p>
+            <ul style="text-align: left; margin: 15px 0; padding-left: 20px; color: #555; font-size: 0.95rem;">
+              <li>Day 1: Delhi → Rishikesh</li>
+              <li>Day 2: Local Sightseeing</li>
+              <li>Day 3: Rishikesh → Delhi</li>
+            </ul>
+          <a href="https://wa.me/917017900021?text=Hi!%20I%20want%20to%20book%20a%20cab%20for%20daily%20rental." target="_blank" class="service-link">
+              WhatsApp Now <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-tachometer-alt"></i>
+          </div>
+          <div class="service-content">
+            <h3>Daily Cab Rental</h3>
+            <p style="font-size: 1.1rem; color: var(--primary); font-weight: 600; margin-bottom: 8px;">
+              ₹3,700 <small style="color: #666; font-weight: normal;">per day</small>
+            </p>
+            <p>200 km running per day.  Ideal for local or outstation trips.</p>
+            <ul style="text-align: left; margin: 15px 0; padding-left: 20px; color: #555; font-size: 0.95rem;">
+              <li>Hundai Aura</li>
+              <li>AC + Well-maintained</li>
+              <li>Experienced driver</li>
+            </ul>
+            <a href="https://wa.me/917017900021?text=Hi!%20I%20want%20to%20book%20a%20cab%20for%20daily%20rental." target="_blank" class="service-link">
+              WhatsApp Now <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact CTA Below -->
+      <div style="text-align: center; margin-top: 40px; padding: 30px; background: white; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+        <p style="font-size: 1.1rem; color: var(--dark); margin-bottom: 15px;">
+          <i class="fas fa-info-circle" style="color: var(--secondary);"></i>
+          <strong> Need custom itinerary or more vehicles?</strong>
+        </p>
+        <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+          <a href="tel:+917017900021" class="btn btn-primary">
+            <i class="fas fa-phone"></i> Call +91 70179 00021
+          </a>
+          <a href="https://wa.me/917017900021?text=Hi!%20I%20need%20a%20custom%20cab%20quote%20for%20Rishikesh." target="_blank" class="btn btn-secondary">
+            <i class="fab fa-whatsapp"></i> Get Quote on WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- PLACES -->
   <section id="places" class="places">
     <div class="container">
@@ -1276,7 +1305,7 @@
             </div>
           </div>
         </div>
-         <div class="place-card">
+        <div class="place-card">
           <div class="place-image">
             <img src="https://content-tourist.rajasthan.gov.in/uploads/istockphoto_154894958_612x612_f252980306.webp" alt="Amber Fort">
             <div class="place-badge">Heritage</div>
@@ -1290,7 +1319,7 @@
             </div>
           </div>
         </div>
-          <div class="place-card">
+        <div class="place-card">
           <div class="place-image">
             <img src="https://cdn1.tripoto.com/media/filter/nl/img/2380291/Image/1698842113_ram_jhula_in_rishikesh.jpg.webp" alt="Ram Jhula Rishikesh">
             <div class="place-badge">Historic</div>
@@ -1304,9 +1333,9 @@
             </div>
           </div>
         </div>
-          <div class="place-card">
+        <div class="place-card">
           <div class="place-image">
-            <img src=" https://www.sirohitourandtravel.com/images/place/beatels-ashram.jpg" alt="Beatles Ashram">
+            <img src="https://www.sirohitourandtravel.com/images/place/beatels-ashram.jpg" alt="Beatles Ashram">
             <div class="place-badge">Artistic</div>
           </div>
           <div class="place-content">
@@ -1318,9 +1347,9 @@
             </div>
           </div>
         </div>
-       <div class="place-card">
+        <div class="place-card">
           <div class="place-image">
-            <img src=" https://www.sirohitourandtravel.com/images/place/parmarth-niketan-ashram.jpg" alt="Parmarth Niketan Ashram">
+            <img src="https://www.sirohitourandtravel.com/images/place/parmarth-niketan-ashram.jpg" alt="Parmarth Niketan Ashram">
             <div class="place-badge">Peaceful</div>
           </div>
           <div class="place-content">
@@ -1332,10 +1361,9 @@
             </div>
           </div>
         </div>
-       
         <div class="place-card">
           <div class="place-image">
-            <img src=" https://www.sirohitourandtravel.com/images/place/triveni-ghat.jpg" alt="Triveni Ghat Rishikesh">
+            <img src="https://www.sirohitourandtravel.com/images/place/triveni-ghat.jpg" alt="Triveni Ghat Rishikesh">
             <div class="place-badge">Spiritual</div>
           </div>
           <div class="place-content">
@@ -1349,7 +1377,7 @@
         </div>
         <div class="place-card">
           <div class="place-image">
-            <img src=" https://blog.yatradham.org/wp-content/uploads/2023/10/Mansa-Devi-Temple.jpg" alt="Mansa Devi Temple">
+            <img src="https://blog.yatradham.org/wp-content/uploads/2023/10/Mansa-Devi-Temple.jpg" alt="Mansa Devi Temple">
             <div class="place-badge">Divine</div>
           </div>
           <div class="place-content">
@@ -1361,11 +1389,9 @@
             </div>
           </div>
         </div>
-       
       </div>
     </div>
   </section>
-
   <!-- CTA -->
   <section class="cta">
     <div class="container">
@@ -1383,7 +1409,6 @@
       </div>
     </div>
   </section>
-
   <!-- CONTACT -->
   <section id="contact" class="contact">
     <div class="container">
@@ -1410,21 +1435,19 @@
           <p>Quick response guaranteed</p>
         </div>
       </div>
-
       <!-- Google Map -->
       <div class="map-container">
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.123456789!2d78.267!3d30.129!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3908d4b6b8b8b8b8%3A0x123456789!2sLaxman%20Jhula%2C%20Rishikesh!5e0!3m2!1sen!2sin!4v1234567890" 
-          width="100%" 
-          height="400" 
-          style="border:0;" 
-          allowfullscreen="" 
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.123456789!2d78.267!3d30.129!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3908d4b6b8b8b8b8%3A0x123456789!2sLaxman%20Jhula%2C%20Rishikesh!5e0!3m2!1sen!2sin!4v1234567890"
+          width="100%"
+          height="400"
+          style="border:0;"
+          allowfullscreen=""
           loading="lazy">
         </iframe>
       </div>
     </div>
   </section>
-
   <!-- INQUIRY POPUP -->
   <div class="inquiry-popup" id="inquiryPopup">
     <div class="inquiry-form">
@@ -1448,6 +1471,7 @@
             <option value="Agra">Agra</option>
             <option value="Jaipur">Jaipur</option>
             <option value="Char Dham">Char Dham</option>
+            <option value="Delhi to Rishikesh Cab">Delhi to Rishikesh Cab</option>
             <option value="Custom">Custom Tour</option>
           </select>
         </div>
@@ -1459,7 +1483,6 @@
       </form>
     </div>
   </div>
-
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
@@ -1479,6 +1502,7 @@
           <ul class="footer-links">
             <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
             <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
+            <li><a href="#cab-services"><i class="fas fa-chevron-right"></i> Cab Services</a></li>
             <li><a href="#places"><i class="fas fa-chevron-right"></i> Places</a></li>
             <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
           </ul>
@@ -1489,7 +1513,7 @@
             <li><a href="#services"><i class="fas fa-chevron-right"></i> Local Sightseeing</a></li>
             <li><a href="#services"><i class="fas fa-chevron-right"></i> Hotel Booking</a></li>
             <li><a href="#services"><i class="fas fa-chevron-right"></i> Airport Transfer</a></li>
-            <li><a href="#services"><i class="fas fa-chevron-right"></i> Adventure Tours</a></li>
+            <li><a href="#cab-services"><i class="fas fa-chevron-right"></i> Cab Services</a></li>
           </ul>
         </div>
         <div class="footer-section">
@@ -1507,7 +1531,6 @@
       </div>
     </div>
   </footer>
-
   <!-- JavaScript -->
   <script>
     // Navbar scroll effect
@@ -1519,7 +1542,6 @@
         navbar.classList.remove('scrolled');
       }
     });
-
     // Mobile menu toggle
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
@@ -1527,7 +1549,6 @@
       hamburger.classList.toggle('active');
       navMenu.classList.toggle('active');
     });
-
     // Close menu on link click
     document.querySelectorAll('.nav-menu a').forEach(link => {
       link.addEventListener('click', () => {
@@ -1535,7 +1556,6 @@
         navMenu.classList.remove('active');
       });
     });
-
     // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
@@ -1552,7 +1572,6 @@
         }
       });
     });
-
     // Counter Animation
     function animateCounters() {
       const counters = document.querySelectorAll('.counter');
@@ -1560,7 +1579,6 @@
         const target = +counter.innerText.replace('+', '').replace('/', '');
         const speed = 200;
         const increment = target / speed;
-
         let current = 0;
         const timer = setInterval(() => {
           current += increment;
@@ -1573,7 +1591,6 @@
         }, 15);
       });
     }
-
     // Trigger counters on scroll
     const statsSection = document.querySelector('.stats');
     const observer = new IntersectionObserver((entries) => {
@@ -1584,20 +1601,16 @@
         }
       });
     }, { threshold: 0.5 });
-
     observer.observe(statsSection);
-
     // Inquiry Popup
     function openInquiryPopup() {
       document.getElementById('inquiryPopup').style.display = 'flex';
       document.body.style.overflow = 'hidden';
     }
-
     function closeInquiryPopup() {
       document.getElementById('inquiryPopup').style.display = 'none';
       document.body.style.overflow = 'auto';
     }
-
     // Submit Inquiry via WhatsApp
     document.getElementById('inquiryForm').addEventListener('submit', function(e) {
       e.preventDefault();
@@ -1605,19 +1618,16 @@
       const phone = document.getElementById('phone').value.trim();
       const destination = document.getElementById('destination').value;
       const message = document.getElementById('message').value.trim();
-
       let text = `Hello! I'm ${name}%0A`;
       text += `Phone: ${phone}%0A`;
       text += `Interested in: ${destination}%0A`;
       if (message) text += `Message: ${message}%0A`;
       text += `%0AThank you!`;
-
       const whatsappURL = `https://wa.me/917017900021?text=${text}`;
       window.open(whatsappURL, '_blank');
       closeInquiryPopup();
       document.getElementById('inquiryForm').reset();
     });
-
     // Close popup on outside click
     window.addEventListener('click', function(e) {
       const popup = document.getElementById('inquiryPopup');
@@ -1625,7 +1635,6 @@
         closeInquiryPopup();
       }
     });
-
     // Fade-in animation for cards
     const fadeObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -1635,7 +1644,6 @@
         }
       });
     }, { threshold: 0.1 });
-
     document.querySelectorAll('.service-card, .place-card, .feature-card, .contact-card').forEach(card => {
       card.style.opacity = '0';
       card.style.transform = 'translateY(30px)';
