@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,6 +41,39 @@
       max-width: 1200px;
       margin: 0 auto;
     }
+    /* ==================== NOTIFICATION BAR ==================== */
+    .notification-bar {
+      background: linear-gradient(135deg, var(--accent) 0%, #e6a620 100%);
+      color: var(--dark);
+      padding: 12px 0;
+      text-align: center;
+      font-size: 1rem;
+      font-weight: 500;
+      position: relative;
+      z-index: 999;
+    }
+    
+    .notification-bar a {
+      color: var(--primary);
+      font-weight: 700;
+      text-decoration: underline;
+      transition: color 0.3s;
+    }
+    
+    .notification-bar a:hover {
+      color: var(--secondary);
+    }
+    
+    .notification-bar i {
+      margin-right: 8px;
+      animation: pulse-icon 2s infinite;
+    }
+    
+    @keyframes pulse-icon {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
     /* ==================== FLOATING BUTTONS ==================== */
     .floating-buttons {
       position: fixed;
@@ -79,6 +113,13 @@
     .inquiry-btn:hover {
       background: #ff5722;
     }
+    .feedback-btn {
+      background: var(--accent);
+      animation: pulse-feedback 2s infinite;
+    }
+    .feedback-btn:hover {
+      background: #e6a620;
+    }
     .float-btn .tooltip {
       position: absolute;
       right: 70px;
@@ -107,6 +148,11 @@
       0% { box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.7); }
       70% { box-shadow: 0 0 0 15px rgba(255, 107, 53, 0); }
       100% { box-shadow: 0 0 0 0 rgba(255, 107, 53, 0); }
+    }
+    @keyframes pulse-feedback {
+      0% { box-shadow: 0 0 0 0 rgba(247, 183, 49, 0.7); }
+      70% { box-shadow: 0 0 0 15px rgba(247, 183, 49, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(247, 183, 49, 0); }
     }
     @media (max-width: 768px) {
       .floating-buttons {
@@ -642,6 +688,148 @@
     .place-meta i {
       color: var(--secondary);
     }
+    /* ==================== CUSTOMER GALLERY ==================== */
+    /* ==================== CUSTOMER GALLERY ==================== */
+.gallery {
+  padding: 80px 0;
+  background: #f8f9fa;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+}
+
+.gallery-item {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 22px rgba(0,0,0,0.09);
+  transition: all 0.28s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 36px rgba(0,0,0,0.14);
+}
+
+.media-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;          /* ← main control of photo proportions */
+  overflow: hidden;
+  background: #111;
+}
+
+.media-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;            /* crops nicely instead of stretching */
+  object-position: center;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover .media-container img {
+  transform: scale(1.06);
+}
+
+/* Video wrapper - keeps 16:9 inside our 4:3 container */
+.embed-container {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.embed-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.gallery-item p {
+  padding: 16px 20px;
+  margin: 0;
+  text-align: center;
+  color: #555;
+  font-size: 0.96rem;
+  font-style: italic;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Optional: make videos a bit taller if you prefer 16:9 feel */
+.gallery-item:has(.embed-container) .media-container {
+  aspect-ratio: 16 / 9;          /* ← uncomment if you want videos taller */
+  /* or use: aspect-ratio: 3 / 2; for something in between */
+}
+    .embed-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
+    }
+
+    .embed-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    /* ==================== TESTIMONIALS ==================== */
+    .testimonials {
+      padding: 80px 0;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    }
+    
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 35px;
+    }
+    
+    .testimonial-card {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+      text-align: center;
+      position: relative;
+    }
+    
+    .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 4rem;
+      color: var(--secondary);
+      opacity: 0.2;
+    }
+    
+    .testimonial-card p {
+      color: #666;
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+    
+    .testimonial-author {
+      font-weight: 600;
+      color: var(--primary);
+    }
+    
+    .testimonial-rating {
+      color: var(--accent);
+      margin-top: 10px;
+    }
     /* ==================== CTA ==================== */
     .cta {
       padding: 80px 0;
@@ -752,6 +940,23 @@
       border-radius: 15px;
       overflow: hidden;
       box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    /* ==================== FEEDBACK FORM ==================== */
+    .feedback-form {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      max-width: 500px;
+      width: 100%;
+      margin: 40px auto 0;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+    
+    .feedback-form h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--primary);
+      margin-bottom: 20px;
+      text-align: center;
     }
     /* ==================== INQUIRY POPUP ==================== */
     .inquiry-popup {
@@ -969,12 +1174,21 @@
   </style>
 </head>
 <body>
+  <!-- NOTIFICATION BAR -->
+  <div class="notification-bar">
+    <i class="fas fa-laptop-code"></i> Unlock Digital Solutions: <a href="https://your-other-website-link.com" target="_blank">Custom Websites & Advanced Vehicle Tracking Systems Await!</a>
+  </div>
   <!-- FLOATING BUTTONS -->
   <div class="floating-buttons">
     <!-- Quick Inquiry Button -->
     <div class="float-btn inquiry-btn" onclick="openInquiryPopup()">
       <i class="fas fa-edit"></i>
       <span class="tooltip">Quick Inquiry</span>
+    </div>
+    <!-- Feedback Button -->
+    <div class="float-btn feedback-btn" onclick="openFeedbackPopup()">
+      <i class="fas fa-comment-dots"></i>
+      <span class="tooltip">Share Feedback</span>
     </div>
     <!-- WhatsApp Button -->
     <a href="https://wa.me/917017900021?text=Hello!%20I%20want%20to%20book%20a%20tour."
@@ -1012,6 +1226,8 @@
         <li><a href="#services">Services</a></li>
         <li><a href="#cab-services">Cab Services</a></li>
         <li><a href="#places">Places</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <div class="hamburger">
@@ -1392,6 +1608,128 @@
       </div>
     </div>
   </section>
+  
+  <!-- CUSTOMER GALLERY -->
+ <!-- CUSTOMER GALLERY -->
+<section id="gallery" class="gallery">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">Memories</div>
+      <h2>Customer Photos & Videos</h2>
+      <p>Captured moments from our trips</p>
+    </div>
+
+    <div class="gallery-grid">
+
+      <!-- Photo 1 -->
+      <div class="gallery-item">
+        <div class="media-container">
+          <img src="https://lh3.googleusercontent.com/d/1oYdqhZnmc_EDa_ksVJrizt2WXmz7KBAb"
+               alt="Customer Photo 1"
+               loading="lazy">
+        </div>
+       
+      </div>
+
+      <!-- Photo 2 -->
+      <div class="gallery-item">
+        <div class="media-container">
+          <img src="https://lh3.googleusercontent.com/d/1YDFpKN0yDqVtHjxisoesUl-DnjWNQcTy"
+               alt="Customer Photo 2"
+               loading="lazy">
+        </div>
+       
+      </div>
+
+      <!-- Photo 3 -->
+      <div class="gallery-item">
+        <div class="media-container">
+          <img src="https://lh3.googleusercontent.com/d/1BMBBcnpxLHzrPUdNhuYQ3GaUWStUfffS"
+               alt="Customer Photo 3"
+               loading="lazy">
+        </div>
+       
+      </div>
+
+      <!-- Photo 4 -->
+      <div class="gallery-item">
+        <div class="media-container">
+          <img src="https://lh3.googleusercontent.com/d/1y3M_mD8xq_oSllXN-jhX0_fEoUHkTKDb"
+               alt="Customer Photo 4"
+               loading="lazy">
+        </div>
+       
+      </div>
+
+      <!-- Video 1 -->
+      <div class="gallery-item">
+        <div class="media-container">
+          <div class="embed-container">
+            <iframe 
+              src="https://drive.google.com/file/d/1_VmAiNDhcfHzTc9QFKoHHYYblibwIwW5/preview"
+              allow="autoplay"
+              frameborder="0"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+       
+      </div>
+
+      <!-- Video 2 -->
+      <div class="gallery-item">
+        <div class="media-container">
+          <div class="embed-container">
+            <iframe 
+              src="https://drive.google.com/file/d/16xJ0SV--p1C5zWiFJ2Y7XeE0zwVshXXg/preview"
+              allow="autoplay"
+              frameborder="0"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+       
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">What Our Customers Say</div>
+        <h2>Customer Feedback</h2>
+        <p>Hear from our happy travelers</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <p>"Amazing experience! The guides were knowledgeable and the trip was well-organized."</p>
+          <div class="testimonial-author">John Doe</div>
+          <div class="testimonial-rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <p>"Loved the spiritual tours. Highly recommend Krishna Tour and Travels."</p>
+          <div class="testimonial-author">Jane Smith</div>
+          <div class="testimonial-rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <p>"Safe and comfortable cab service from Delhi to Rishikesh. Will book again!"</p>
+          <div class="testimonial-author">Mike Johnson</div>
+          <div class="testimonial-rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+        </div>
+        <!-- Add more testimonials as needed -->
+      </div>
+    </div>
+  </section>
+  
   <!-- CTA -->
   <section class="cta">
     <div class="container">
@@ -1478,6 +1816,39 @@
         <div class="form-group">
           <label>Message (Optional)</label>
           <textarea id="message" placeholder="Travel dates, group size, etc."></textarea>
+        </div>
+        <button type="submit" class="submit-inquiry">Send via WhatsApp</button>
+      </form>
+    </div>
+  </div>
+  <!-- FEEDBACK POPUP -->
+  <div class="inquiry-popup" id="feedbackPopup">
+    <div class="inquiry-form">
+      <span class="close-popup" onclick="closeFeedbackPopup()">×</span>
+      <h3>Share Your Feedback</h3>
+      <form id="feedbackForm">
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" id="feedbackName" required />
+        </div>
+        <div class="form-group">
+          <label>Phone</label>
+          <input type="tel" id="feedbackPhone" required />
+        </div>
+        <div class="form-group">
+          <label>Rating</label>
+          <select id="feedbackRating" required>
+            <option value="">Select Rating</option>
+            <option value="5">5 Stars</option>
+            <option value="4">4 Stars</option>
+            <option value="3">3 Stars</option>
+            <option value="2">2 Stars</option>
+            <option value="1">1 Star</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Feedback</label>
+          <textarea id="feedbackMessage" required placeholder="Share your experience..."></textarea>
         </div>
         <button type="submit" class="submit-inquiry">Send via WhatsApp</button>
       </form>
@@ -1611,6 +1982,15 @@
       document.getElementById('inquiryPopup').style.display = 'none';
       document.body.style.overflow = 'auto';
     }
+    // Feedback Popup
+    function openFeedbackPopup() {
+      document.getElementById('feedbackPopup').style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+    function closeFeedbackPopup() {
+      document.getElementById('feedbackPopup').style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
     // Submit Inquiry via WhatsApp
     document.getElementById('inquiryForm').addEventListener('submit', function(e) {
       e.preventDefault();
@@ -1628,11 +2008,32 @@
       closeInquiryPopup();
       document.getElementById('inquiryForm').reset();
     });
+    // Submit Feedback via WhatsApp
+    document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('feedbackName').value.trim();
+      const phone = document.getElementById('feedbackPhone').value.trim();
+      const rating = document.getElementById('feedbackRating').value;
+      const message = document.getElementById('feedbackMessage').value.trim();
+      let text = `Feedback from ${name}%0A`;
+      text += `Phone: ${phone}%0A`;
+      text += `Rating: ${rating} Stars%0A`;
+      text += `Message: ${message}%0A`;
+      const whatsappURL = `https://wa.me/917017900021?text=${text}`;
+      window.open(whatsappURL, '_blank');
+      closeFeedbackPopup();
+      document.getElementById('feedbackForm').reset();
+      alert('Thank you for your feedback!');
+    });
     // Close popup on outside click
     window.addEventListener('click', function(e) {
-      const popup = document.getElementById('inquiryPopup');
-      if (e.target === popup) {
+      const inquiryPopup = document.getElementById('inquiryPopup');
+      const feedbackPopup = document.getElementById('feedbackPopup');
+      if (e.target === inquiryPopup) {
         closeInquiryPopup();
+      }
+      if (e.target === feedbackPopup) {
+        closeFeedbackPopup();
       }
     });
     // Fade-in animation for cards
@@ -1644,7 +2045,7 @@
         }
       });
     }, { threshold: 0.1 });
-    document.querySelectorAll('.service-card, .place-card, .feature-card, .contact-card').forEach(card => {
+    document.querySelectorAll('.service-card, .place-card, .feature-card, .contact-card, .gallery-item, .testimonial-card').forEach(card => {
       card.style.opacity = '0';
       card.style.transform = 'translateY(30px)';
       card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
