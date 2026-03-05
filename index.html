@@ -1,21 +1,18 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Krishna Tour and Travels - Rishikesh, Haridwar, Agra & Jaipur</title>
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-  
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
     :root {
       --primary: #1a5490;
       --secondary: #ff6b35;
@@ -24,7 +21,7 @@
       --light: #ecf0f1;
       --white: #ffffff;
     }
-  
+
     body {
       font-family: 'Poppins', sans-serif;
       line-height: 1.6;
@@ -32,15 +29,12 @@
       background: var(--white);
       overflow-x: hidden;
     }
-  
+
     a { text-decoration: none; color: inherit; }
     img { max-width: 100%; display: block; }
-  
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+
+    .container { width: 90%; max-width: 1200px; margin: 0 auto; }
+
     /* ==================== NOTIFICATION BAR ==================== */
     .notification-bar {
       background: linear-gradient(135deg, var(--accent) 0%, #e6a620 100%);
@@ -52,28 +46,24 @@
       position: relative;
       z-index: 999;
     }
-    
+
     .notification-bar a {
       color: var(--primary);
       font-weight: 700;
       text-decoration: underline;
       transition: color 0.3s;
     }
-    
-    .notification-bar a:hover {
-      color: var(--secondary);
-    }
-    
-    .notification-bar i {
-      margin-right: 8px;
-      animation: pulse-icon 2s infinite;
-    }
-    
+
+    .notification-bar a:hover { color: var(--secondary); }
+
+    .notification-bar i { margin-right: 8px; animation: pulse-icon 2s infinite; }
+
     @keyframes pulse-icon {
       0% { transform: scale(1); }
       50% { transform: scale(1.2); }
       100% { transform: scale(1); }
     }
+
     /* ==================== FLOATING BUTTONS ==================== */
     .floating-buttons {
       position: fixed;
@@ -102,24 +92,11 @@
       transform: scale(1.1);
       box-shadow: 0 6px 20px rgba(0,0,0,0.3);
     }
-    .whatsapp-btn {
-      background: #25d366;
-      animation: pulse 2s infinite;
-    }
-    .inquiry-btn {
-      background: var(--secondary);
-      animation: pulse-inquiry 2s infinite;
-    }
-    .inquiry-btn:hover {
-      background: #ff5722;
-    }
-    .feedback-btn {
-      background: var(--accent);
-      animation: pulse-feedback 2s infinite;
-    }
-    .feedback-btn:hover {
-      background: #e6a620;
-    }
+    .whatsapp-btn { background: #25d366; animation: pulse 2s infinite; }
+    .inquiry-btn { background: var(--secondary); animation: pulse-inquiry 2s infinite; }
+    .inquiry-btn:hover { background: #ff5722; }
+    .feedback-btn { background: var(--accent); animation: pulse-feedback 2s infinite; }
+    .feedback-btn:hover { background: #e6a620; }
     .float-btn .tooltip {
       position: absolute;
       right: 70px;
@@ -134,11 +111,8 @@
       transition: all 0.3s;
       pointer-events: none;
     }
-    .float-btn:hover .tooltip {
-      opacity: 1;
-      visibility: visible;
-      right: 75px;
-    }
+    .float-btn:hover .tooltip { opacity: 1; visibility: visible; right: 75px; }
+
     @keyframes pulse {
       0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
       70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
@@ -155,20 +129,11 @@
       100% { box-shadow: 0 0 0 0 rgba(247, 183, 49, 0); }
     }
     @media (max-width: 768px) {
-      .floating-buttons {
-        bottom: 15px;
-        right: 15px;
-        gap: 12px;
-      }
-      .float-btn {
-        width: 50px;
-        height: 50px;
-        font-size: 1.5rem;
-      }
-      .float-btn .tooltip {
-        display: none;
-      }
+      .floating-buttons { bottom: 15px; right: 15px; gap: 12px; }
+      .float-btn { width: 50px; height: 50px; font-size: 1.5rem; }
+      .float-btn .tooltip { display: none; }
     }
+
     /* ==================== TOP BAR ==================== */
     .top-bar {
       background: linear-gradient(135deg, var(--primary) 0%, #0f3d5c 100%);
@@ -176,7 +141,7 @@
       padding: 10px 0;
       font-size: 0.9rem;
     }
-  
+
     .top-bar-content {
       display: flex;
       justify-content: space-between;
@@ -184,29 +149,12 @@
       flex-wrap: wrap;
       gap: 15px;
     }
-  
-    .contact-info {
-      display: flex;
-      gap: 25px;
-      flex-wrap: wrap;
-    }
-  
-    .contact-info span {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-  
-    .contact-info i {
-      color: var(--accent);
-      font-size: 0.95rem;
-    }
-  
-    .social-links {
-      display: flex;
-      gap: 12px;
-    }
-  
+
+    .contact-info { display: flex; gap: 25px; flex-wrap: wrap; }
+    .contact-info span { display: flex; align-items: center; gap: 8px; }
+    .contact-info i { color: var(--accent); font-size: 0.95rem; }
+
+    .social-links { display: flex; gap: 12px; }
     .social-links a {
       width: 32px;
       height: 32px;
@@ -217,11 +165,8 @@
       justify-content: center;
       transition: all 0.3s;
     }
-  
-    .social-links a:hover {
-      background: var(--accent);
-      transform: translateY(-3px);
-    }
+    .social-links a:hover { background: var(--accent); transform: translateY(-3px); }
+
     /* ==================== NAVBAR ==================== */
     .navbar {
       background: var(--white);
@@ -231,18 +176,14 @@
       z-index: 1000;
       transition: all 0.3s;
     }
-  
-    .navbar.scrolled {
-      box-shadow: 0 4px 30px rgba(0,0,0,0.15);
-    }
-  
+    .navbar.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.15); }
+
     .nav-container {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 18px 0;
     }
-  
     .nav-logo {
       display: flex;
       align-items: center;
@@ -252,17 +193,9 @@
       color: var(--primary);
       font-family: 'Playfair Display', serif;
     }
-  
-    .nav-logo i {
-      color: var(--secondary);
-    }
-  
-    .nav-menu {
-      list-style: none;
-      display: flex;
-      gap: 35px;
-    }
-  
+    .nav-logo i { color: var(--secondary); }
+
+    .nav-menu { list-style: none; display: flex; gap: 35px; }
     .nav-menu a {
       color: var(--dark);
       font-weight: 500;
@@ -270,7 +203,6 @@
       transition: color 0.3s;
       padding: 5px 0;
     }
-  
     .nav-menu a::after {
       content: '';
       position: absolute;
@@ -281,22 +213,10 @@
       background: var(--secondary);
       transition: width 0.3s;
     }
-  
-    .nav-menu a:hover {
-      color: var(--secondary);
-    }
-  
-    .nav-menu a:hover::after {
-      width: 100%;
-    }
-  
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-    }
-  
+    .nav-menu a:hover { color: var(--secondary); }
+    .nav-menu a:hover::after { width: 100%; }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
     .hamburger span {
       width: 28px;
       height: 3px;
@@ -304,6 +224,7 @@
       transition: all 0.3s;
       border-radius: 2px;
     }
+
     /* ==================== HERO ==================== */
     .hero {
       position: relative;
@@ -314,18 +235,13 @@
       align-items: center;
       overflow: hidden;
     }
-  
     .hero::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
+      top: 0; left: 0; right: 0; bottom: 0;
       background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
       opacity: 0.3;
     }
-  
     .hero-content {
       position: relative;
       z-index: 2;
@@ -333,18 +249,10 @@
       color: var(--white);
       animation: fadeInUp 1s ease;
     }
-  
     @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
-  
     .hero-badge {
       display: inline-block;
       background: rgba(247,183,49,0.2);
@@ -356,27 +264,19 @@
       margin-bottom: 20px;
       border: 1px solid var(--accent);
     }
-  
     .hero h1 {
       font-size: 3.8rem;
       font-family: 'Playfair Display', serif;
       margin-bottom: 20px;
       line-height: 1.2;
     }
-  
     .hero p {
       font-size: 1.3rem;
       margin-bottom: 35px;
       opacity: 0.95;
       font-weight: 300;
     }
-  
-    .hero-buttons {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-  
+    .hero-buttons { display: flex; gap: 20px; flex-wrap: wrap; }
     .btn {
       padding: 14px 35px;
       font-weight: 600;
@@ -388,40 +288,29 @@
       cursor: pointer;
       border: 2px solid transparent;
     }
-  
-    .btn-primary {
-      background: var(--secondary);
-      color: var(--white);
-    }
-  
+    .btn-primary { background: var(--secondary); color: var(--white); }
     .btn-primary:hover {
       background: #ff5722;
       transform: translateY(-3px);
       box-shadow: 0 10px 30px rgba(255,107,53,0.4);
     }
-  
     .btn-secondary {
       background: transparent;
       color: var(--white);
       border: 2px solid var(--white);
     }
-  
-    .btn-secondary:hover {
-      background: var(--white);
-      color: var(--primary);
-    }
+    .btn-secondary:hover { background: var(--white); color: var(--primary); }
+
     /* ==================== FEATURES ==================== */
     .features {
       padding: 80px 0;
       background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     }
-  
     .features-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 30px;
     }
-  
     .feature-card {
       background: var(--white);
       padding: 40px 30px;
@@ -431,13 +320,11 @@
       transition: all 0.3s;
       border: 2px solid transparent;
     }
-  
     .feature-card:hover {
       transform: translateY(-10px);
       box-shadow: 0 15px 40px rgba(0,0,0,0.15);
       border-color: var(--secondary);
     }
-  
     .feature-icon {
       width: 70px;
       height: 70px;
@@ -450,17 +337,13 @@
       font-size: 1.8rem;
       color: var(--white);
     }
-  
     .feature-card h3 {
       font-size: 1.3rem;
       margin-bottom: 12px;
       color: var(--primary);
     }
-  
-    .feature-card p {
-      color: #666;
-      font-size: 0.95rem;
-    }
+    .feature-card p { color: #666; font-size: 0.95rem; }
+
     /* ==================== STATS COUNTERS ==================== */
     .stats {
       padding: 60px 0;
@@ -479,16 +362,10 @@
       font-family: 'Playfair Display', serif;
       margin-bottom: 8px;
     }
-    .stat-item p {
-      font-size: 1.1rem;
-      opacity: 0.9;
-    }
+    .stat-item p { font-size: 1.1rem; opacity: 0.9; }
+
     /* ==================== SECTION HEADER ==================== */
-    .section-header {
-      text-align: center;
-      margin-bottom: 60px;
-    }
-  
+    .section-header { text-align: center; margin-bottom: 60px; }
     .section-badge {
       display: inline-block;
       background: rgba(26,84,144,0.1);
@@ -499,31 +376,26 @@
       font-weight: 600;
       margin-bottom: 15px;
     }
-  
     .section-header h2 {
       font-size: 2.8rem;
       font-family: 'Playfair Display', serif;
       color: var(--primary);
       margin-bottom: 15px;
     }
-  
     .section-header p {
       font-size: 1.1rem;
       color: #666;
       max-width: 600px;
       margin: 0 auto;
     }
+
     /* ==================== SERVICES ==================== */
-    .services {
-      padding: 80px 0;
-    }
-  
+    .services { padding: 80px 0; }
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 35px;
     }
-  
     .service-card {
       background: var(--white);
       border-radius: 20px;
@@ -532,55 +404,33 @@
       transition: all 0.3s;
       position: relative;
     }
-  
     .service-card::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
+      top: 0; left: 0; right: 0;
       height: 5px;
       background: linear-gradient(90deg, var(--secondary), var(--accent));
       transform: scaleX(0);
       transition: transform 0.3s;
     }
-  
-    .service-card:hover::before {
-      transform: scaleX(1);
-    }
-  
+    .service-card:hover::before { transform: scaleX(1); }
     .service-card:hover {
       transform: translateY(-10px);
       box-shadow: 0 15px 40px rgba(0,0,0,0.15);
     }
-  
     .service-icon {
       background: linear-gradient(135deg, var(--primary) 0%, #0f3d5c 100%);
       padding: 40px;
       text-align: center;
     }
-  
-    .service-icon i {
-      font-size: 3rem;
-      color: var(--accent);
-    }
-  
-    .service-content {
-      padding: 30px;
-      text-align: center;
-    }
-  
+    .service-icon i { font-size: 3rem; color: var(--accent); }
+    .service-content { padding: 30px; text-align: center; }
     .service-content h3 {
       font-size: 1.4rem;
       margin-bottom: 12px;
       color: var(--primary);
     }
-  
-    .service-content p {
-      color: #666;
-      margin-bottom: 20px;
-    }
-  
+    .service-content p { color: #666; margin-bottom: 20px; }
     .service-link {
       color: var(--secondary);
       font-weight: 600;
@@ -589,27 +439,21 @@
       gap: 8px;
       transition: gap 0.3s;
     }
-  
-    .service-link:hover {
-      gap: 12px;
-    }
+    .service-link:hover { gap: 12px; }
+
     /* ==================== CAB SERVICES ==================== */
-    .cab-services {
-      padding: 80px 0;
-      background: #f8f9fa;
-    }
+    .cab-services { padding: 80px 0; background: #f8f9fa; }
+
     /* ==================== PLACES ==================== */
     .places {
       padding: 80px 0;
       background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     }
-  
     .places-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 35px;
     }
-  
     .place-card {
       background: var(--white);
       border-radius: 20px;
@@ -618,33 +462,20 @@
       transition: all 0.3s;
       position: relative;
     }
-  
     .place-card:hover {
       transform: translateY(-10px);
       box-shadow: 0 15px 40px rgba(0,0,0,0.2);
     }
-  
-    .place-image {
-      position: relative;
-      height: 250px;
-      overflow: hidden;
-    }
-  
+    .place-image { position: relative; height: 250px; overflow: hidden; }
     .place-image img {
-      width: 100%;
-      height: 100%;
+      width: 100%; height: 100%;
       object-fit: cover;
       transition: transform 0.5s;
     }
-  
-    .place-card:hover .place-image img {
-      transform: scale(1.1);
-    }
-  
+    .place-card:hover .place-image img { transform: scale(1.1); }
     .place-badge {
       position: absolute;
-      top: 20px;
-      right: 20px;
+      top: 20px; right: 20px;
       background: var(--secondary);
       color: var(--white);
       padding: 8px 15px;
@@ -652,24 +483,14 @@
       font-size: 0.85rem;
       font-weight: 600;
     }
-  
-    .place-content {
-      padding: 25px;
-    }
-  
+    .place-content { padding: 25px; }
     .place-content h3 {
       font-size: 1.5rem;
       color: var(--primary);
       margin-bottom: 12px;
       font-family: 'Playfair Display', serif;
     }
-  
-    .place-content p {
-      color: #666;
-      margin-bottom: 15px;
-      font-size: 0.95rem;
-    }
-  
+    .place-content p { color: #666; margin-bottom: 15px; font-size: 0.95rem; }
     .place-meta {
       display: flex;
       gap: 20px;
@@ -678,123 +499,74 @@
       font-size: 0.9rem;
       color: #666;
     }
-  
-    .place-meta span {
-      display: flex;
-      align-items: center;
-      gap: 6px;
+    .place-meta span { display: flex; align-items: center; gap: 6px; }
+    .place-meta i { color: var(--secondary); }
+
+    /* ==================== GALLERY ==================== */
+    .gallery { padding: 80px 0; background: #f8f9fa; }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
     }
-  
-    .place-meta i {
-      color: var(--secondary);
-    }
-    /* ==================== CUSTOMER GALLERY ==================== */
-    /* ==================== CUSTOMER GALLERY ==================== */
-.gallery {
-  padding: 80px 0;
-  background: #f8f9fa;
-}
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 28px;
-}
-
-.gallery-item {
-  background: white;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 6px 22px rgba(0,0,0,0.09);
-  transition: all 0.28s ease;
-  display: flex;
-  flex-direction: column;
-}
-
-.gallery-item:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 36px rgba(0,0,0,0.14);
-}
-
-.media-container {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 4 / 3;          /* ← main control of photo proportions */
-  overflow: hidden;
-  background: #111;
-}
-
-.media-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;            /* crops nicely instead of stretching */
-  object-position: center;
-  transition: transform 0.4s ease;
-}
-
-.gallery-item:hover .media-container img {
-  transform: scale(1.06);
-}
-
-/* Video wrapper - keeps 16:9 inside our 4:3 container */
-.embed-container {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.embed-container iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-.gallery-item p {
-  padding: 16px 20px;
-  margin: 0;
-  text-align: center;
-  color: #555;
-  font-size: 0.96rem;
-  font-style: italic;
-  flex-grow: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Optional: make videos a bit taller if you prefer 16:9 feel */
-.gallery-item:has(.embed-container) .media-container {
-  aspect-ratio: 16 / 9;          /* ← uncomment if you want videos taller */
-  /* or use: aspect-ratio: 3 / 2; for something in between */
-}
-    .embed-container {
-      position: relative;
-      padding-bottom: 56.25%; /* 16:9 aspect ratio */
-      height: 0;
+    .gallery-item {
+      background: white;
+      border-radius: 16px;
       overflow: hidden;
-      max-width: 100%;
+      box-shadow: 0 6px 22px rgba(0,0,0,0.09);
+      transition: all 0.28s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .gallery-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 36px rgba(0,0,0,0.14);
     }
 
-    .embed-container iframe {
+    .media-container {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      background: #111;
+    }
+    .media-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 0.4s ease;
+    }
+    .gallery-item:hover .media-container img { transform: scale(1.06); }
+
+    /* Video wrapper */
+    .embed-container {
       position: absolute;
-      top: 0;
-      left: 0;
+      inset: 0;
       width: 100%;
       height: 100%;
     }
+    .embed-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .gallery-item:has(.embed-container) .media-container {
+      aspect-ratio: 16 / 9;
+    }
+
     /* ==================== TESTIMONIALS ==================== */
     .testimonials {
       padding: 80px 0;
       background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     }
-    
     .testimonials-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 35px;
     }
-    
     .testimonial-card {
       background: white;
       padding: 30px;
@@ -803,7 +575,6 @@
       text-align: center;
       position: relative;
     }
-    
     .testimonial-card::before {
       content: '"';
       position: absolute;
@@ -814,22 +585,10 @@
       color: var(--secondary);
       opacity: 0.2;
     }
-    
-    .testimonial-card p {
-      color: #666;
-      margin-bottom: 20px;
-      font-style: italic;
-    }
-    
-    .testimonial-author {
-      font-weight: 600;
-      color: var(--primary);
-    }
-    
-    .testimonial-rating {
-      color: var(--accent);
-      margin-top: 10px;
-    }
+    .testimonial-card p { color: #666; margin-bottom: 20px; font-style: italic; }
+    .testimonial-author { font-weight: 600; color: var(--primary); }
+    .testimonial-rating { color: var(--accent); margin-top: 10px; }
+
     /* ==================== CTA ==================== */
     .cta {
       padding: 80px 0;
@@ -837,7 +596,6 @@
       position: relative;
       overflow: hidden;
     }
-  
     .cta::before {
       content: '';
       position: absolute;
@@ -848,54 +606,21 @@
       background: rgba(255,255,255,0.05);
       border-radius: 50%;
     }
-  
-    .cta-content {
-      text-align: center;
-      color: var(--white);
-      position: relative;
-      z-index: 2;
-    }
-  
-    .cta h2 {
-      font-size: 2.8rem;
-      font-family: 'Playfair Display', serif;
-      margin-bottom: 20px;
-    }
-  
-    .cta p {
-      font-size: 1.2rem;
-      margin-bottom: 35px;
-      opacity: 0.9;
-    }
-  
-    .cta-buttons {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-  
-    .btn-light {
-      background: var(--white);
-      color: var(--primary);
-    }
-  
-    .btn-light:hover {
-      background: var(--accent);
-      color: var(--white);
-    }
+    .cta-content { text-align: center; color: var(--white); position: relative; z-index: 2; }
+    .cta h2 { font-size: 2.8rem; font-family: 'Playfair Display', serif; margin-bottom: 20px; }
+    .cta p { font-size: 1.2rem; margin-bottom: 35px; opacity: 0.9; }
+    .cta-buttons { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+    .btn-light { background: var(--white); color: var(--primary); }
+    .btn-light:hover { background: var(--accent); color: var(--white); }
+
     /* ==================== CONTACT ==================== */
-    .contact {
-      padding: 80px 0;
-    }
-  
+    .contact { padding: 80px 0; }
     .contact-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 35px;
       margin-top: 50px;
     }
-  
     .contact-card {
       background: linear-gradient(135deg, var(--primary) 0%, #0f3d5c 100%);
       padding: 40px 30px;
@@ -904,12 +629,10 @@
       color: var(--white);
       transition: all 0.3s;
     }
-  
     .contact-card:hover {
       transform: translateY(-10px);
       box-shadow: 0 15px 40px rgba(26,84,144,0.3);
     }
-  
     .contact-icon {
       width: 70px;
       height: 70px;
@@ -921,49 +644,22 @@
       margin: 0 auto 20px;
       font-size: 1.8rem;
     }
-  
-    .contact-card h3 {
-      font-size: 1.3rem;
-      margin-bottom: 12px;
-    }
-  
-    .contact-card p {
-      font-size: 1.1rem;
-      opacity: 0.9;
-    }
-  
-    .contact-card strong {
-      color: var(--accent);
-    }
+    .contact-card h3 { font-size: 1.3rem; margin-bottom: 12px; }
+    .contact-card p { font-size: 1.1rem; opacity: 0.9; }
+    .contact-card strong { color: var(--accent); }
+
     .map-container {
       margin-top: 40px;
       border-radius: 15px;
       overflow: hidden;
       box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
-    /* ==================== FEEDBACK FORM ==================== */
-    .feedback-form {
-      background: white;
-      padding: 40px;
-      border-radius: 20px;
-      max-width: 500px;
-      width: 100%;
-      margin: 40px auto 0;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    }
-    
-    .feedback-form h3 {
-      font-family: 'Playfair Display', serif;
-      color: var(--primary);
-      margin-bottom: 20px;
-      text-align: center;
-    }
-    /* ==================== INQUIRY POPUP ==================== */
+
+    /* ==================== INQUIRY POPUP / FEEDBACK POPUP ==================== */
     .inquiry-popup {
       display: none;
       position: fixed;
-      top: 0;
-      left: 0;
+      top: 0; left: 0;
       width: 100%;
       height: 100%;
       background: rgba(0,0,0,0.7);
@@ -993,18 +689,14 @@
       color: #aaa;
       cursor: pointer;
     }
-    .close-popup:hover {
-      color: var(--secondary);
-    }
+    .close-popup:hover { color: var(--secondary); }
     .inquiry-form h3 {
       font-family: 'Playfair Display', serif;
       color: var(--primary);
       margin-bottom: 20px;
       text-align: center;
     }
-    .form-group {
-      margin-bottom: 20px;
-    }
+    .form-group { margin-bottom: 20px; }
     .form-group label {
       display: block;
       margin-bottom: 8px;
@@ -1020,10 +712,7 @@
       border-radius: 8px;
       font-family: 'Poppins', sans-serif;
     }
-    .form-group textarea {
-      height: 100px;
-      resize: vertical;
-    }
+    .form-group textarea { height: 100px; resize: vertical; }
     .submit-inquiry {
       background: var(--secondary);
       color: white;
@@ -1035,43 +724,21 @@
       width: 100%;
       transition: all 0.3s;
     }
-    .submit-inquiry:hover {
-      background: #ff5722;
-      transform: translateY(-2px);
-    }
+    .submit-inquiry:hover { background: #ff5722; transform: translateY(-2px); }
+    .submit-inquiry:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
+
     /* ==================== FOOTER ==================== */
-    .footer {
-      background: #1a1a1a;
-      color: #aaa;
-      padding: 50px 0 20px;
-    }
-  
+    .footer { background: #1a1a1a; color: #aaa; padding: 50px 0 20px; }
     .footer-content {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 40px;
       margin-bottom: 40px;
     }
-  
-    .footer-section h3 {
-      color: var(--white);
-      margin-bottom: 20px;
-      font-size: 1.3rem;
-    }
-  
-    .footer-section p {
-      line-height: 1.8;
-      margin-bottom: 15px;
-    }
-  
-    .footer-links {
-      list-style: none;
-    }
-  
-    .footer-links li {
-      margin-bottom: 10px;
-    }
-  
+    .footer-section h3 { color: var(--white); margin-bottom: 20px; font-size: 1.3rem; }
+    .footer-section p { line-height: 1.8; margin-bottom: 15px; }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 10px; }
     .footer-links a {
       color: #aaa;
       transition: color 0.3s;
@@ -1079,29 +746,19 @@
       align-items: center;
       gap: 8px;
     }
-  
-    .footer-links a:hover {
-      color: var(--accent);
-    }
-  
+    .footer-links a:hover { color: var(--accent); }
     .footer-bottom {
       border-top: 1px solid #333;
       padding-top: 20px;
       text-align: center;
       font-size: 0.9rem;
     }
+
     /* ==================== RESPONSIVE ==================== */
     @media (max-width: 768px) {
-      .top-bar-content {
-        flex-direction: column;
-        text-align: center;
-      }
-    
-      .contact-info {
-        flex-direction: column;
-        gap: 10px;
-      }
-    
+      .top-bar-content { flex-direction: column; text-align: center; }
+      .contact-info { flex-direction: column; gap: 10px; }
+
       .nav-menu {
         position: fixed;
         top: 76px;
@@ -1115,69 +772,36 @@
         box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         gap: 0;
       }
-    
       .nav-menu li {
         width: 100%;
         text-align: center;
         padding: 20px 0;
         border-bottom: 1px solid #eee;
       }
-    
-      .nav-menu.active {
-        left: 0;
-      }
-    
-      .hamburger {
-        display: flex;
-      }
-    
-      .hamburger.active span:nth-child(1) {
-        transform: rotate(45deg) translate(8px, 8px);
-      }
-    
-      .hamburger.active span:nth-child(2) {
-        opacity: 0;
-      }
-    
-      .hamburger.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -7px);
-      }
-    
-      .hero {
-        height: 70vh;
-      }
-    
-      .hero h1 {
-        font-size: 2.5rem;
-      }
-    
-      .hero p {
-        font-size: 1.1rem;
-      }
-    
-      .hero-buttons {
-        flex-direction: column;
-      }
-    
-      .section-header h2 {
-        font-size: 2.2rem;
-      }
-    
-      .cta h2 {
-        font-size: 2.2rem;
-      }
-    
-      .cta-buttons {
-        flex-direction: column;
-      }
+      .nav-menu.active { left: 0; }
+      .hamburger { display: flex; }
+      .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(8px, 8px); }
+      .hamburger.active span:nth-child(2) { opacity: 0; }
+      .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -7px); }
+
+      .hero { height: 70vh; }
+      .hero h1 { font-size: 2.5rem; }
+      .hero p { font-size: 1.1rem; }
+      .hero-buttons { flex-direction: column; }
+      .section-header h2 { font-size: 2.2rem; }
+      .cta h2 { font-size: 2.2rem; }
+      .cta-buttons { flex-direction: column; }
     }
   </style>
 </head>
+
 <body>
   <!-- NOTIFICATION BAR -->
   <div class="notification-bar">
-    <i class="fas fa-laptop-code"></i> Unlock Digital Solutions: <a href="https://your-other-website-link.com" target="_blank">Custom Websites & Advanced Vehicle Tracking Systems Await!</a>
+    <i class="fas fa-laptop-code"></i> Unlock Digital Solutions:
+    <a href="https://your-other-website-link.com" target="_blank">Custom Websites & Advanced Vehicle Tracking Systems Await!</a>
   </div>
+
   <!-- FLOATING BUTTONS -->
   <div class="floating-buttons">
     <!-- Quick Inquiry Button -->
@@ -1185,11 +809,13 @@
       <i class="fas fa-edit"></i>
       <span class="tooltip">Quick Inquiry</span>
     </div>
+
     <!-- Feedback Button -->
     <div class="float-btn feedback-btn" onclick="openFeedbackPopup()">
       <i class="fas fa-comment-dots"></i>
       <span class="tooltip">Share Feedback</span>
     </div>
+
     <!-- WhatsApp Button -->
     <a href="https://wa.me/917017900021?text=Hello!%20I%20want%20to%20book%20a%20tour."
        target="_blank"
@@ -1199,6 +825,7 @@
       <span class="tooltip">Chat on WhatsApp</span>
     </a>
   </div>
+
   <!-- TOP BAR -->
   <div class="top-bar">
     <div class="container top-bar-content">
@@ -1214,6 +841,7 @@
       </div>
     </div>
   </div>
+
   <!-- NAVBAR -->
   <nav class="navbar">
     <div class="container nav-container">
@@ -1231,12 +859,11 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
       <div class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </div>
     </div>
   </nav>
+
   <!-- HERO -->
   <section id="home" class="hero">
     <div class="container">
@@ -1257,41 +884,35 @@
       </div>
     </div>
   </section>
+
   <!-- FEATURES -->
   <section class="features">
     <div class="container">
       <div class="features-grid">
         <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-shield-alt"></i>
-          </div>
+          <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
           <h3>Safe & Reliable</h3>
           <p>100% verified drivers and well-maintained vehicles for your safety</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-hand-holding-dollar"></i>
-          </div>
+          <div class="feature-icon"><i class="fas fa-hand-holding-dollar"></i></div>
           <h3>Best Prices</h3>
           <p>Affordable packages with no hidden charges and transparent pricing</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-clock"></i>
-          </div>
+          <div class="feature-icon"><i class="fas fa-clock"></i></div>
           <h3>24/7 Support</h3>
           <p>Round-the-clock customer service for hassle-free travel experience</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-map-location-dot"></i>
-          </div>
+          <div class="feature-icon"><i class="fas fa-map-location-dot"></i></div>
           <h3>Expert Guides</h3>
           <p>Local experts who know every spiritual and scenic spot in detail</p>
         </div>
       </div>
     </div>
   </section>
+
   <!-- STATS COUNTERS -->
   <section class="stats">
     <div class="container">
@@ -1315,6 +936,7 @@
       </div>
     </div>
   </section>
+
   <!-- SERVICES -->
   <section id="services" class="services">
     <div class="container">
@@ -1325,75 +947,51 @@
       </div>
       <div class="services-grid">
         <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-map-marked-alt"></i>
-          </div>
+          <div class="service-icon"><i class="fas fa-map-marked-alt"></i></div>
           <div class="service-content">
             <h3>Local Sightseeing</h3>
             <p>Explore all major temples, ashrams, and scenic spots with our guided tours</p>
-            <a href="#contact" class="service-link">
-              Learn More <i class="fas fa-arrow-right"></i>
-            </a>
+            <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
         <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-hotel"></i>
-          </div>
+          <div class="service-icon"><i class="fas fa-hotel"></i></div>
           <div class="service-content">
             <h3>Hotel Booking</h3>
             <p>Premium hotels, budget stays, and ashram accommodations at best rates</p>
-            <a href="#contact" class="service-link">
-              Learn More <i class="fas fa-arrow-right"></i>
-            </a>
+            <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
         <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-plane-departure"></i>
-          </div>
+          <div class="service-icon"><i class="fas fa-plane-departure"></i></div>
           <div class="service-content">
             <h3>Airport Transfer</h3>
             <p>Comfortable pickup and drop from Dehradun & Delhi Airport</p>
-            <a href="#contact" class="service-link">
-              Learn More <i class="fas fa-arrow-right"></i>
-            </a>
+            <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
         <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-car-side"></i>
-          </div>
+          <div class="service-icon"><i class="fas fa-car-side"></i></div>
           <div class="service-content">
             <h3>Outstation Trips</h3>
             <p>Visit Agra, Jaipur, Mussoorie, Auli, and Char Dham</p>
-            <a href="#contact" class="service-link">
-              Learn More <i class="fas fa-arrow-right"></i>
-            </a>
+            <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
         <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-person-hiking"></i>
-          </div>
+          <div class="service-icon"><i class="fas fa-person-hiking"></i></div>
           <div class="service-content">
             <h3>Adventure Tours</h3>
             <p>River rafting, camping, trekking, and bungee jumping experiences</p>
-            <a href="#contact" class="service-link">
-              Learn More <i class="fas fa-arrow-right"></i>
-            </a>
+            <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
         <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-om"></i>
-          </div>
+          <div class="service-icon"><i class="fas fa-om"></i></div>
           <div class="service-content">
             <h3>Spiritual Tours</h3>
             <p>Customized pilgrimage packages to temples and sacred sites</p>
-            <a href="#contact" class="service-link">
-              Learn More <i class="fas fa-arrow-right"></i>
-            </a>
+            <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
       </div>
@@ -1408,11 +1006,10 @@
         <h2>Cab Services – Delhi to Rishikesh</h2>
         <p>Affordable, safe & comfortable round trip packages</p>
       </div>
+
       <div class="services-grid">
         <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-car"></i>
-          </div>
+          <div class="service-icon"><i class="fas fa-car"></i></div>
           <div class="service-content">
             <h3>Delhi ↔ Rishikesh (3 Days)</h3>
             <p style="font-size: 1.1rem; color: var(--primary); font-weight: 600; margin-bottom: 8px;">
@@ -1424,35 +1021,36 @@
               <li>Day 2: Local Sightseeing</li>
               <li>Day 3: Rishikesh → Delhi</li>
             </ul>
-          <a href="https://wa.me/917017900021?text=Hi!%20I%20want%20to%20book%20a%20cab%20for%20daily%20rental." target="_blank" class="service-link">
+            <a href="https://wa.me/917017900021?text=Hi!%20I%20want%20to%20book%20a%20cab%20for%20daily%20rental."
+               target="_blank"
+               class="service-link">
               WhatsApp Now <i class="fab fa-whatsapp"></i>
             </a>
           </div>
         </div>
 
         <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-tachometer-alt"></i>
-          </div>
+          <div class="service-icon"><i class="fas fa-tachometer-alt"></i></div>
           <div class="service-content">
             <h3>Daily Cab Rental</h3>
             <p style="font-size: 1.1rem; color: var(--primary); font-weight: 600; margin-bottom: 8px;">
               ₹3,700 <small style="color: #666; font-weight: normal;">per day</small>
             </p>
-            <p>200 km running per day.  Ideal for local or outstation trips.</p>
+            <p>200 km running per day. Ideal for local or outstation trips.</p>
             <ul style="text-align: left; margin: 15px 0; padding-left: 20px; color: #555; font-size: 0.95rem;">
               <li>Hundai Aura</li>
               <li>AC + Well-maintained</li>
               <li>Experienced driver</li>
             </ul>
-            <a href="https://wa.me/917017900021?text=Hi!%20I%20want%20to%20book%20a%20cab%20for%20daily%20rental." target="_blank" class="service-link">
+            <a href="https://wa.me/917017900021?text=Hi!%20I%20want%20to%20book%20a%20cab%20for%20daily%20rental."
+               target="_blank"
+               class="service-link">
               WhatsApp Now <i class="fab fa-whatsapp"></i>
             </a>
           </div>
         </div>
       </div>
 
-      <!-- Contact CTA Below -->
       <div style="text-align: center; margin-top: 40px; padding: 30px; background: white; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
         <p style="font-size: 1.1rem; color: var(--dark); margin-bottom: 15px;">
           <i class="fas fa-info-circle" style="color: var(--secondary);"></i>
@@ -1462,7 +1060,9 @@
           <a href="tel:+917017900021" class="btn btn-primary">
             <i class="fas fa-phone"></i> Call +91 70179 00021
           </a>
-          <a href="https://wa.me/917017900021?text=Hi!%20I%20need%20a%20custom%20cab%20quote%20for%20Rishikesh." target="_blank" class="btn btn-secondary">
+          <a href="https://wa.me/917017900021?text=Hi!%20I%20need%20a%20custom%20cab%20quote%20for%20Rishikesh."
+             target="_blank"
+             class="btn btn-secondary">
             <i class="fab fa-whatsapp"></i> Get Quote on WhatsApp
           </a>
         </div>
@@ -1478,6 +1078,7 @@
         <h2>Must-Visit Places</h2>
         <p>Explore the divine beauty and heritage of Rishikesh, Haridwar, Agra & Jaipur</p>
       </div>
+
       <div class="places-grid">
         <div class="place-card">
           <div class="place-image">
@@ -1493,6 +1094,7 @@
             </div>
           </div>
         </div>
+
         <div class="place-card">
           <div class="place-image">
             <img src="https://www.thekumbhmelaindia.com/wp-content/uploads/2019/09/har-ki-pauri.jpg" alt="Har Ki Pauri">
@@ -1507,6 +1109,7 @@
             </div>
           </div>
         </div>
+
         <div class="place-card">
           <div class="place-image">
             <img src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Taj_Mahal_%28Edited%29.jpeg" alt="Taj Mahal">
@@ -1521,6 +1124,7 @@
             </div>
           </div>
         </div>
+
         <div class="place-card">
           <div class="place-image">
             <img src="https://content-tourist.rajasthan.gov.in/uploads/istockphoto_154894958_612x612_f252980306.webp" alt="Amber Fort">
@@ -1535,6 +1139,7 @@
             </div>
           </div>
         </div>
+
         <div class="place-card">
           <div class="place-image">
             <img src="https://cdn1.tripoto.com/media/filter/nl/img/2380291/Image/1698842113_ram_jhula_in_rishikesh.jpg.webp" alt="Ram Jhula Rishikesh">
@@ -1549,6 +1154,7 @@
             </div>
           </div>
         </div>
+
         <div class="place-card">
           <div class="place-image">
             <img src="https://www.sirohitourandtravel.com/images/place/beatels-ashram.jpg" alt="Beatles Ashram">
@@ -1563,6 +1169,7 @@
             </div>
           </div>
         </div>
+
         <div class="place-card">
           <div class="place-image">
             <img src="https://www.sirohitourandtravel.com/images/place/parmarth-niketan-ashram.jpg" alt="Parmarth Niketan Ashram">
@@ -1577,6 +1184,7 @@
             </div>
           </div>
         </div>
+
         <div class="place-card">
           <div class="place-image">
             <img src="https://www.sirohitourandtravel.com/images/place/triveni-ghat.jpg" alt="Triveni Ghat Rishikesh">
@@ -1591,6 +1199,7 @@
             </div>
           </div>
         </div>
+
         <div class="place-card">
           <div class="place-image">
             <img src="https://blog.yatradham.org/wp-content/uploads/2023/10/Mansa-Devi-Temple.jpg" alt="Mansa Devi Temple">
@@ -1605,95 +1214,64 @@
             </div>
           </div>
         </div>
+
       </div>
     </div>
   </section>
-  
+
   <!-- CUSTOMER GALLERY -->
- <!-- CUSTOMER GALLERY -->
-<section id="gallery" class="gallery">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-badge">Memories</div>
-      <h2>Customer Photos & Videos</h2>
-      <p>Captured moments from our trips</p>
-    </div>
-
-    <div class="gallery-grid">
-
-      <!-- Photo 1 -->
-      <div class="gallery-item">
-        <div class="media-container">
-          <img src="https://lh3.googleusercontent.com/d/1oYdqhZnmc_EDa_ksVJrizt2WXmz7KBAb"
-               alt="Customer Photo 1"
-               loading="lazy">
-        </div>
-       
+  <section id="gallery" class="gallery">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">Memories</div>
+        <h2>Customer Photos & Videos</h2>
+        <p>Captured moments from our trips</p>
       </div>
 
-      <!-- Photo 2 -->
-      <div class="gallery-item">
-        <div class="media-container">
-          <img src="https://lh3.googleusercontent.com/d/1YDFpKN0yDqVtHjxisoesUl-DnjWNQcTy"
-               alt="Customer Photo 2"
-               loading="lazy">
-        </div>
-       
-      </div>
-
-      <!-- Photo 3 -->
-      <div class="gallery-item">
-        <div class="media-container">
-          <img src="https://lh3.googleusercontent.com/d/1BMBBcnpxLHzrPUdNhuYQ3GaUWStUfffS"
-               alt="Customer Photo 3"
-               loading="lazy">
-        </div>
-       
-      </div>
-
-      <!-- Photo 4 -->
-      <div class="gallery-item">
-        <div class="media-container">
-          <img src="https://lh3.googleusercontent.com/d/1y3M_mD8xq_oSllXN-jhX0_fEoUHkTKDb"
-               alt="Customer Photo 4"
-               loading="lazy">
-        </div>
-       
-      </div>
-
-      <!-- Video 1 -->
-      <div class="gallery-item">
-        <div class="media-container">
-          <div class="embed-container">
-            <iframe 
-              src="https://drive.google.com/file/d/1_VmAiNDhcfHzTc9QFKoHHYYblibwIwW5/preview"
-              allow="autoplay"
-              frameborder="0"
-              allowfullscreen>
-            </iframe>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <div class="media-container">
+            <img src="https://lh3.googleusercontent.com/d/1oYdqhZnmc_EDa_ksVJrizt2WXmz7KBAb" alt="Customer Photo 1" loading="lazy">
           </div>
         </div>
-       
-      </div>
 
-      <!-- Video 2 -->
-      <div class="gallery-item">
-        <div class="media-container">
-          <div class="embed-container">
-            <iframe 
-              src="https://drive.google.com/file/d/16xJ0SV--p1C5zWiFJ2Y7XeE0zwVshXXg/preview"
-              allow="autoplay"
-              frameborder="0"
-              allowfullscreen>
-            </iframe>
+        <div class="gallery-item">
+          <div class="media-container">
+            <img src="https://lh3.googleusercontent.com/d/1YDFpKN0yDqVtHjxisoesUl-DnjWNQcTy" alt="Customer Photo 2" loading="lazy">
           </div>
         </div>
-       
-      </div>
 
+        <div class="gallery-item">
+          <div class="media-container">
+            <img src="https://lh3.googleusercontent.com/d/1BMBBcnpxLHzrPUdNhuYQ3GaUWStUfffS" alt="Customer Photo 3" loading="lazy">
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <div class="media-container">
+            <img src="https://lh3.googleusercontent.com/d/1y3M_mD8xq_oSllXN-jhX0_fEoUHkTKDb" alt="Customer Photo 4" loading="lazy">
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <div class="media-container">
+            <div class="embed-container">
+              <iframe src="https://drive.google.com/file/d/1_VmAiNDhcfHzTc9QFKoHHYYblibwIwW5/preview" allow="autoplay" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <div class="media-container">
+            <div class="embed-container">
+              <iframe src="https://drive.google.com/file/d/16xJ0SV--p1C5zWiFJ2Y7XeE0zwVshXXg/preview" allow="autoplay" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- TESTIMONIALS -->
   <section id="testimonials" class="testimonials">
@@ -1703,33 +1281,14 @@
         <h2>Customer Feedback</h2>
         <p>Hear from our happy travelers</p>
       </div>
-      <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <p>"Amazing experience! The guides were knowledgeable and the trip was well-organized."</p>
-          <div class="testimonial-author">John Doe</div>
-          <div class="testimonial-rating">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <p>"Loved the spiritual tours. Highly recommend Krishna Tour and Travels."</p>
-          <div class="testimonial-author">Jane Smith</div>
-          <div class="testimonial-rating">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <p>"Safe and comfortable cab service from Delhi to Rishikesh. Will book again!"</p>
-          <div class="testimonial-author">Mike Johnson</div>
-          <div class="testimonial-rating">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-          </div>
-        </div>
-        <!-- Add more testimonials as needed -->
+
+      <!-- This will be filled from Supabase approved feedback -->
+      <div class="testimonials-grid" id="testimonialsGrid">
+        <!-- If no approved feedback exists, JS will insert a friendly default card -->
       </div>
     </div>
   </section>
-  
+
   <!-- CTA -->
   <section class="cta">
     <div class="container">
@@ -1737,9 +1296,7 @@
         <h2>Ready for Your Spiritual & Heritage Journey?</h2>
         <p>Book your tour package today and explore the best of India</p>
         <div class="cta-buttons">
-          <a href="#contact" class="btn btn-light">
-            <i class="fas fa-phone"></i> Call Now
-          </a>
+          <a href="#contact" class="btn btn-light"><i class="fas fa-phone"></i> Call Now</a>
           <a href="https://wa.me/917017900021" target="_blank" class="btn btn-secondary">
             <i class="fab fa-whatsapp"></i> WhatsApp Us
           </a>
@@ -1747,6 +1304,7 @@
       </div>
     </div>
   </section>
+
   <!-- CONTACT -->
   <section id="contact" class="contact">
     <div class="container">
@@ -1755,25 +1313,22 @@
         <h2>Contact Us</h2>
         <p>We're here to help plan your perfect journey</p>
       </div>
+
       <div class="contact-grid">
         <div class="contact-card">
-          <div class="contact-icon">
-            <i class="fas fa-phone-volume"></i>
-          </div>
+          <div class="contact-icon"><i class="fas fa-phone-volume"></i></div>
           <h3>Call or WhatsApp</h3>
           <p><strong>+91 70179 00021</strong></p>
           <p>Available 24/7</p>
         </div>
         <div class="contact-card">
-          <div class="contact-icon">
-            <i class="fas fa-envelope"></i>
-          </div>
+          <div class="contact-icon"><i class="fas fa-envelope"></i></div>
           <h3>Email Us</h3>
           <p><strong>Kunalgujjar7584@gmail.com</strong></p>
           <p>Quick response guaranteed</p>
         </div>
       </div>
-      <!-- Google Map -->
+
       <div class="map-container">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.123456789!2d78.267!3d30.129!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3908d4b6b8b8b8b8%3A0x123456789!2sLaxman%20Jhula%2C%20Rishikesh!5e0!3m2!1sen!2sin!4v1234567890"
@@ -1786,6 +1341,7 @@
       </div>
     </div>
   </section>
+
   <!-- INQUIRY POPUP -->
   <div class="inquiry-popup" id="inquiryPopup">
     <div class="inquiry-form">
@@ -1821,6 +1377,7 @@
       </form>
     </div>
   </div>
+
   <!-- FEEDBACK POPUP -->
   <div class="inquiry-popup" id="feedbackPopup">
     <div class="inquiry-form">
@@ -1850,10 +1407,12 @@
           <label>Feedback</label>
           <textarea id="feedbackMessage" required placeholder="Share your experience..."></textarea>
         </div>
-        <button type="submit" class="submit-inquiry">Send via WhatsApp</button>
+        <!-- CHANGED: No WhatsApp, this submits to Supabase -->
+        <button type="submit" class="submit-inquiry" id="feedbackSubmitBtn">Submit Feedback</button>
       </form>
     </div>
   </div>
+
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
@@ -1868,6 +1427,7 @@
             <a href="https://wa.me/917017900021" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
           </div>
         </div>
+
         <div class="footer-section">
           <h3>Quick Links</h3>
           <ul class="footer-links">
@@ -1878,6 +1438,7 @@
             <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
           </ul>
         </div>
+
         <div class="footer-section">
           <h3>Our Services</h3>
           <ul class="footer-links">
@@ -1887,6 +1448,7 @@
             <li><a href="#cab-services"><i class="fas fa-chevron-right"></i> Cab Services</a></li>
           </ul>
         </div>
+
         <div class="footer-section">
           <h3>Contact Info</h3>
           <ul class="footer-links">
@@ -1897,29 +1459,33 @@
           </ul>
         </div>
       </div>
+
       <div class="footer-bottom">
         <p>© 2025 Krishna Tour & Travel. All Rights Reserved. | Designed with <i class="fas fa-heart" style="color: #ff6b35;"></i> for travelers</p>
       </div>
     </div>
   </footer>
+
+  <!-- Supabase JS (required) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
   <!-- JavaScript -->
   <script>
-    // Navbar scroll effect
+    // ===================== NAVBAR SCROLL EFFECT =====================
     const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
+      if (window.scrollY > 50) navbar.classList.add('scrolled');
+      else navbar.classList.remove('scrolled');
     });
-    // Mobile menu toggle
+
+    // ===================== MOBILE MENU TOGGLE =====================
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
     hamburger.addEventListener('click', () => {
       hamburger.classList.toggle('active');
       navMenu.classList.toggle('active');
     });
+
     // Close menu on link click
     document.querySelectorAll('.nav-menu a').forEach(link => {
       link.addEventListener('click', () => {
@@ -1927,7 +1493,8 @@
         navMenu.classList.remove('active');
       });
     });
-    // Smooth scroll
+
+    // ===================== SMOOTH SCROLL =====================
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         const href = this.getAttribute('href');
@@ -1935,26 +1502,26 @@
           e.preventDefault();
           const target = document.querySelector(href);
           if (target) {
-            target.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start'
-            });
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }
         }
       });
     });
-    // Counter Animation
+
+    // ===================== COUNTER ANIMATION =====================
     function animateCounters() {
       const counters = document.querySelectorAll('.counter');
       counters.forEach(counter => {
-        const target = +counter.innerText.replace('+', '').replace('/', '');
+        const raw = counter.innerText;
+        const target = +raw.replace('+','').replace('/','');
         const speed = 200;
         const increment = target / speed;
         let current = 0;
+
         const timer = setInterval(() => {
           current += increment;
           if (current >= target) {
-            counter.innerText = target + (counter.innerText.includes('+') ? '+' : counter.innerText.includes('/') ? '/5' : '');
+            counter.innerText = target;
             clearInterval(timer);
           } else {
             counter.innerText = Math.ceil(current);
@@ -1962,7 +1529,7 @@
         }, 15);
       });
     }
-    // Trigger counters on scroll
+
     const statsSection = document.querySelector('.stats');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -1973,7 +1540,8 @@
       });
     }, { threshold: 0.5 });
     observer.observe(statsSection);
-    // Inquiry Popup
+
+    // ===================== POPUPS =====================
     function openInquiryPopup() {
       document.getElementById('inquiryPopup').style.display = 'flex';
       document.body.style.overflow = 'hidden';
@@ -1982,7 +1550,7 @@
       document.getElementById('inquiryPopup').style.display = 'none';
       document.body.style.overflow = 'auto';
     }
-    // Feedback Popup
+
     function openFeedbackPopup() {
       document.getElementById('feedbackPopup').style.display = 'flex';
       document.body.style.overflow = 'hidden';
@@ -1991,52 +1559,37 @@
       document.getElementById('feedbackPopup').style.display = 'none';
       document.body.style.overflow = 'auto';
     }
-    // Submit Inquiry via WhatsApp
+
+    // Close popup on outside click
+    window.addEventListener('click', function(e) {
+      const inquiryPopup = document.getElementById('inquiryPopup');
+      const feedbackPopup = document.getElementById('feedbackPopup');
+      if (e.target === inquiryPopup) closeInquiryPopup();
+      if (e.target === feedbackPopup) closeFeedbackPopup();
+    });
+
+    // ===================== INQUIRY VIA WHATSAPP (UNCHANGED) =====================
     document.getElementById('inquiryForm').addEventListener('submit', function(e) {
       e.preventDefault();
       const name = document.getElementById('name').value.trim();
       const phone = document.getElementById('phone').value.trim();
       const destination = document.getElementById('destination').value;
       const message = document.getElementById('message').value.trim();
-      let text = `Hello! I'm ${name}%0A`;
-      text += `Phone: ${phone}%0A`;
-      text += `Interested in: ${destination}%0A`;
-      if (message) text += `Message: ${message}%0A`;
+
+      let text = `Hello! I'm ${encodeURIComponent(name)}%0A`;
+      text += `Phone: ${encodeURIComponent(phone)}%0A`;
+      text += `Interested in: ${encodeURIComponent(destination)}%0A`;
+      if (message) text += `Message: ${encodeURIComponent(message)}%0A`;
       text += `%0AThank you!`;
+
       const whatsappURL = `https://wa.me/917017900021?text=${text}`;
       window.open(whatsappURL, '_blank');
+
       closeInquiryPopup();
       document.getElementById('inquiryForm').reset();
     });
-    // Submit Feedback via WhatsApp
-    document.getElementById('feedbackForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const name = document.getElementById('feedbackName').value.trim();
-      const phone = document.getElementById('feedbackPhone').value.trim();
-      const rating = document.getElementById('feedbackRating').value;
-      const message = document.getElementById('feedbackMessage').value.trim();
-      let text = `Feedback from ${name}%0A`;
-      text += `Phone: ${phone}%0A`;
-      text += `Rating: ${rating} Stars%0A`;
-      text += `Message: ${message}%0A`;
-      const whatsappURL = `https://wa.me/917017900021?text=${text}`;
-      window.open(whatsappURL, '_blank');
-      closeFeedbackPopup();
-      document.getElementById('feedbackForm').reset();
-      alert('Thank you for your feedback!');
-    });
-    // Close popup on outside click
-    window.addEventListener('click', function(e) {
-      const inquiryPopup = document.getElementById('inquiryPopup');
-      const feedbackPopup = document.getElementById('feedbackPopup');
-      if (e.target === inquiryPopup) {
-        closeInquiryPopup();
-      }
-      if (e.target === feedbackPopup) {
-        closeFeedbackPopup();
-      }
-    });
-    // Fade-in animation for cards
+
+    // ===================== FADE-IN ANIMATION FOR CARDS =====================
     const fadeObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -2045,11 +1598,151 @@
         }
       });
     }, { threshold: 0.1 });
+
     document.querySelectorAll('.service-card, .place-card, .feature-card, .contact-card, .gallery-item, .testimonial-card').forEach(card => {
       card.style.opacity = '0';
       card.style.transform = 'translateY(30px)';
       card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
       fadeObserver.observe(card);
+    });
+
+    // ===================== SUPABASE FEEDBACK INTEGRATION =====================
+    // IMPORTANT: Replace these with your actual Supabase Project URL and anon key
+    const SUPABASE_URL = "https://mjyvbozmyombhchsapae.supabase.co";
+    const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1qeXZib3pteW9tYmhjaHNhcGFlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI3MDk3OTcsImV4cCI6MjA4ODI4NTc5N30.C0Z1_IIktkRl54ZO1muY7ycnavZ3z62NLSEK1vg62a4";
+
+    const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    function escapeHTML(str) {
+      return String(str)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    function starsHTML(rating) {
+      let html = "";
+      for (let i = 1; i <= 5; i++) {
+        html += i <= rating ? '<i class="fas fa-star"></i>' : '<i class="far fa-star"></i>';
+      }
+      return html;
+    }
+
+    async function loadApprovedFeedback() {
+      try {
+        const { data, error } = await sb
+          .from('feedback')
+          .select('name, rating, message, created_at')
+          .eq('status', 'approved')
+          .order('created_at', { ascending: false })
+          .limit(12);
+
+        if (error) throw error;
+        renderTestimonials(data || []);
+      } catch (err) {
+        console.error("Failed to load feedback:", err);
+        // fallback UI if Supabase fails
+        renderTestimonials([]);
+      }
+    }
+
+    function renderTestimonials(items) {
+      const grid = document.getElementById('testimonialsGrid');
+      if (!grid) return;
+
+      grid.innerHTML = "";
+
+      if (!items.length) {
+        grid.innerHTML = `
+          <div class="testimonial-card">
+            <p>"Be the first to leave a review!"</p>
+            <div class="testimonial-author">Krishna Tour & Travels</div>
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+          </div>
+        `;
+        return;
+      }
+
+      items.forEach((f) => {
+        const card = document.createElement('div');
+        card.className = 'testimonial-card';
+        card.innerHTML = `
+          <p>"${escapeHTML(f.message)}"</p>
+          <div class="testimonial-author">${escapeHTML(f.name)}</div>
+          <div class="testimonial-rating">${starsHTML(Number(f.rating) || 0)}</div>
+        `;
+        grid.appendChild(card);
+      });
+
+      // re-apply fade observer to dynamically created testimonials
+      grid.querySelectorAll('.testimonial-card').forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        fadeObserver.observe(card);
+      });
+    }
+
+    // Submit feedback to Supabase (NO WhatsApp)
+    document.getElementById('feedbackForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('feedbackName').value.trim();
+      const phone = document.getElementById('feedbackPhone').value.trim();
+      const rating = parseInt(document.getElementById('feedbackRating').value, 10);
+      const message = document.getElementById('feedbackMessage').value.trim();
+
+      if (!name || !phone || !rating || !message) {
+        alert("Please fill all fields.");
+        return;
+      }
+      if (rating < 1 || rating > 5) {
+        alert("Rating must be between 1 and 5.");
+        return;
+      }
+      if (message.length > 800) {
+        alert("Feedback is too long. Keep it under 800 characters.");
+        return;
+      }
+
+      const btn = document.getElementById('feedbackSubmitBtn');
+      btn.disabled = true;
+      const oldText = btn.textContent;
+      btn.textContent = "Submitting...";
+
+      try {
+        const { error } = await sb.from('feedback').insert([{
+          name,
+          phone,
+          rating,
+          message
+          // status defaults to 'pending' in DB
+        }]);
+
+        if (error) throw error;
+
+        alert("Thanks! Your feedback was submitted for approval.");
+        closeFeedbackPopup();
+        this.reset();
+
+        // refresh approved list (it won't show immediately unless you approve it)
+        await loadApprovedFeedback();
+      } catch (err) {
+        console.error("Submit feedback failed:", err);
+        alert("Failed to submit feedback. Please try again.");
+      } finally {
+        btn.disabled = false;
+        btn.textContent = oldText;
+      }
+    });
+
+    // Load approved feedback on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      loadApprovedFeedback();
     });
   </script>
 </body>
