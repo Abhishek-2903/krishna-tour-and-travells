@@ -24,6 +24,10 @@
       --muted: #6c757d;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Poppins', sans-serif;
       line-height: 1.6;
@@ -31,10 +35,14 @@
       background: var(--white);
       overflow-x: hidden;
     }
+
     a { text-decoration: none; color: inherit; }
     img { max-width: 100%; display: block; }
 
-    .container { width: 90%; max-width: 1200px; margin: 0 auto; }
+    .container {
+      width: min(90%, 1200px);
+      margin: 0 auto;
+    }
 
     /* ==================== NOTIFICATION BAR ==================== */
     .notification-bar {
@@ -47,12 +55,15 @@
       position: relative;
       z-index: 999;
     }
+
     .notification-bar a {
       color: var(--primary);
       font-weight: 700;
       text-decoration: underline;
       transition: color 0.3s;
+      word-break: break-word;
     }
+
     .notification-bar a:hover { color: var(--secondary); }
 
     /* ==================== FLOATING BUTTONS ==================== */
@@ -65,6 +76,7 @@
       flex-direction: column;
       gap: 15px;
     }
+
     .float-btn {
       width: 60px;
       height: 60px;
@@ -79,11 +91,17 @@
       transition: all 0.3s;
       position: relative;
     }
-    .float-btn:hover { transform: scale(1.1); box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
+
+    .float-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    }
+
     .whatsapp-btn { background: #25d366; animation: pulse 2s infinite; }
     .inquiry-btn { background: var(--secondary); }
     .feedback-btn { background: var(--accent); }
     .admin-btn { background: #111; }
+
     .float-btn .tooltip {
       position: absolute;
       right: 70px;
@@ -98,18 +116,17 @@
       transition: all 0.3s;
       pointer-events: none;
     }
-    .float-btn:hover .tooltip { opacity: 1; visibility: visible; right: 75px; }
+
+    .float-btn:hover .tooltip {
+      opacity: 1;
+      visibility: visible;
+      right: 75px;
+    }
 
     @keyframes pulse {
       0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
       70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
       100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-    }
-
-    @media (max-width: 768px) {
-      .floating-buttons { bottom: 15px; right: 15px; gap: 12px; }
-      .float-btn { width: 50px; height: 50px; font-size: 1.5rem; }
-      .float-btn .tooltip { display: none; }
     }
 
     /* ==================== TOP BAR ==================== */
@@ -119,6 +136,7 @@
       padding: 10px 0;
       font-size: 0.9rem;
     }
+
     .top-bar-content {
       display: flex;
       justify-content: space-between;
@@ -126,18 +144,49 @@
       flex-wrap: wrap;
       gap: 15px;
     }
-    .contact-info { display: flex; gap: 25px; flex-wrap: wrap; }
-    .contact-info span { display: flex; align-items: center; gap: 8px; }
-    .contact-info i { color: var(--accent); font-size: 0.95rem; }
-    .social-links { display: flex; gap: 12px; }
+
+    .contact-info {
+      display: flex;
+      gap: 25px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .contact-info span {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      word-break: break-word;
+    }
+
+    .contact-info i {
+      color: var(--accent);
+      font-size: 0.95rem;
+      flex-shrink: 0;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
     .social-links a {
-      width: 32px; height: 32px;
+      width: 32px;
+      height: 32px;
       background: rgba(255,255,255,0.1);
       border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       transition: all 0.3s;
+      flex-shrink: 0;
     }
-    .social-links a:hover { background: var(--accent); transform: translateY(-3px); }
+
+    .social-links a:hover {
+      background: var(--accent);
+      transform: translateY(-3px);
+    }
 
     /* ==================== NAVBAR ==================== */
     .navbar {
@@ -148,27 +197,48 @@
       z-index: 1000;
       transition: all 0.3s;
     }
+
     .navbar.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.15); }
+
     .nav-container {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 18px 0;
-      gap: 18px;
+      padding: 16px 0;
+      gap: 16px;
+      flex-wrap: wrap;
     }
+
     .nav-logo {
       display: flex;
       align-items: center;
       gap: 12px;
-      font-size: 1.6rem;
+      font-size: 1.5rem;
       font-weight: 700;
       color: var(--primary);
       font-family: 'Playfair Display', serif;
-      white-space: nowrap;
+      min-width: 0;
+      flex: 1 1 auto;
     }
-    .nav-logo i { color: var(--secondary); }
 
-    .nav-menu { list-style: none; display: flex; gap: 28px; flex-wrap: wrap; }
+    .nav-logo i {
+      color: var(--secondary);
+      flex-shrink: 0;
+    }
+
+    .nav-logo span {
+      overflow-wrap: anywhere;
+      line-height: 1.2;
+    }
+
+    .nav-menu {
+      list-style: none;
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
     .nav-menu a {
       color: var(--dark);
       font-weight: 500;
@@ -176,6 +246,7 @@
       transition: color 0.3s;
       padding: 5px 0;
     }
+
     .nav-menu a::after {
       content: '';
       position: absolute;
@@ -186,12 +257,21 @@
       background: var(--secondary);
       transition: width 0.3s;
     }
+
     .nav-menu a:hover { color: var(--secondary); }
     .nav-menu a:hover::after { width: 100%; }
 
-    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
     .hamburger span {
-      width: 28px; height: 3px;
+      width: 28px;
+      height: 3px;
       background: var(--primary);
       transition: all 0.3s;
       border-radius: 2px;
@@ -209,12 +289,23 @@
       font-weight: 600;
       font-size: 0.9rem;
       white-space: nowrap;
+      flex-shrink: 0;
+      max-width: 100%;
     }
+
+    .availability-pill span:last-child {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
     .dot {
-      width: 10px; height: 10px;
+      width: 10px;
+      height: 10px;
       border-radius: 50%;
       background: var(--muted);
+      flex-shrink: 0;
     }
+
     .dot.available { background: var(--ok); }
     .dot.limited { background: var(--warn); }
     .dot.busy { background: var(--bad); }
@@ -223,13 +314,15 @@
     /* ==================== HERO ==================== */
     .hero {
       position: relative;
-      height: 88vh;
-      background: linear-gradient(135deg, rgba(26,84,144,0.85) 0%, rgba(15,61,92,0.85) 100%),
-                url('https://www.ojashvi.com/images/best-rishikesh.jpg') center/cover no-repeat;
+      min-height: 88vh;
+      background:
+        linear-gradient(135deg, rgba(26,84,144,0.85) 0%, rgba(15,61,92,0.85) 100%),
+        url('https://www.ojashvi.com/images/best-rishikesh.jpg') center/cover no-repeat;
       display: flex;
       align-items: center;
       overflow: hidden;
     }
+
     .hero::before {
       content: '';
       position: absolute;
@@ -237,17 +330,21 @@
       background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
       opacity: 0.3;
     }
+
     .hero-content {
       position: relative;
       z-index: 2;
       max-width: 760px;
       color: var(--white);
       animation: fadeInUp 1s ease;
+      padding: 40px 0;
     }
+
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
     .hero-badge {
       display: inline-block;
       background: rgba(247,183,49,0.2);
@@ -259,14 +356,27 @@
       margin-bottom: 14px;
       border: 1px solid var(--accent);
     }
+
     .hero h1 {
-      font-size: 3.5rem;
+      font-size: clamp(2rem, 5vw, 3.5rem);
       font-family: 'Playfair Display', serif;
       margin-bottom: 18px;
       line-height: 1.2;
     }
-    .hero p { font-size: 1.2rem; margin-bottom: 26px; opacity: 0.95; font-weight: 300; }
-    .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
+
+    .hero p {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      margin-bottom: 26px;
+      opacity: 0.95;
+      font-weight: 300;
+      max-width: 680px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
 
     .btn {
       padding: 14px 28px;
@@ -275,22 +385,46 @@
       transition: all 0.3s;
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 10px;
       cursor: pointer;
       border: 2px solid transparent;
+      text-align: center;
+      min-height: 50px;
     }
-    .btn-primary { background: var(--secondary); color: var(--white); }
+
+    .btn-primary {
+      background: var(--secondary);
+      color: var(--white);
+    }
+
     .btn-primary:hover {
       background: #ff5722;
       transform: translateY(-3px);
       box-shadow: 0 10px 30px rgba(255,107,53,0.4);
     }
-    .btn-secondary { background: transparent; color: var(--white); border: 2px solid var(--white); }
-    .btn-secondary:hover { background: var(--white); color: var(--primary); }
-    .btn-light { background: var(--white); color: var(--primary); }
-    .btn-light:hover { background: var(--accent); color: var(--white); }
 
-    /* Hero availability card */
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid var(--white);
+    }
+
+    .btn-secondary:hover {
+      background: var(--white);
+      color: var(--primary);
+    }
+
+    .btn-light {
+      background: var(--white);
+      color: var(--primary);
+    }
+
+    .btn-light:hover {
+      background: var(--accent);
+      color: var(--white);
+    }
+
     .hero-availability {
       display: inline-flex;
       align-items: center;
@@ -302,13 +436,26 @@
       margin-bottom: 14px;
       backdrop-filter: blur(6px);
       font-weight: 600;
+      max-width: 100%;
     }
-    .hero-availability small { opacity: 0.9; font-weight: 500; }
+
+    .hero-availability small {
+      opacity: 0.9;
+      font-weight: 500;
+    }
 
     /* ==================== SECTION HEADER ==================== */
     .section { padding: 80px 0; }
-    .section-alt { background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); }
-    .section-header { text-align: center; margin-bottom: 52px; }
+
+    .section-alt {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 52px;
+    }
+
     .section-badge {
       display: inline-block;
       background: rgba(26,84,144,0.1);
@@ -319,13 +466,21 @@
       font-weight: 700;
       margin-bottom: 12px;
     }
+
     .section-header h2 {
-      font-size: 2.6rem;
+      font-size: clamp(1.9rem, 4vw, 2.6rem);
       font-family: 'Playfair Display', serif;
       color: var(--primary);
       margin-bottom: 12px;
+      line-height: 1.2;
     }
-    .section-header p { font-size: 1.1rem; color: #666; max-width: 650px; margin: 0 auto; }
+
+    .section-header p {
+      font-size: 1.1rem;
+      color: #666;
+      max-width: 650px;
+      margin: 0 auto;
+    }
 
     /* ==================== FEATURES ==================== */
     .features-grid {
@@ -333,6 +488,7 @@
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 26px;
     }
+
     .card {
       background: var(--white);
       padding: 34px 26px;
@@ -341,18 +497,38 @@
       transition: all 0.3s;
       border: 2px solid transparent;
     }
-    .card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0,0,0,0.15); border-color: var(--secondary); }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+      border-color: var(--secondary);
+    }
+
     .feature-icon {
-      width: 70px; height: 70px;
+      width: 70px;
+      height: 70px;
       background: linear-gradient(135deg, var(--secondary) 0%, #ff8c5a 100%);
       border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       margin: 0 auto 18px;
       font-size: 1.8rem;
       color: var(--white);
     }
-    .card h3 { font-size: 1.25rem; margin-bottom: 10px; color: var(--primary); text-align: center; }
-    .card p { color: #666; font-size: 0.95rem; text-align: center; }
+
+    .card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+      color: var(--primary);
+      text-align: center;
+    }
+
+    .card p {
+      color: #666;
+      font-size: 0.95rem;
+      text-align: center;
+    }
 
     /* ==================== BOOKING FORM ==================== */
     .booking-grid {
@@ -361,36 +537,74 @@
       gap: 30px;
       align-items: start;
     }
-    .form-wrap {
+
+    .form-wrap,
+    .helper-box {
       background: white;
       border-radius: 18px;
       padding: 28px;
       box-shadow: 0 6px 22px rgba(0,0,0,0.1);
     }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+    .helper-box {
+      border: 1px solid #eee;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
     .form-group { margin-bottom: 14px; }
-    .form-group label { display: block; margin-bottom: 8px; font-weight: 600; }
-    .form-group input, .form-group select, .form-group textarea {
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
       width: 100%;
       padding: 12px 14px;
       border: 1px solid #ddd;
       border-radius: 10px;
       font-family: 'Poppins', sans-serif;
       outline: none;
-    }
-    .form-group textarea { height: 100px; resize: vertical; }
-    .helper-box {
+      font-size: 1rem;
       background: #fff;
-      border-radius: 18px;
-      padding: 28px;
-      box-shadow: 0 6px 22px rgba(0,0,0,0.1);
-      border: 1px solid #eee;
     }
-    .helper-box h3 { color: var(--primary); margin-bottom: 10px; }
-    .helper-box ul { margin-top: 10px; padding-left: 18px; color: #555; }
+
+    .form-group textarea {
+      height: 100px;
+      resize: vertical;
+    }
+
+    .helper-box h3 {
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .helper-box ul {
+      margin-top: 10px;
+      padding-left: 18px;
+      color: #555;
+    }
+
     .helper-box li { margin: 6px 0; }
-    .btn-full { width: 100%; justify-content: center; }
-    .btn:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
+
+    .btn-full {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .btn:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+      transform: none;
+    }
 
     /* ==================== SERVICE AREA MAP ==================== */
     .map-grid {
@@ -399,18 +613,22 @@
       gap: 26px;
       align-items: stretch;
     }
+
     .map-container {
       border-radius: 16px;
       overflow: hidden;
       box-shadow: 0 10px 30px rgba(0,0,0,0.1);
       min-height: 380px;
+      background: #f5f5f5;
     }
+
     .area-list {
       background: white;
       border-radius: 16px;
       padding: 26px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     }
+
     .chip {
       display: inline-flex;
       align-items: center;
@@ -423,7 +641,9 @@
       font-weight: 600;
       color: #334;
       font-size: 0.95rem;
+      flex-wrap: wrap;
     }
+
     .chip i { color: var(--secondary); }
 
     /* ==================== GALLERY ==================== */
@@ -432,6 +652,7 @@
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 24px;
     }
+
     .gallery-item {
       background: white;
       border-radius: 16px;
@@ -441,7 +662,12 @@
       display: flex;
       flex-direction: column;
     }
-    .gallery-item:hover { transform: translateY(-8px); box-shadow: 0 12px 36px rgba(0,0,0,0.14); }
+
+    .gallery-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 36px rgba(0,0,0,0.14);
+    }
+
     .media-container {
       position: relative;
       width: 100%;
@@ -449,18 +675,38 @@
       overflow: hidden;
       background: #111;
     }
+
     .media-container img {
-      width: 100%; height: 100%;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
       object-position: center;
       transition: transform 0.4s ease;
     }
-    .gallery-item:hover .media-container img { transform: scale(1.06); }
-    .embed-container { position: absolute; inset: 0; width: 100%; height: 100%; }
-    .embed-container iframe { width: 100%; height: 100%; border: none; }
+
+    .gallery-item:hover .media-container img {
+      transform: scale(1.06);
+    }
+
+    .embed-container {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .embed-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
 
     /* ==================== FAQ ==================== */
-    .faq-wrap { max-width: 900px; margin: 0 auto; }
+    .faq-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
     .faq-item {
       background: white;
       border-radius: 14px;
@@ -469,6 +715,7 @@
       margin-bottom: 14px;
       border: 1px solid #eee;
     }
+
     .faq-q {
       display: flex;
       align-items: center;
@@ -478,13 +725,20 @@
       font-weight: 700;
       color: var(--primary);
     }
+
     .faq-a {
       margin-top: 10px;
       color: #555;
       display: none;
     }
+
     .faq-item.open .faq-a { display: block; }
-    .faq-item .chev { transition: transform 0.25s; }
+
+    .faq-item .chev {
+      transition: transform 0.25s;
+      flex-shrink: 0;
+    }
+
     .faq-item.open .chev { transform: rotate(180deg); }
 
     /* ==================== TESTIMONIALS ==================== */
@@ -493,6 +747,7 @@
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 28px;
     }
+
     .testimonial-card {
       background: white;
       padding: 26px;
@@ -501,6 +756,7 @@
       text-align: center;
       position: relative;
     }
+
     .testimonial-card::before {
       content: '"';
       position: absolute;
@@ -511,9 +767,23 @@
       color: var(--secondary);
       opacity: 0.2;
     }
-    .testimonial-card p { color: #666; margin-bottom: 18px; font-style: italic; }
-    .testimonial-author { font-weight: 700; color: var(--primary); }
-    .testimonial-rating { color: var(--accent); margin-top: 10px; }
+
+    .testimonial-card p {
+      color: #666;
+      margin-bottom: 18px;
+      font-style: italic;
+      overflow-wrap: anywhere;
+    }
+
+    .testimonial-author {
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .testimonial-rating {
+      color: var(--accent);
+      margin-top: 10px;
+    }
 
     /* ==================== CTA ==================== */
     .cta {
@@ -522,6 +792,7 @@
       position: relative;
       overflow: hidden;
     }
+
     .cta::before {
       content: '';
       position: absolute;
@@ -532,10 +803,33 @@
       background: rgba(255,255,255,0.05);
       border-radius: 50%;
     }
-    .cta-content { text-align: center; color: var(--white); position: relative; z-index: 2; }
-    .cta h2 { font-size: 2.6rem; font-family: 'Playfair Display', serif; margin-bottom: 18px; }
-    .cta p { font-size: 1.15rem; margin-bottom: 28px; opacity: 0.92; }
-    .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    .cta-content {
+      text-align: center;
+      color: var(--white);
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta h2 {
+      font-size: clamp(2rem, 4vw, 2.6rem);
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 18px;
+      line-height: 1.2;
+    }
+
+    .cta p {
+      font-size: 1.15rem;
+      margin-bottom: 28px;
+      opacity: 0.92;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
 
     /* ==================== CONTACT ==================== */
     .contact-grid {
@@ -544,6 +838,7 @@
       gap: 26px;
       margin-top: 40px;
     }
+
     .contact-card {
       background: linear-gradient(135deg, var(--primary) 0%, #0f3d5c 100%);
       padding: 36px 26px;
@@ -552,21 +847,30 @@
       color: var(--white);
       transition: all 0.3s;
     }
+
     .contact-card:hover {
       transform: translateY(-10px);
       box-shadow: 0 15px 40px rgba(26,84,144,0.3);
     }
+
     .contact-icon {
-      width: 70px; height: 70px;
+      width: 70px;
+      height: 70px;
       background: rgba(255,255,255,0.15);
       border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       margin: 0 auto 18px;
       font-size: 1.8rem;
     }
-    .contact-card strong { color: var(--accent); }
 
-    /* ==================== POPUPS (Inquiry + Feedback + Admin) ==================== */
+    .contact-card strong {
+      color: var(--accent);
+      overflow-wrap: anywhere;
+    }
+
+    /* ==================== POPUPS ==================== */
     .popup {
       display: none;
       position: fixed;
@@ -577,6 +881,7 @@
       justify-content: center;
       padding: 20px;
     }
+
     .popup-card {
       background: white;
       padding: 30px;
@@ -588,10 +893,12 @@
       max-height: 88vh;
       overflow: auto;
     }
+
     @keyframes popupSlide {
       from { transform: scale(0.92); opacity: 0; }
       to { transform: scale(1); opacity: 1; }
     }
+
     .close-popup {
       position: absolute;
       top: 12px;
@@ -599,8 +906,11 @@
       font-size: 1.6rem;
       color: #aaa;
       cursor: pointer;
+      line-height: 1;
     }
+
     .close-popup:hover { color: var(--secondary); }
+
     .popup-card h3 {
       font-family: 'Playfair Display', serif;
       color: var(--primary);
@@ -617,11 +927,13 @@
       flex-wrap: wrap;
       margin-bottom: 14px;
     }
+
     .admin-tabs {
       display: flex;
       gap: 10px;
       flex-wrap: wrap;
     }
+
     .tab-btn {
       padding: 10px 14px;
       border-radius: 999px;
@@ -630,11 +942,13 @@
       cursor: pointer;
       font-weight: 700;
     }
+
     .tab-btn.active {
       background: var(--primary);
       color: white;
       border-color: var(--primary);
     }
+
     .admin-panel { display: none; }
     .admin-panel.active { display: block; }
 
@@ -644,13 +958,17 @@
       overflow: hidden;
       border-radius: 12px;
       border: 1px solid #eee;
+      min-width: 720px;
     }
-    .admin-table th, .admin-table td {
+
+    .admin-table th,
+    .admin-table td {
       padding: 12px 10px;
       border-bottom: 1px solid #eee;
       font-size: 0.92rem;
       vertical-align: top;
     }
+
     .admin-table th {
       background: #f5f7fb;
       color: #223;
@@ -658,6 +976,7 @@
       font-weight: 800;
       white-space: nowrap;
     }
+
     .badge {
       padding: 6px 10px;
       border-radius: 999px;
@@ -665,12 +984,19 @@
       font-size: 0.85rem;
       display: inline-block;
       border: 1px solid transparent;
+      text-transform: capitalize;
     }
+
     .b-pending { background: #fff3cd; color: #856404; border-color: #ffeeba; }
     .b-approved { background: #d4edda; color: #155724; border-color: #c3e6cb; }
     .b-rejected { background: #f8d7da; color: #721c24; border-color: #f5c6cb; }
 
-    .admin-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+    .admin-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
     .mini-btn {
       padding: 8px 10px;
       border-radius: 10px;
@@ -679,10 +1005,15 @@
       font-weight: 800;
       background: #fff;
     }
+
     .mini-btn.approve { border-color: #c3e6cb; }
     .mini-btn.reject { border-color: #f5c6cb; }
     .mini-btn.confirm { border-color: #b8daff; }
-    .mini-btn.logout { background: #111; color: #fff; border-color: #111; }
+    .mini-btn.logout {
+      background: #111;
+      color: #fff;
+      border-color: #111;
+    }
 
     /* ==================== FOOTER ==================== */
     .footer {
@@ -690,52 +1021,367 @@
       color: #aaa;
       padding: 50px 0 20px;
     }
+
     .footer-content {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 34px;
       margin-bottom: 30px;
     }
-    .footer-section h3 { color: var(--white); margin-bottom: 14px; font-size: 1.2rem; }
+
+    .footer-section h3 {
+      color: var(--white);
+      margin-bottom: 14px;
+      font-size: 1.2rem;
+    }
+
     .footer-links { list-style: none; }
+
     .footer-links li { margin-bottom: 10px; }
-    .footer-links a { color: #aaa; transition: color 0.3s; display: inline-flex; align-items: center; gap: 8px; }
+
+    .footer-links a {
+      color: #aaa;
+      transition: color 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      overflow-wrap: anywhere;
+    }
+
     .footer-links a:hover { color: var(--accent); }
-    .footer-bottom { border-top: 1px solid #333; padding-top: 18px; text-align: center; font-size: 0.9rem; }
+
+    .footer-bottom {
+      border-top: 1px solid #333;
+      padding-top: 18px;
+      text-align: center;
+      font-size: 0.9rem;
+    }
 
     /* ==================== RESPONSIVE ==================== */
-    @media (max-width: 900px) {
-      .booking-grid { grid-template-columns: 1fr; }
-      .map-grid { grid-template-columns: 1fr; }
-      .hero h1 { font-size: 2.7rem; }
+    @media (max-width: 1100px) {
+      .nav-menu {
+        gap: 18px;
+      }
+
+      .nav-logo {
+        font-size: 1.35rem;
+      }
+
+      .availability-pill {
+        font-size: 0.85rem;
+        padding: 8px 10px;
+      }
     }
+
+    @media (max-width: 900px) {
+      .booking-grid,
+      .map-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: 78vh;
+      }
+
+      .hero-buttons,
+      .cta-buttons {
+        gap: 12px;
+      }
+    }
+
     @media (max-width: 768px) {
+      .notification-bar {
+        font-size: 0.92rem;
+        padding: 10px 12px;
+      }
+
+      .top-bar {
+        font-size: 0.85rem;
+      }
+
+      .top-bar-content {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .contact-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .social-links {
+        justify-content: flex-start;
+      }
+
+      .nav-container {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-areas:
+          "logo burger"
+          "availability availability";
+        align-items: center;
+        gap: 12px;
+        padding: 14px 0;
+      }
+
+      .nav-logo {
+        grid-area: logo;
+        font-size: 1.15rem;
+        gap: 10px;
+        min-width: 0;
+      }
+
+      .nav-logo span {
+        display: block;
+        white-space: normal;
+        line-height: 1.15;
+      }
+
+      .hamburger {
+        grid-area: burger;
+        display: flex;
+        justify-self: end;
+      }
+
+      .availability-pill {
+        grid-area: availability;
+        width: 100%;
+        justify-content: center;
+        white-space: normal;
+        border-radius: 14px;
+      }
+
       .nav-menu {
         position: fixed;
-        top: 76px;
+        top: 130px;
         left: -100%;
         width: 100%;
-        height: calc(100vh - 76px);
+        height: calc(100vh - 130px);
         background: var(--white);
         flex-direction: column;
-        padding: 30px 0;
+        padding: 20px 0;
         transition: left 0.3s;
         box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         gap: 0;
+        overflow-y: auto;
+        z-index: 999;
       }
+
       .nav-menu li {
         width: 100%;
         text-align: center;
         padding: 16px 0;
         border-bottom: 1px solid #eee;
       }
+
       .nav-menu.active { left: 0; }
-      .hamburger { display: flex; }
-      .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(8px, 8px); }
+
+      .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 8px);
+      }
+
       .hamburger.active span:nth-child(2) { opacity: 0; }
-      .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -7px); }
-      .form-row { grid-template-columns: 1fr; }
-      .hero { height: 74vh; }
+
+      .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 50px 0;
+        background-position: center;
+      }
+
+      .hero-content {
+        padding: 20px 0;
+      }
+
+      .hero-availability {
+        width: 100%;
+        align-items: flex-start;
+      }
+
+      .hero-badge {
+        font-size: 0.82rem;
+        padding: 8px 14px;
+      }
+
+      .hero h1 {
+        font-size: 2.1rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .hero-buttons .btn,
+      .cta-buttons .btn {
+        width: 100%;
+      }
+
+      .section {
+        padding: 60px 0;
+      }
+
+      .section-header {
+        margin-bottom: 36px;
+      }
+
+      .section-header p {
+        font-size: 1rem;
+      }
+
+      .features-grid,
+      .gallery-grid,
+      .testimonials-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .form-wrap,
+      .helper-box,
+      .area-list,
+      .card,
+      .contact-card,
+      .popup-card {
+        padding: 22px 18px;
+      }
+
+      .map-container {
+        min-height: 300px;
+      }
+
+      .faq-item {
+        padding: 16px;
+      }
+
+      .faq-q {
+        font-size: 0.98rem;
+        align-items: flex-start;
+      }
+
+      .popup {
+        padding: 12px;
+      }
+
+      .popup-card {
+        width: 100%;
+        max-height: 90vh;
+        border-radius: 16px;
+        padding: 22px 16px;
+      }
+
+      .admin-top {
+        align-items: stretch;
+      }
+
+      .admin-tabs {
+        width: 100%;
+      }
+
+      .tab-btn {
+        flex: 1 1 auto;
+        text-align: center;
+      }
+
+      .footer {
+        padding: 40px 0 20px;
+      }
+
+      .footer-content {
+        gap: 24px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .container {
+        width: min(94%, 1200px);
+      }
+
+      .floating-buttons {
+        bottom: 15px;
+        right: 15px;
+        gap: 12px;
+      }
+
+      .float-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.4rem;
+      }
+
+      .float-btn .tooltip {
+        display: none;
+      }
+
+      .nav-logo {
+        font-size: 1rem;
+      }
+
+      .availability-pill {
+        font-size: 0.82rem;
+        padding: 8px 10px;
+      }
+
+      .hero h1 {
+        font-size: 1.75rem;
+      }
+
+      .section-header h2 {
+        font-size: 1.75rem;
+      }
+
+      .cta h2 {
+        font-size: 1.8rem;
+      }
+
+      .btn {
+        padding: 13px 18px;
+        font-size: 0.95rem;
+      }
+
+      .chip {
+        width: 100%;
+        justify-content: flex-start;
+        margin-right: 0;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .media-container {
+        aspect-ratio: 16 / 11;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-card {
+        padding: 28px 18px;
+      }
+
+      .testimonial-card {
+        padding: 22px 16px;
+      }
+
+      .admin-table {
+        min-width: 640px;
+      }
+
+      .footer-bottom {
+        font-size: 0.82rem;
+      }
     }
   </style>
 </head>
@@ -749,25 +1395,21 @@
 
   <!-- FLOATING BUTTONS -->
   <div class="floating-buttons">
-    <!-- Online Booking quick open -->
     <div class="float-btn inquiry-btn" onclick="scrollToSection('#booking')">
       <i class="fas fa-taxi"></i>
       <span class="tooltip">Book Now</span>
     </div>
 
-    <!-- Feedback Button -->
     <div class="float-btn feedback-btn" onclick="openPopup('feedbackPopup')">
       <i class="fas fa-comment-dots"></i>
       <span class="tooltip">Share Feedback</span>
     </div>
 
-    <!-- Instant WhatsApp Booking Button -->
     <a href="#" class="float-btn whatsapp-btn" aria-label="WhatsApp" onclick="instantWhatsAppBooking(event)">
       <i class="fab fa-whatsapp"></i>
       <span class="tooltip">Instant WhatsApp Booking</span>
     </a>
 
-    <!-- Admin Dashboard -->
     <div class="float-btn admin-btn" onclick="openPopup('adminPopup')">
       <i class="fas fa-user-shield"></i>
       <span class="tooltip">Admin</span>
@@ -962,7 +1604,7 @@
               After submit, booking is saved. You can also send instant WhatsApp message.
             </div>
 
-            <button type="button" class="btn btn-secondary btn-full" style="margin-top:10px;" onclick="sendBookingToWhatsApp()">
+            <button type="button" class="btn btn-secondary btn-full" style="margin-top:10px; color: var(--primary); border-color: var(--primary);" onclick="sendBookingToWhatsApp()">
               Send Booking on WhatsApp <i class="fab fa-whatsapp"></i>
             </button>
           </form>
@@ -986,7 +1628,6 @@
             </a>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -1002,7 +1643,6 @@
 
       <div class="map-grid">
         <div class="map-container">
-          <!-- Replace with your real map embed if needed -->
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110206.87138544779!2d78.2301768!3d30.0871682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3908d4b6b8b8b8b8%3A0x123456789!2sLaxman%20Jhula%2C%20Rishikesh!5e0!3m2!1sen!2sin!4v1234567890"
             width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
@@ -1035,7 +1675,6 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -1155,7 +1794,7 @@
       <div class="testimonials-grid" id="testimonialsGrid"></div>
 
       <div style="text-align:center; margin-top:18px;">
-        <a href="#" class="btn btn-secondary" onclick="openPopup('feedbackPopup')">
+        <a href="#" class="btn btn-secondary" style="color: var(--primary); border-color: var(--primary);" onclick="openPopup('feedbackPopup')">
           Leave Feedback <i class="fas fa-comment-dots"></i>
         </a>
       </div>
@@ -1368,7 +2007,6 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
 
@@ -1422,7 +2060,7 @@
     // =========================================================
     // CONFIG: PUT YOUR SUPABASE VALUES
     // =========================================================
-   const SUPABASE_URL = "https://mjyvbozmyombhchsapae.supabase.co";
+    const SUPABASE_URL = "https://mjyvbozmyombhchsapae.supabase.co";
     const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1qeXZib3pteW9tYmhjaHNhcGFlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI3MDk3OTcsImV4cCI6MjA4ODI4NTc5N30.C0Z1_IIktkRl54ZO1muY7ycnavZ3z62NLSEK1vg62a4";
 
     const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
@@ -1432,22 +2070,23 @@
     // =========================================================
     // UI HELPERS
     // =========================================================
-    function scrollToSection(sel){
+    function scrollToSection(sel) {
       const el = document.querySelector(sel);
-      if (el) el.scrollIntoView({behavior:'smooth', block:'start'});
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
-    function openPopup(id){
+    function openPopup(id) {
       document.getElementById(id).style.display = 'flex';
       document.body.style.overflow = 'hidden';
     }
-    function closePopup(id){
+
+    function closePopup(id) {
       document.getElementById(id).style.display = 'none';
       document.body.style.overflow = 'auto';
     }
 
     window.addEventListener('click', (e) => {
-      const popups = ['feedbackPopup','adminPopup'];
+      const popups = ['feedbackPopup', 'adminPopup'];
       popups.forEach(pid => {
         const el = document.getElementById(pid);
         if (el && e.target === el) closePopup(pid);
@@ -1464,10 +2103,12 @@
     // Mobile menu
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
+
     hamburger.addEventListener('click', () => {
       hamburger.classList.toggle('active');
       navMenu.classList.toggle('active');
     });
+
     document.querySelectorAll('.nav-menu a').forEach(link => {
       link.addEventListener('click', () => {
         hamburger.classList.remove('active');
@@ -1476,7 +2117,7 @@
     });
 
     // FAQ toggle
-    function toggleFaq(el){
+    function toggleFaq(el) {
       const item = el.closest('.faq-item');
       item.classList.toggle('open');
     }
@@ -1484,12 +2125,12 @@
     // =========================================================
     // WHATSAPP
     // =========================================================
-    function openWhatsApp(text){
+    function openWhatsApp(text) {
       const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
       window.open(url, '_blank');
     }
 
-    function instantWhatsAppBooking(e){
+    function instantWhatsAppBooking(e) {
       e.preventDefault();
       const text =
 `Hello! I want to book a cab.
@@ -1502,7 +2143,7 @@ Notes:`;
       openWhatsApp(text);
     }
 
-    function sendBookingToWhatsApp(){
+    function sendBookingToWhatsApp() {
       const payload = getBookingFormData();
       if (!payload) return;
 
@@ -1521,9 +2162,9 @@ Note: ${payload.note || '-'}
     }
 
     // =========================================================
-    // AVAILABILITY (read from settings table)
+    // AVAILABILITY
     // =========================================================
-    function setAvailabilityUI(status, message){
+    function setAvailabilityUI(status, message) {
       const dot = document.getElementById('availabilityDot');
       const text = document.getElementById('availabilityText');
       const hdot = document.getElementById('heroAvailabilityDot');
@@ -1535,8 +2176,8 @@ Note: ${payload.note || '-'}
       htext.textContent = message;
     }
 
-    async function loadAvailability(){
-      try{
+    async function loadAvailability() {
+      try {
         const { data, error } = await sb
           .from('settings')
           .select('availability_status, availability_message')
@@ -1545,14 +2186,14 @@ Note: ${payload.note || '-'}
 
         if (error) throw error;
         setAvailabilityUI(data.availability_status, data.availability_message);
-      }catch(err){
+      } catch (err) {
         console.error('Availability load failed:', err);
         setAvailabilityUI('offline', 'Availability unavailable');
       }
     }
 
     // =========================================================
-    // FEEDBACK: submit + load approved
+    // FEEDBACK
     // =========================================================
     function escapeHTML(str) {
       return String(str)
@@ -1563,36 +2204,36 @@ Note: ${payload.note || '-'}
         .replaceAll("'", "&#039;");
     }
 
-    function starsHTML(rating){
+    function starsHTML(rating) {
       let html = "";
-      for(let i=1;i<=5;i++){
-        html += i<=rating ? '<i class="fas fa-star"></i>' : '<i class="far fa-star"></i>';
+      for (let i = 1; i <= 5; i++) {
+        html += i <= rating ? '<i class="fas fa-star"></i>' : '<i class="far fa-star"></i>';
       }
       return html;
     }
 
-    async function loadApprovedFeedback(){
-      try{
+    async function loadApprovedFeedback() {
+      try {
         const { data, error } = await sb
           .from('feedback')
           .select('name, rating, message, created_at')
-          .eq('status','approved')
-          .order('created_at', {ascending:false})
+          .eq('status', 'approved')
+          .order('created_at', { ascending: false })
           .limit(12);
 
-        if(error) throw error;
+        if (error) throw error;
         renderTestimonials(data || []);
-      }catch(err){
+      } catch (err) {
         console.error('Load feedback failed:', err);
         renderTestimonials([]);
       }
     }
 
-    function renderTestimonials(items){
+    function renderTestimonials(items) {
       const grid = document.getElementById('testimonialsGrid');
       grid.innerHTML = "";
 
-      if(!items.length){
+      if (!items.length) {
         grid.innerHTML = `
           <div class="testimonial-card">
             <p>"Be the first to leave a review!"</p>
@@ -1610,7 +2251,7 @@ Note: ${payload.note || '-'}
         card.innerHTML = `
           <p>"${escapeHTML(f.message)}"</p>
           <div class="testimonial-author">${escapeHTML(f.name)}</div>
-          <div class="testimonial-rating">${starsHTML(Number(f.rating)||0)}</div>
+          <div class="testimonial-rating">${starsHTML(Number(f.rating) || 0)}</div>
         `;
         grid.appendChild(card);
       });
@@ -1624,15 +2265,17 @@ Note: ${payload.note || '-'}
       const rating = parseInt(document.getElementById('feedbackRating').value, 10);
       const message = document.getElementById('feedbackMessage').value.trim();
 
-      if(!name || !phone || !rating || !message){
+      if (!name || !phone || !rating || !message) {
         alert('Please fill all fields.');
         return;
       }
-      if(rating < 1 || rating > 5){
+
+      if (rating < 1 || rating > 5) {
         alert('Rating must be between 1 and 5.');
         return;
       }
-      if(message.length > 800){
+
+      if (message.length > 800) {
         alert('Feedback too long. Keep under 800 characters.');
         return;
       }
@@ -1640,26 +2283,26 @@ Note: ${payload.note || '-'}
       const btn = document.getElementById('feedbackSubmitBtn');
       btn.disabled = true;
 
-      try{
+      try {
         const { error } = await sb.from('feedback').insert([{ name, phone, rating, message }]);
-        if(error) throw error;
+        if (error) throw error;
 
         alert('Thanks! Feedback submitted for approval.');
         document.getElementById('feedbackForm').reset();
         closePopup('feedbackPopup');
         await loadApprovedFeedback();
-      }catch(err){
+      } catch (err) {
         console.error(err);
         alert('Failed to submit feedback.');
-      }finally{
+      } finally {
         btn.disabled = false;
       }
     });
 
     // =========================================================
-    // BOOKINGS: submit to Supabase
+    // BOOKINGS
     // =========================================================
-    function getBookingFormData(){
+    function getBookingFormData() {
       const name = document.getElementById('bkName').value.trim();
       const phone = document.getElementById('bkPhone').value.trim();
       const pickup = document.getElementById('bkPickup').value.trim();
@@ -1669,12 +2312,11 @@ Note: ${payload.note || '-'}
       const dtLocal = document.getElementById('bkDateTime').value;
       const note = document.getElementById('bkNote').value.trim();
 
-      if(!name || !phone || !pickup || !dropoff || !ride_type || !dtLocal){
+      if (!name || !phone || !pickup || !dropoff || !ride_type || !dtLocal) {
         alert('Please fill all required booking fields.');
         return null;
       }
 
-      // Convert local datetime to ISO
       const travel_datetime = new Date(dtLocal).toISOString();
 
       return { name, phone, pickup, dropoff, ride_type, passengers, travel_datetime, note };
@@ -1683,29 +2325,29 @@ Note: ${payload.note || '-'}
     document.getElementById('bookingForm').addEventListener('submit', async (e) => {
       e.preventDefault();
       const payload = getBookingFormData();
-      if(!payload) return;
+      if (!payload) return;
 
       const btn = document.getElementById('bookingSubmitBtn');
       btn.disabled = true;
 
-      try{
+      try {
         const { error } = await sb.from('bookings').insert([payload]);
-        if(error) throw error;
+        if (error) throw error;
 
         alert('Booking submitted! We will confirm soon. You can also send it on WhatsApp.');
         document.getElementById('bookingForm').reset();
-      }catch(err){
+      } catch (err) {
         console.error(err);
         alert('Failed to submit booking. Please try again.');
-      }finally{
+      } finally {
         btn.disabled = false;
       }
     });
 
     // =========================================================
-    // ADMIN DASHBOARD (Supabase Auth)
+    // ADMIN DASHBOARD
     // =========================================================
-    function switchTab(id, btn){
+    function switchTab(id, btn) {
       document.querySelectorAll('.admin-panel').forEach(p => p.classList.remove('active'));
       document.getElementById(id).classList.add('active');
 
@@ -1713,11 +2355,11 @@ Note: ${payload.note || '-'}
       btn.classList.add('active');
     }
 
-    async function adminLogin(){
+    async function adminLogin() {
       const email = document.getElementById('adminEmail').value.trim();
       const password = document.getElementById('adminPassword').value;
 
-      if(!email || !password){
+      if (!email || !password) {
         alert('Enter email and password.');
         return;
       }
@@ -1725,28 +2367,28 @@ Note: ${payload.note || '-'}
       const btn = document.getElementById('adminLoginBtn');
       btn.disabled = true;
 
-      try{
-        const { data, error } = await sb.auth.signInWithPassword({ email, password });
-        if(error) throw error;
+      try {
+        const { error } = await sb.auth.signInWithPassword({ email, password });
+        if (error) throw error;
 
         await showAdminState();
         await loadAdminFeedback();
         await loadAdminBookings();
         await loadAdminAvailabilityIntoForm();
-      }catch(err){
+      } catch (err) {
         console.error(err);
         alert('Admin login failed. Check email/password.');
-      }finally{
+      } finally {
         btn.disabled = false;
       }
     }
 
-    async function adminLogout(){
+    async function adminLogout() {
       await sb.auth.signOut();
       await showAdminState();
     }
 
-    async function showAdminState(){
+    async function showAdminState() {
       const { data } = await sb.auth.getSession();
       const loggedIn = !!data.session;
 
@@ -1754,21 +2396,21 @@ Note: ${payload.note || '-'}
       document.getElementById('adminLoggedIn').style.display = loggedIn ? 'block' : 'none';
     }
 
-    function statusBadge(status){
-      if(status === 'approved') return `<span class="badge b-approved">approved</span>`;
-      if(status === 'rejected') return `<span class="badge b-rejected">rejected</span>`;
+    function statusBadge(status) {
+      if (status === 'approved') return `<span class="badge b-approved">approved</span>`;
+      if (status === 'rejected') return `<span class="badge b-rejected">rejected</span>`;
       return `<span class="badge b-pending">pending</span>`;
     }
 
-    async function loadAdminFeedback(){
-      try{
+    async function loadAdminFeedback() {
+      try {
         const { data, error } = await sb
           .from('feedback')
           .select('id, name, phone, rating, message, status, created_at')
-          .order('created_at', { ascending:false })
+          .order('created_at', { ascending: false })
           .limit(50);
 
-        if(error) throw error;
+        if (error) throw error;
 
         const body = document.getElementById('adminFeedbackBody');
         body.innerHTML = "";
@@ -1792,45 +2434,45 @@ Note: ${payload.note || '-'}
           `;
           body.appendChild(tr);
         });
-      }catch(err){
+      } catch (err) {
         console.error(err);
         alert('Failed to load admin feedback. Are you logged in?');
       }
     }
 
-    async function updateFeedbackStatus(id, status){
-      try{
+    async function updateFeedbackStatus(id, status) {
+      try {
         const { error } = await sb
           .from('feedback')
           .update({ status })
           .eq('id', id);
 
-        if(error) throw error;
+        if (error) throw error;
 
         await loadAdminFeedback();
         await loadApprovedFeedback();
-      }catch(err){
+      } catch (err) {
         console.error(err);
         alert('Failed to update feedback status.');
       }
     }
 
-    function bookingBadge(status){
+    function bookingBadge(status) {
       const cls = status === 'confirmed' ? 'b-approved' :
                   status === 'completed' ? 'b-approved' :
                   status === 'cancelled' ? 'b-rejected' : 'b-pending';
       return `<span class="badge ${cls}">${status}</span>`;
     }
 
-    async function loadAdminBookings(){
-      try{
+    async function loadAdminBookings() {
+      try {
         const { data, error } = await sb
           .from('bookings')
           .select('id, name, phone, pickup, dropoff, ride_type, passengers, travel_datetime, note, status, created_at')
-          .order('created_at', { ascending:false })
+          .order('created_at', { ascending: false })
           .limit(50);
 
-        if(error) throw error;
+        if (error) throw error;
 
         const body = document.getElementById('adminBookingsBody');
         body.innerHTML = "";
@@ -1858,61 +2500,64 @@ Note: ${payload.note || '-'}
           `;
           body.appendChild(tr);
         });
-      }catch(err){
+      } catch (err) {
         console.error(err);
         alert('Failed to load bookings.');
       }
     }
 
-    async function updateBookingStatus(id, status){
-      try{
+    async function updateBookingStatus(id, status) {
+      try {
         const { error } = await sb.from('bookings').update({ status }).eq('id', id);
-        if(error) throw error;
+        if (error) throw error;
         await loadAdminBookings();
-      }catch(err){
+      } catch (err) {
         console.error(err);
         alert('Failed to update booking status.');
       }
     }
 
-    async function loadAdminAvailabilityIntoForm(){
-      try{
+    async function loadAdminAvailabilityIntoForm() {
+      try {
         const { data, error } = await sb
           .from('settings')
           .select('availability_status, availability_message')
-          .eq('id',1)
+          .eq('id', 1)
           .single();
 
-        if(error) throw error;
+        if (error) throw error;
         document.getElementById('admAvailStatus').value = data.availability_status;
         document.getElementById('admAvailMsg').value = data.availability_message;
-      }catch(err){
+      } catch (err) {
         console.error(err);
-        // not fatal
       }
     }
 
-    async function saveAvailability(){
+    async function saveAvailability() {
       const status = document.getElementById('admAvailStatus').value;
       const msg = document.getElementById('admAvailMsg').value.trim() || 'Cars Available Now';
 
       const btn = document.getElementById('admAvailSaveBtn');
       btn.disabled = true;
 
-      try{
+      try {
         const { error } = await sb
           .from('settings')
-          .update({ availability_status: status, availability_message: msg, updated_at: new Date().toISOString() })
-          .eq('id',1);
+          .update({
+            availability_status: status,
+            availability_message: msg,
+            updated_at: new Date().toISOString()
+          })
+          .eq('id', 1);
 
-        if(error) throw error;
+        if (error) throw error;
 
         await loadAvailability();
         alert('Availability updated.');
-      }catch(err){
+      } catch (err) {
         console.error(err);
         alert('Failed to save availability. Are you logged in?');
-      }finally{
+      } finally {
         btn.disabled = false;
       }
     }
@@ -1925,7 +2570,6 @@ Note: ${payload.note || '-'}
       await loadAvailability();
       await loadApprovedFeedback();
 
-      // keep admin state synced if session changes
       sb.auth.onAuthStateChange(async () => {
         await showAdminState();
       });
