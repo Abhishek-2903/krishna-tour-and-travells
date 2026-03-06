@@ -2,1541 +2,1876 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Krishna Tour and Travels - Rishikesh, Haridwar, Agra & Jaipur</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Krishna Tour & Travels | Cab Booking for Rishikesh, Haridwar, Dehradun & Outstation</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
 
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    :root {
-      --primary: #1a5490;
-      --secondary: #ff6b35;
-      --accent: #f7b731;
-      --dark: #2c3e50;
-      --light: #ecf0f1;
-      --white: #ffffff;
-      --ok: #28a745;
-      --warn: #ffc107;
-      --bad: #dc3545;
-      --muted: #6c757d;
+    :root{
+      --primary:#0f2742;
+      --primary-2:#16395f;
+      --accent:#ff7a1a;
+      --accent-dark:#e76608;
+      --accent-soft:#fff1e5;
+      --text:#1b2430;
+      --muted:#667085;
+      --border:#e8edf3;
+      --bg:#ffffff;
+      --bg-soft:#f7f9fc;
+      --success:#16a34a;
+      --warn:#d97706;
+      --danger:#dc2626;
+      --shadow:0 10px 30px rgba(15,39,66,.08);
+      --shadow-lg:0 16px 48px rgba(15,39,66,.12);
+      --radius:22px;
+      --radius-md:16px;
+      --radius-sm:12px;
+      --container:min(1180px,92vw);
+      --nav-h:86px;
     }
 
-    html {
-      scroll-behavior: smooth;
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:'Inter',sans-serif;
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+    button,input,select,textarea{font:inherit}
+    .container{width:var(--container);margin:0 auto}
+    .section{padding:88px 0}
+    .section-soft{background:var(--bg-soft)}
+    .section-head{
+      text-align:center;
+      margin-bottom:46px;
+    }
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 14px;
+      border-radius:999px;
+      background:#edf4fb;
+      color:var(--primary-2);
+      font-size:.9rem;
+      font-weight:700;
+      margin-bottom:14px;
+    }
+    .section-head h2{
+      font-family:'Playfair Display',serif;
+      font-size:clamp(2rem,4vw,3rem);
+      line-height:1.15;
+      color:var(--primary);
+      margin-bottom:12px;
+    }
+    .section-head p{
+      max-width:700px;
+      margin:0 auto;
+      color:var(--muted);
+      font-size:1.04rem;
     }
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      line-height: 1.6;
-      color: var(--dark);
-      background: var(--white);
-      overflow-x: hidden;
+    /* TOP STRIP */
+    .top-strip{
+      background:var(--primary);
+      color:#fff;
+      font-size:.92rem;
+    }
+    .top-strip-inner{
+      min-height:46px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      flex-wrap:wrap;
+      padding:8px 0;
+    }
+    .top-strip-left,
+    .top-strip-right{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+    .top-chip{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      color:#e7eef8;
+    }
+    .top-chip i{color:#ffbd80}
+    .top-socials{
+      display:flex;
+      gap:10px;
+    }
+    .top-socials a{
+      width:34px;height:34px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:rgba(255,255,255,.08);
+      transition:.25s ease;
+    }
+    .top-socials a:hover{
+      background:var(--accent);
+      transform:translateY(-2px);
     }
 
-    a { text-decoration: none; color: inherit; }
-    img { max-width: 100%; display: block; }
-
-    .container {
-      width: min(90%, 1200px);
-      margin: 0 auto;
+    /* NAVBAR */
+    .navbar{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(255,255,255,.92);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(232,237,243,.9);
+    }
+    .navbar.scrolled{
+      box-shadow:0 8px 30px rgba(15,39,66,.08);
+    }
+    .nav-inner{
+      min-height:var(--nav-h);
+      display:grid;
+      grid-template-columns:auto 1fr auto;
+      align-items:center;
+      gap:22px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:0;
+    }
+    .brand-icon{
+      width:48px;height:48px;
+      border-radius:14px;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(135deg,var(--accent),#ff9e4f);
+      color:#fff;
+      font-size:1.2rem;
+      flex-shrink:0;
+      box-shadow:0 10px 24px rgba(255,122,26,.25);
+    }
+    .brand-text{
+      min-width:0;
+    }
+    .brand-text h1{
+      font-size:1.1rem;
+      line-height:1.1;
+      color:var(--primary);
+      font-weight:800;
+      letter-spacing:-.02em;
+    }
+    .brand-text span{
+      display:block;
+      font-size:.84rem;
+      color:var(--muted);
+      font-weight:600;
+      margin-top:2px;
     }
 
-    /* ==================== NOTIFICATION BAR ==================== */
-    .notification-bar {
-      background: linear-gradient(135deg, var(--accent) 0%, #e6a620 100%);
-      color: var(--dark);
-      padding: 12px 0;
-      text-align: center;
-      font-size: 1rem;
-      font-weight: 500;
-      position: relative;
-      z-index: 999;
+    .nav-menu{
+      list-style:none;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:26px;
+      flex-wrap:wrap;
+    }
+    .nav-menu a{
+      color:#334155;
+      font-weight:600;
+      font-size:.96rem;
+      transition:.25s ease;
+      position:relative;
+      padding:6px 0;
+    }
+    .nav-menu a::after{
+      content:'';
+      position:absolute;
+      left:0;bottom:0;
+      width:0;height:2px;
+      background:var(--accent);
+      transition:.25s ease;
+    }
+    .nav-menu a:hover{
+      color:var(--accent);
+    }
+    .nav-menu a:hover::after{width:100%}
+
+    .nav-actions{
+      display:flex;
+      align-items:center;
+      gap:12px;
     }
 
-    .notification-bar a {
-      color: var(--primary);
-      font-weight: 700;
-      text-decoration: underline;
-      transition: color 0.3s;
-      word-break: break-word;
+    .availability-pill{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border:1px solid var(--border);
+      border-radius:999px;
+      background:#fff;
+      max-width:250px;
+      font-size:.92rem;
+      font-weight:700;
+      color:#334155;
+      box-shadow:0 4px 12px rgba(15,39,66,.04);
     }
-
-    .notification-bar a:hover { color: var(--secondary); }
-
-    /* ==================== FLOATING BUTTONS ==================== */
-    .floating-buttons {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 1000;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
+    .availability-pill span:last-child{
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
     }
-
-    .float-btn {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.8rem;
-      color: white;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-      cursor: pointer;
-      transition: all 0.3s;
-      position: relative;
+    .dot{
+      width:10px;height:10px;border-radius:50%;
+      background:#6b7280;
+      flex-shrink:0;
     }
+    .dot.available{background:var(--success)}
+    .dot.limited{background:var(--warn)}
+    .dot.busy{background:var(--danger)}
+    .dot.offline{background:#111827}
 
-    .float-btn:hover {
-      transform: scale(1.1);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    .hamburger{
+      display:none;
+      width:46px;height:46px;
+      border:none;
+      background:#fff;
+      border-radius:14px;
+      border:1px solid var(--border);
+      cursor:pointer;
+      place-items:center;
+      box-shadow:0 8px 20px rgba(15,39,66,.06);
     }
-
-    .whatsapp-btn { background: #25d366; animation: pulse 2s infinite; }
-    .inquiry-btn { background: var(--secondary); }
-    .feedback-btn { background: var(--accent); }
-    .admin-btn { background: #111; }
-
-    .float-btn .tooltip {
-      position: absolute;
-      right: 70px;
-      background: #333;
-      color: white;
-      padding: 8px 12px;
-      border-radius: 6px;
-      font-size: 0.9rem;
-      white-space: nowrap;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.3s;
-      pointer-events: none;
+    .hamburger span{
+      display:block;
+      width:20px;height:2px;
+      background:var(--primary);
+      margin:4px auto;
+      transition:.25s ease;
     }
+    .hamburger.active span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+    .hamburger.active span:nth-child(2){opacity:0}
+    .hamburger.active span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
 
-    .float-btn:hover .tooltip {
-      opacity: 1;
-      visibility: visible;
-      right: 75px;
+    /* BUTTONS */
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      border:none;
+      border-radius:999px;
+      padding:14px 22px;
+      font-weight:800;
+      cursor:pointer;
+      transition:.28s ease;
+      min-height:52px;
     }
-
-    @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-      70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    .btn-primary{
+      background:var(--accent);
+      color:#fff;
+      box-shadow:0 12px 24px rgba(255,122,26,.23);
     }
-
-    /* ==================== TOP BAR ==================== */
-    .top-bar {
-      background: linear-gradient(135deg, var(--primary) 0%, #0f3d5c 100%);
-      color: var(--white);
-      padding: 10px 0;
-      font-size: 0.9rem;
+    .btn-primary:hover{
+      background:var(--accent-dark);
+      transform:translateY(-2px);
     }
-
-    .top-bar-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 15px;
+    .btn-dark{
+      background:var(--primary);
+      color:#fff;
+      box-shadow:0 12px 24px rgba(15,39,66,.18);
     }
-
-    .contact-info {
-      display: flex;
-      gap: 25px;
-      flex-wrap: wrap;
-      align-items: center;
+    .btn-dark:hover{
+      background:#0a2037;
+      transform:translateY(-2px);
     }
-
-    .contact-info span {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      word-break: break-word;
+    .btn-light{
+      background:#fff;
+      color:var(--primary);
+      border:1px solid var(--border);
+      box-shadow:0 10px 24px rgba(15,39,66,.06);
     }
-
-    .contact-info i {
-      color: var(--accent);
-      font-size: 0.95rem;
-      flex-shrink: 0;
+    .btn-light:hover{
+      transform:translateY(-2px);
+      border-color:#d7e0ea;
     }
-
-    .social-links {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
+    .btn-outline{
+      background:transparent;
+      color:var(--primary);
+      border:1.5px solid #cfd8e3;
     }
-
-    .social-links a {
-      width: 32px;
-      height: 32px;
-      background: rgba(255,255,255,0.1);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s;
-      flex-shrink: 0;
+    .btn-outline:hover{
+      border-color:var(--accent);
+      color:var(--accent);
+      transform:translateY(-2px);
     }
+    .btn-block{width:100%}
+    .btn:disabled{opacity:.7;cursor:not-allowed;transform:none}
 
-    .social-links a:hover {
-      background: var(--accent);
-      transform: translateY(-3px);
-    }
-
-    /* ==================== NAVBAR ==================== */
-    .navbar {
-      background: var(--white);
-      box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      transition: all 0.3s;
-    }
-
-    .navbar.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.15); }
-
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px 0;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--primary);
-      font-family: 'Playfair Display', serif;
-      min-width: 0;
-      flex: 1 1 auto;
-    }
-
-    .nav-logo i {
-      color: var(--secondary);
-      flex-shrink: 0;
-    }
-
-    .nav-logo span {
-      overflow-wrap: anywhere;
-      line-height: 1.2;
-    }
-
-    .nav-menu {
-      list-style: none;
-      display: flex;
-      gap: 28px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
-    .nav-menu a {
-      color: var(--dark);
-      font-weight: 500;
-      position: relative;
-      transition: color 0.3s;
-      padding: 5px 0;
-    }
-
-    .nav-menu a::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--secondary);
-      transition: width 0.3s;
-    }
-
-    .nav-menu a:hover { color: var(--secondary); }
-    .nav-menu a:hover::after { width: 100%; }
-
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      flex-shrink: 0;
-    }
-
-    .hamburger span {
-      width: 28px;
-      height: 3px;
-      background: var(--primary);
-      transition: all 0.3s;
-      border-radius: 2px;
-    }
-
-    /* Availability pill in navbar */
-    .availability-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: #f3f6fb;
-      border: 1px solid #e4ebf7;
-      font-weight: 600;
-      font-size: 0.9rem;
-      white-space: nowrap;
-      flex-shrink: 0;
-      max-width: 100%;
-    }
-
-    .availability-pill span:last-child {
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--muted);
-      flex-shrink: 0;
-    }
-
-    .dot.available { background: var(--ok); }
-    .dot.limited { background: var(--warn); }
-    .dot.busy { background: var(--bad); }
-    .dot.offline { background: #333; }
-
-    /* ==================== HERO ==================== */
-    .hero {
-      position: relative;
-      min-height: 88vh;
+    /* HERO */
+    .hero{
+      position:relative;
+      padding:62px 0 40px;
       background:
-        linear-gradient(135deg, rgba(26,84,144,0.85) 0%, rgba(15,61,92,0.85) 100%),
-        url('https://www.ojashvi.com/images/best-rishikesh.jpg') center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
+        radial-gradient(circle at top right, rgba(255,122,26,.13), transparent 28%),
+        radial-gradient(circle at left 30%, rgba(22,57,95,.06), transparent 35%),
+        linear-gradient(180deg,#fbfdff 0%,#f7fafc 100%);
+      overflow:hidden;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
+      gap:34px;
+      align-items:center;
+    }
+    .hero-copy h2{
+      font-family:'Playfair Display',serif;
+      font-size:clamp(2.5rem,5vw,4.6rem);
+      line-height:1.08;
+      color:var(--primary);
+      letter-spacing:-.03em;
+      margin-bottom:16px;
+    }
+    .hero-copy p{
+      color:var(--muted);
+      font-size:1.08rem;
+      max-width:640px;
+      margin-bottom:24px;
+    }
+    .hero-badges{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-bottom:18px;
+    }
+    .hero-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      border-radius:999px;
+      padding:10px 14px;
+      background:#fff;
+      border:1px solid var(--border);
+      font-weight:700;
+      color:#334155;
+      box-shadow:0 8px 20px rgba(15,39,66,.05);
+    }
+    .hero-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-bottom:26px;
+    }
+    .hero-trust{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+      margin-top:12px;
+      max-width:760px;
+    }
+    .trust-card{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:16px 16px;
+      box-shadow:var(--shadow);
+    }
+    .trust-card h4{
+      font-size:.95rem;
+      color:var(--primary);
+      margin-bottom:5px;
+    }
+    .trust-card p{
+      font-size:.9rem;
+      color:var(--muted);
+      margin:0;
     }
 
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-      opacity: 0.3;
+    .hero-side{
+      position:relative;
+    }
+    .hero-card{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:28px;
+      padding:22px;
+      box-shadow:var(--shadow-lg);
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-card::before{
+      content:'';
+      position:absolute;
+      top:-60px;right:-60px;
+      width:180px;height:180px;
+      border-radius:50%;
+      background:linear-gradient(135deg,rgba(255,122,26,.18),rgba(255,122,26,0));
+    }
+    .hero-card-top{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:12px;
+      margin-bottom:16px;
+      position:relative;
+      z-index:1;
+    }
+    .hero-card-top h3{
+      color:var(--primary);
+      font-size:1.25rem;
+      line-height:1.2;
+      margin-bottom:4px;
+    }
+    .hero-card-top p{
+      color:var(--muted);
+      font-size:.92rem;
+    }
+    .mini-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:7px;
+      background:var(--accent-soft);
+      color:#c05608;
+      font-weight:800;
+      font-size:.85rem;
+      padding:8px 12px;
+      border-radius:999px;
+      white-space:nowrap;
+    }
+    .route-list{
+      display:grid;
+      gap:12px;
+      position:relative;
+      z-index:1;
+    }
+    .route-item{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:14px 16px;
+      border-radius:18px;
+      background:#f9fbfd;
+      border:1px solid #edf2f7;
+    }
+    .route-item strong{
+      color:var(--primary);
+      display:block;
+      margin-bottom:2px;
+    }
+    .route-item span{
+      color:var(--muted);
+      font-size:.9rem;
+    }
+    .route-price{
+      color:var(--accent);
+      font-weight:800;
+      white-space:nowrap;
+      font-size:.96rem;
+    }
+    .hero-note{
+      margin-top:16px;
+      background:#f7fafc;
+      border:1px dashed #d7e1ec;
+      border-radius:18px;
+      padding:14px 16px;
+      color:#475467;
+      font-size:.93rem;
+      position:relative;
+      z-index:1;
     }
 
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 760px;
-      color: var(--white);
-      animation: fadeInUp 1s ease;
-      padding: 40px 0;
+    /* TYPE CARDS */
+    .type-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+    .type-card{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:22px;
+      padding:22px;
+      box-shadow:var(--shadow);
+      transition:.28s ease;
+      position:relative;
+      overflow:hidden;
+    }
+    .type-card:hover{
+      transform:translateY(-6px);
+      box-shadow:var(--shadow-lg);
+      border-color:#dfe7ef;
+    }
+    .type-icon{
+      width:58px;height:58px;
+      border-radius:18px;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(135deg,var(--accent),#ff9f56);
+      color:#fff;
+      font-size:1.25rem;
+      margin-bottom:16px;
+      box-shadow:0 12px 26px rgba(255,122,26,.2);
+    }
+    .type-card h3{
+      color:var(--primary);
+      font-size:1.15rem;
+      margin-bottom:8px;
+    }
+    .type-card p{
+      color:var(--muted);
+      font-size:.95rem;
+      margin-bottom:14px;
+    }
+    .type-meta{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
+      font-size:.9rem;
+      font-weight:700;
+      color:#475467;
     }
 
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
+    /* ROUTES */
+    .routes-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+    .route-card{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:22px;
+      padding:20px;
+      box-shadow:var(--shadow);
+      transition:.28s ease;
+    }
+    .route-card:hover{
+      transform:translateY(-5px);
+      box-shadow:var(--shadow-lg);
+    }
+    .route-top{
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      margin-bottom:14px;
+      align-items:flex-start;
+    }
+    .route-top h3{
+      color:var(--primary);
+      font-size:1.1rem;
+      line-height:1.25;
+    }
+    .route-chip{
+      padding:7px 10px;
+      border-radius:999px;
+      background:#eef6ff;
+      color:var(--primary-2);
+      font-size:.8rem;
+      font-weight:800;
+      white-space:nowrap;
+    }
+    .route-info{
+      display:grid;
+      gap:10px;
+      margin-bottom:16px;
+    }
+    .route-info div{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      color:#475467;
+      font-size:.93rem;
+    }
+    .route-info i{color:var(--accent)}
+    .route-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
     }
 
-    .hero-badge {
-      display: inline-block;
-      background: rgba(247,183,49,0.2);
-      color: var(--accent);
-      padding: 8px 20px;
-      border-radius: 30px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      margin-bottom: 14px;
-      border: 1px solid var(--accent);
+    /* VEHICLES */
+    .vehicles-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+    }
+    .vehicle-card{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:24px;
+      padding:22px;
+      box-shadow:var(--shadow);
+      transition:.28s ease;
+      text-align:left;
+    }
+    .vehicle-card:hover{
+      transform:translateY(-5px);
+      box-shadow:var(--shadow-lg);
+    }
+    .vehicle-icon{
+      width:64px;height:64px;
+      border-radius:18px;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(135deg,#16395f,#214d7e);
+      color:#fff;
+      font-size:1.45rem;
+      margin-bottom:14px;
+      box-shadow:0 12px 28px rgba(22,57,95,.18);
+    }
+    .vehicle-card h3{
+      color:var(--primary);
+      font-size:1.15rem;
+      margin-bottom:6px;
+    }
+    .vehicle-card p{
+      color:var(--muted);
+      font-size:.94rem;
+      margin-bottom:14px;
+    }
+    .vehicle-features{
+      list-style:none;
+      display:grid;
+      gap:10px;
+    }
+    .vehicle-features li{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      color:#475467;
+      font-size:.92rem;
+    }
+    .vehicle-features i{
+      color:var(--accent);
+      margin-top:3px;
     }
 
-    .hero h1 {
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      font-family: 'Playfair Display', serif;
-      margin-bottom: 18px;
-      line-height: 1.2;
+    /* WHY US */
+    .why-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+    }
+    .why-card{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:22px;
+      padding:24px 20px;
+      text-align:center;
+      box-shadow:var(--shadow);
+    }
+    .why-card .why-icon{
+      width:58px;height:58px;
+      border-radius:18px;
+      display:grid;
+      place-items:center;
+      margin:0 auto 14px;
+      background:var(--accent-soft);
+      color:var(--accent);
+      font-size:1.3rem;
+    }
+    .why-card h3{
+      color:var(--primary);
+      font-size:1.06rem;
+      margin-bottom:8px;
+    }
+    .why-card p{
+      color:var(--muted);
+      font-size:.93rem;
     }
 
-    .hero p {
-      font-size: clamp(1rem, 2vw, 1.2rem);
-      margin-bottom: 26px;
-      opacity: 0.95;
-      font-weight: 300;
-      max-width: 680px;
+    /* HOW IT WORKS */
+    .steps{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+    }
+    .step-card{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:22px;
+      padding:24px 20px;
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+    .step-number{
+      width:42px;height:42px;
+      border-radius:50%;
+      background:var(--primary);
+      color:#fff;
+      display:grid;
+      place-items:center;
+      font-weight:800;
+      margin-bottom:14px;
+    }
+    .step-card h3{
+      color:var(--primary);
+      margin-bottom:8px;
+      font-size:1.08rem;
+    }
+    .step-card p{
+      color:var(--muted);
+      font-size:.94rem;
     }
 
-    .hero-buttons {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
+    /* BOOKING */
+    .booking-grid{
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
+      gap:24px;
+      align-items:start;
     }
-
-    .btn {
-      padding: 14px 28px;
-      font-weight: 700;
-      border-radius: 50px;
-      transition: all 0.3s;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      cursor: pointer;
-      border: 2px solid transparent;
-      text-align: center;
-      min-height: 50px;
+    .booking-box,
+    .booking-help{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:26px;
+      padding:28px;
+      box-shadow:var(--shadow-lg);
     }
-
-    .btn-primary {
-      background: var(--secondary);
-      color: var(--white);
+    .booking-box h3,
+    .booking-help h3{
+      color:var(--primary);
+      font-size:1.35rem;
+      margin-bottom:8px;
     }
-
-    .btn-primary:hover {
-      background: #ff5722;
-      transform: translateY(-3px);
-      box-shadow: 0 10px 30px rgba(255,107,53,0.4);
+    .booking-box > p,
+    .booking-help > p{
+      color:var(--muted);
+      margin-bottom:18px;
+      font-size:.96rem;
     }
-
-    .btn-secondary {
-      background: transparent;
-      color: var(--white);
-      border: 2px solid var(--white);
+    .form-row{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
     }
-
-    .btn-secondary:hover {
-      background: var(--white);
-      color: var(--primary);
+    .form-group{margin-bottom:14px}
+    .form-group label{
+      display:block;
+      margin-bottom:8px;
+      font-weight:700;
+      color:#344054;
+      font-size:.94rem;
     }
-
-    .btn-light {
-      background: var(--white);
-      color: var(--primary);
-    }
-
-    .btn-light:hover {
-      background: var(--accent);
-      color: var(--white);
-    }
-
-    .hero-availability {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.25);
-      padding: 10px 14px;
-      border-radius: 14px;
-      margin-bottom: 14px;
-      backdrop-filter: blur(6px);
-      font-weight: 600;
-      max-width: 100%;
-    }
-
-    .hero-availability small {
-      opacity: 0.9;
-      font-weight: 500;
-    }
-
-    /* ==================== SECTION HEADER ==================== */
-    .section { padding: 80px 0; }
-
-    .section-alt {
-      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    }
-
-    .section-header {
-      text-align: center;
-      margin-bottom: 52px;
-    }
-
-    .section-badge {
-      display: inline-block;
-      background: rgba(26,84,144,0.1);
-      color: var(--primary);
-      padding: 8px 20px;
-      border-radius: 30px;
-      font-size: 0.9rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-
-    .section-header h2 {
-      font-size: clamp(1.9rem, 4vw, 2.6rem);
-      font-family: 'Playfair Display', serif;
-      color: var(--primary);
-      margin-bottom: 12px;
-      line-height: 1.2;
-    }
-
-    .section-header p {
-      font-size: 1.1rem;
-      color: #666;
-      max-width: 650px;
-      margin: 0 auto;
-    }
-
-    /* ==================== FEATURES ==================== */
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 26px;
-    }
-
-    .card {
-      background: var(--white);
-      padding: 34px 26px;
-      border-radius: 16px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-      transition: all 0.3s;
-      border: 2px solid transparent;
-    }
-
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-      border-color: var(--secondary);
-    }
-
-    .feature-icon {
-      width: 70px;
-      height: 70px;
-      background: linear-gradient(135deg, var(--secondary) 0%, #ff8c5a 100%);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 18px;
-      font-size: 1.8rem;
-      color: var(--white);
-    }
-
-    .card h3 {
-      font-size: 1.25rem;
-      margin-bottom: 10px;
-      color: var(--primary);
-      text-align: center;
-    }
-
-    .card p {
-      color: #666;
-      font-size: 0.95rem;
-      text-align: center;
-    }
-
-    /* ==================== BOOKING FORM ==================== */
-    .booking-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 30px;
-      align-items: start;
-    }
-
-    .form-wrap,
-    .helper-box {
-      background: white;
-      border-radius: 18px;
-      padding: 28px;
-      box-shadow: 0 6px 22px rgba(0,0,0,0.1);
-    }
-
-    .helper-box {
-      border: 1px solid #eee;
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-    }
-
-    .form-group { margin-bottom: 14px; }
-
-    .form-group label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: 600;
-    }
-
     .form-group input,
     .form-group select,
-    .form-group textarea {
-      width: 100%;
-      padding: 12px 14px;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      font-family: 'Poppins', sans-serif;
-      outline: none;
-      font-size: 1rem;
-      background: #fff;
+    .form-group textarea{
+      width:100%;
+      border:1px solid #d7e0ea;
+      border-radius:16px;
+      padding:14px 16px;
+      outline:none;
+      background:#fff;
+      transition:.2s ease;
+      color:var(--text);
+    }
+    .form-group textarea{
+      resize:vertical;
+      min-height:110px;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus{
+      border-color:#9db8d7;
+      box-shadow:0 0 0 4px rgba(22,57,95,.06);
+    }
+    .help-stack{
+      display:grid;
+      gap:16px;
+    }
+    .help-card{
+      background:#f8fbff;
+      border:1px solid #e6eef7;
+      border-radius:20px;
+      padding:18px;
+    }
+    .help-card h4{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      color:var(--primary);
+      font-size:1rem;
+      margin-bottom:8px;
+    }
+    .help-card p,
+    .help-card li{
+      color:#556070;
+      font-size:.93rem;
+    }
+    .help-card ul{
+      padding-left:18px;
+      margin-top:8px;
+      display:grid;
+      gap:6px;
     }
 
-    .form-group textarea {
-      height: 100px;
-      resize: vertical;
+    /* GALLERY */
+    .mini-gallery{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
+    }
+    .gallery-item{
+      border-radius:22px;
+      overflow:hidden;
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+      background:#fff;
+    }
+    .gallery-item img{
+      width:100%;
+      height:270px;
+      object-fit:cover;
     }
 
-    .helper-box h3 {
-      color: var(--primary);
-      margin-bottom: 10px;
+    /* TESTIMONIALS */
+    .testimonials-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+    .testimonial-card{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:24px;
+      padding:24px;
+      box-shadow:var(--shadow);
+      position:relative;
+    }
+    .testimonial-card::before{
+      content:'“';
+      position:absolute;
+      top:12px;right:16px;
+      font-size:3rem;
+      color:#eff4f9;
+      font-family:serif;
+      line-height:1;
+    }
+    .testimonial-stars{
+      color:#f59e0b;
+      margin-bottom:12px;
+      display:flex;
+      gap:3px;
+    }
+    .testimonial-card p{
+      color:#475467;
+      font-size:.95rem;
+      margin-bottom:16px;
+    }
+    .testimonial-author{
+      font-weight:800;
+      color:var(--primary);
     }
 
-    .helper-box ul {
-      margin-top: 10px;
-      padding-left: 18px;
-      color: #555;
+    /* FAQ */
+    .faq-wrap{
+      max-width:920px;
+      margin:0 auto;
+      display:grid;
+      gap:14px;
+    }
+    .faq-item{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:20px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .faq-q{
+      width:100%;
+      background:#fff;
+      border:none;
+      padding:20px 22px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      cursor:pointer;
+      text-align:left;
+      color:var(--primary);
+      font-weight:800;
+      font-size:1rem;
+    }
+    .faq-a{
+      display:none;
+      padding:0 22px 20px;
+      color:#556070;
+      font-size:.95rem;
+    }
+    .faq-item.open .faq-a{display:block}
+    .faq-item .chev{transition:.2s ease}
+    .faq-item.open .chev{transform:rotate(180deg)}
+
+    /* CTA */
+    .cta{
+      background:linear-gradient(135deg,var(--primary) 0%,#1b446f 100%);
+      color:#fff;
+      position:relative;
+      overflow:hidden;
+    }
+    .cta::before{
+      content:'';
+      position:absolute;
+      right:-120px;top:-100px;
+      width:340px;height:340px;
+      border-radius:50%;
+      background:rgba(255,255,255,.06);
+    }
+    .cta-inner{
+      position:relative;
+      z-index:1;
+      text-align:center;
+      padding:78px 0;
+    }
+    .cta-inner h2{
+      font-family:'Playfair Display',serif;
+      font-size:clamp(2rem,4vw,3rem);
+      margin-bottom:12px;
+    }
+    .cta-inner p{
+      color:#d9e6f3;
+      max-width:700px;
+      margin:0 auto 22px;
+    }
+    .cta-actions{
+      display:flex;
+      justify-content:center;
+      gap:12px;
+      flex-wrap:wrap;
     }
 
-    .helper-box li { margin: 6px 0; }
-
-    .btn-full {
-      width: 100%;
-      justify-content: center;
+    /* CONTACT */
+    .contact-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+    .contact-card{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:22px;
+      padding:24px;
+      box-shadow:var(--shadow);
+      text-align:center;
+    }
+    .contact-icon{
+      width:62px;height:62px;
+      border-radius:18px;
+      display:grid;
+      place-items:center;
+      margin:0 auto 14px;
+      background:var(--accent-soft);
+      color:var(--accent);
+      font-size:1.35rem;
+    }
+    .contact-card h3{
+      color:var(--primary);
+      margin-bottom:6px;
+    }
+    .contact-card p{
+      color:var(--muted);
+      font-size:.95rem;
+    }
+    .contact-card strong{
+      color:var(--primary);
+      display:block;
+      margin-bottom:4px;
+      font-size:1rem;
     }
 
-    .btn:disabled {
-      opacity: 0.7;
-      cursor: not-allowed;
-      transform: none;
+    /* POPUP */
+    .popup{
+      display:none;
+      position:fixed;
+      inset:0;
+      background:rgba(15,23,42,.7);
+      z-index:2000;
+      padding:20px;
+      align-items:center;
+      justify-content:center;
+    }
+    .popup-card{
+      background:#fff;
+      width:min(960px,100%);
+      max-height:90vh;
+      overflow:auto;
+      border-radius:28px;
+      padding:28px;
+      position:relative;
+      box-shadow:0 24px 80px rgba(2,6,23,.28);
+      animation:popIn .26s ease;
+    }
+    @keyframes popIn{
+      from{transform:translateY(18px) scale(.97);opacity:0}
+      to{transform:translateY(0) scale(1);opacity:1}
+    }
+    .close-popup{
+      position:absolute;
+      top:14px;right:16px;
+      width:42px;height:42px;
+      border:none;border-radius:50%;
+      background:#f3f6fa;
+      cursor:pointer;
+      font-size:1.05rem;
+      color:#475467;
+    }
+    .close-popup:hover{background:#e9eef5}
+    .popup-card h3{
+      color:var(--primary);
+      font-size:1.55rem;
+      margin-bottom:6px;
+    }
+    .popup-card > p{
+      color:var(--muted);
+      margin-bottom:18px;
     }
 
-    /* ==================== SERVICE AREA MAP ==================== */
-    .map-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 26px;
-      align-items: stretch;
+    /* POP TYPES */
+    .pop-types-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+      margin-top:10px;
+    }
+    .pop-type{
+      border:1px solid var(--border);
+      border-radius:22px;
+      padding:20px;
+      background:#fff;
+      box-shadow:var(--shadow);
+      transition:.25s ease;
+      cursor:pointer;
+    }
+    .pop-type:hover{
+      transform:translateY(-4px);
+      box-shadow:var(--shadow-lg);
+      border-color:#dce5ef;
+    }
+    .pop-type .type-icon{
+      margin-bottom:14px;
+      width:54px;height:54px;
+      border-radius:16px;
+    }
+    .pop-type h4{
+      color:var(--primary);
+      margin-bottom:6px;
+      font-size:1.05rem;
+    }
+    .pop-type p{
+      color:var(--muted);
+      font-size:.92rem;
+      margin-bottom:10px;
+    }
+    .pop-type span{
+      color:var(--accent);
+      font-size:.9rem;
+      font-weight:800;
     }
 
-    .map-container {
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-      min-height: 380px;
-      background: #f5f5f5;
+    /* FEEDBACK */
+    .feedback-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
     }
 
-    .area-list {
-      background: white;
-      border-radius: 16px;
-      padding: 26px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    /* ADMIN */
+    .admin-top{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-bottom:16px;
+    }
+    .admin-tabs{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .tab-btn{
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:#fff;
+      cursor:pointer;
+      font-weight:800;
+      color:#334155;
+    }
+    .tab-btn.active{
+      background:var(--primary);
+      color:#fff;
+      border-color:var(--primary);
+    }
+    .admin-panel{display:none}
+    .admin-panel.active{display:block}
+    .table-wrap{
+      overflow:auto;
+      border:1px solid var(--border);
+      border-radius:18px;
+    }
+    .admin-table{
+      width:100%;
+      border-collapse:collapse;
+      min-width:760px;
+      background:#fff;
+    }
+    .admin-table th,.admin-table td{
+      padding:14px 12px;
+      border-bottom:1px solid #eef2f6;
+      text-align:left;
+      vertical-align:top;
+      font-size:.92rem;
+    }
+    .admin-table th{
+      background:#f8fafc;
+      color:#334155;
+      font-weight:800;
+      white-space:nowrap;
+    }
+    .badge{
+      display:inline-block;
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:.84rem;
+      font-weight:800;
+      text-transform:capitalize;
+      border:1px solid transparent;
+    }
+    .b-pending{background:#fff7ed;color:#c2410c;border-color:#fed7aa}
+    .b-approved{background:#ecfdf3;color:#15803d;border-color:#bbf7d0}
+    .b-rejected{background:#fef2f2;color:#b91c1c;border-color:#fecaca}
+    .admin-actions{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+    .mini-btn{
+      border:1px solid var(--border);
+      background:#fff;
+      border-radius:12px;
+      padding:8px 10px;
+      font-weight:800;
+      cursor:pointer;
+    }
+    .mini-btn.logout{
+      background:#111827;
+      color:#fff;
+      border-color:#111827;
     }
 
-    .chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: #f3f6fb;
-      border: 1px solid #e4ebf7;
-      margin: 6px 6px 0 0;
-      font-weight: 600;
-      color: #334;
-      font-size: 0.95rem;
-      flex-wrap: wrap;
+    /* FLOATING CTA */
+    .floating-cta{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      z-index:1100;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+    .fab-btn{
+      width:58px;height:58px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      color:#fff;
+      box-shadow:0 14px 28px rgba(2,6,23,.22);
+      font-size:1.35rem;
+      transition:.25s ease;
+    }
+    .fab-btn:hover{transform:translateY(-3px) scale(1.03)}
+    .fab-wa{background:#25d366}
+    .fab-book{background:var(--accent)}
+
+    .mobile-bottom-bar{
+      display:none;
+      position:fixed;
+      left:0;right:0;bottom:0;
+      z-index:1200;
+      background:#fff;
+      border-top:1px solid var(--border);
+      box-shadow:0 -10px 26px rgba(15,39,66,.08);
+      padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+      gap:10px;
+    }
+    .mobile-bottom-bar a,
+    .mobile-bottom-bar button{
+      flex:1;
+      min-height:50px;
+      border:none;
+      border-radius:14px;
+      font-weight:800;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      cursor:pointer;
+    }
+    .mobile-call{background:#eef6ff;color:var(--primary)}
+    .mobile-wa{background:#25d366;color:#fff}
+
+    /* FOOTER */
+    .footer{
+      background:#0b1724;
+      color:#b6c3d1;
+      padding:58px 0 24px;
+    }
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1.2fr .8fr .8fr;
+      gap:28px;
+      margin-bottom:28px;
+    }
+    .footer h3{
+      color:#fff;
+      margin-bottom:12px;
+      font-size:1.08rem;
+    }
+    .footer p,
+    .footer li,
+    .footer a{
+      color:#b6c3d1;
+      font-size:.95rem;
+    }
+    .footer-links{
+      list-style:none;
+      display:grid;
+      gap:10px;
+    }
+    .footer-links a:hover{color:#fff}
+    .footer-bottom{
+      border-top:1px solid rgba(255,255,255,.08);
+      padding-top:18px;
+      text-align:center;
+      font-size:.92rem;
+      color:#8ea0b5;
     }
 
-    .chip i { color: var(--secondary); }
-
-    /* ==================== GALLERY ==================== */
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-    }
-
-    .gallery-item {
-      background: white;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 6px 22px rgba(0,0,0,0.09);
-      transition: all 0.28s ease;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .gallery-item:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 36px rgba(0,0,0,0.14);
-    }
-
-    .media-container {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      overflow: hidden;
-      background: #111;
-    }
-
-    .media-container img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      transition: transform 0.4s ease;
-    }
-
-    .gallery-item:hover .media-container img {
-      transform: scale(1.06);
-    }
-
-    .embed-container {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    .embed-container iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-
-    /* ==================== FAQ ==================== */
-    .faq-wrap {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .faq-item {
-      background: white;
-      border-radius: 14px;
-      padding: 18px 18px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-      margin-bottom: 14px;
-      border: 1px solid #eee;
-    }
-
-    .faq-q {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      cursor: pointer;
-      font-weight: 700;
-      color: var(--primary);
-    }
-
-    .faq-a {
-      margin-top: 10px;
-      color: #555;
-      display: none;
-    }
-
-    .faq-item.open .faq-a { display: block; }
-
-    .faq-item .chev {
-      transition: transform 0.25s;
-      flex-shrink: 0;
-    }
-
-    .faq-item.open .chev { transform: rotate(180deg); }
-
-    /* ==================== TESTIMONIALS ==================== */
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 28px;
-    }
-
-    .testimonial-card {
-      background: white;
-      padding: 26px;
-      border-radius: 18px;
-      box-shadow: 0 5px 25px rgba(0,0,0,0.1);
-      text-align: center;
-      position: relative;
-    }
-
-    .testimonial-card::before {
-      content: '"';
-      position: absolute;
-      top: -20px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 4rem;
-      color: var(--secondary);
-      opacity: 0.2;
-    }
-
-    .testimonial-card p {
-      color: #666;
-      margin-bottom: 18px;
-      font-style: italic;
-      overflow-wrap: anywhere;
-    }
-
-    .testimonial-author {
-      font-weight: 700;
-      color: var(--primary);
-    }
-
-    .testimonial-rating {
-      color: var(--accent);
-      margin-top: 10px;
-    }
-
-    /* ==================== CTA ==================== */
-    .cta {
-      padding: 80px 0;
-      background: linear-gradient(135deg, var(--primary) 0%, #0f3d5c 100%);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .cta::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      right: -10%;
-      width: 500px;
-      height: 500px;
-      background: rgba(255,255,255,0.05);
-      border-radius: 50%;
-    }
-
-    .cta-content {
-      text-align: center;
-      color: var(--white);
-      position: relative;
-      z-index: 2;
-    }
-
-    .cta h2 {
-      font-size: clamp(2rem, 4vw, 2.6rem);
-      font-family: 'Playfair Display', serif;
-      margin-bottom: 18px;
-      line-height: 1.2;
-    }
-
-    .cta p {
-      font-size: 1.15rem;
-      margin-bottom: 28px;
-      opacity: 0.92;
-    }
-
-    .cta-buttons {
-      display: flex;
-      gap: 16px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    /* ==================== CONTACT ==================== */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 26px;
-      margin-top: 40px;
-    }
-
-    .contact-card {
-      background: linear-gradient(135deg, var(--primary) 0%, #0f3d5c 100%);
-      padding: 36px 26px;
-      border-radius: 18px;
-      text-align: center;
-      color: var(--white);
-      transition: all 0.3s;
-    }
-
-    .contact-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 40px rgba(26,84,144,0.3);
-    }
-
-    .contact-icon {
-      width: 70px;
-      height: 70px;
-      background: rgba(255,255,255,0.15);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 18px;
-      font-size: 1.8rem;
-    }
-
-    .contact-card strong {
-      color: var(--accent);
-      overflow-wrap: anywhere;
-    }
-
-    /* ==================== POPUPS ==================== */
-    .popup {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.72);
-      z-index: 2000;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-
-    .popup-card {
-      background: white;
-      padding: 30px;
-      border-radius: 18px;
-      max-width: 880px;
-      width: 100%;
-      position: relative;
-      animation: popupSlide 0.35s ease;
-      max-height: 88vh;
-      overflow: auto;
-    }
-
-    @keyframes popupSlide {
-      from { transform: scale(0.92); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
-    }
-
-    .close-popup {
-      position: absolute;
-      top: 12px;
-      right: 16px;
-      font-size: 1.6rem;
-      color: #aaa;
-      cursor: pointer;
-      line-height: 1;
-    }
-
-    .close-popup:hover { color: var(--secondary); }
-
-    .popup-card h3 {
-      font-family: 'Playfair Display', serif;
-      color: var(--primary);
-      margin-bottom: 14px;
-      text-align: center;
-    }
-
-    /* Admin Dashboard UI */
-    .admin-top {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      margin-bottom: 14px;
-    }
-
-    .admin-tabs {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .tab-btn {
-      padding: 10px 14px;
-      border-radius: 999px;
-      border: 1px solid #e7e7e7;
-      background: #f8f8f8;
-      cursor: pointer;
-      font-weight: 700;
-    }
-
-    .tab-btn.active {
-      background: var(--primary);
-      color: white;
-      border-color: var(--primary);
-    }
-
-    .admin-panel { display: none; }
-    .admin-panel.active { display: block; }
-
-    .admin-table {
-      width: 100%;
-      border-collapse: collapse;
-      overflow: hidden;
-      border-radius: 12px;
-      border: 1px solid #eee;
-      min-width: 720px;
-    }
-
-    .admin-table th,
-    .admin-table td {
-      padding: 12px 10px;
-      border-bottom: 1px solid #eee;
-      font-size: 0.92rem;
-      vertical-align: top;
-    }
-
-    .admin-table th {
-      background: #f5f7fb;
-      color: #223;
-      text-align: left;
-      font-weight: 800;
-      white-space: nowrap;
-    }
-
-    .badge {
-      padding: 6px 10px;
-      border-radius: 999px;
-      font-weight: 800;
-      font-size: 0.85rem;
-      display: inline-block;
-      border: 1px solid transparent;
-      text-transform: capitalize;
-    }
-
-    .b-pending { background: #fff3cd; color: #856404; border-color: #ffeeba; }
-    .b-approved { background: #d4edda; color: #155724; border-color: #c3e6cb; }
-    .b-rejected { background: #f8d7da; color: #721c24; border-color: #f5c6cb; }
-
-    .admin-actions {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .mini-btn {
-      padding: 8px 10px;
-      border-radius: 10px;
-      border: 1px solid #ddd;
-      cursor: pointer;
-      font-weight: 800;
-      background: #fff;
-    }
-
-    .mini-btn.approve { border-color: #c3e6cb; }
-    .mini-btn.reject { border-color: #f5c6cb; }
-    .mini-btn.confirm { border-color: #b8daff; }
-    .mini-btn.logout {
-      background: #111;
-      color: #fff;
-      border-color: #111;
-    }
-
-    /* ==================== FOOTER ==================== */
-    .footer {
-      background: #1a1a1a;
-      color: #aaa;
-      padding: 50px 0 20px;
-    }
-
-    .footer-content {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 34px;
-      margin-bottom: 30px;
-    }
-
-    .footer-section h3 {
-      color: var(--white);
-      margin-bottom: 14px;
-      font-size: 1.2rem;
-    }
-
-    .footer-links { list-style: none; }
-
-    .footer-links li { margin-bottom: 10px; }
-
-    .footer-links a {
-      color: #aaa;
-      transition: color 0.3s;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      overflow-wrap: anywhere;
-    }
-
-    .footer-links a:hover { color: var(--accent); }
-
-    .footer-bottom {
-      border-top: 1px solid #333;
-      padding-top: 18px;
-      text-align: center;
-      font-size: 0.9rem;
-    }
-
-    /* ==================== RESPONSIVE ==================== */
-    @media (max-width: 1100px) {
-      .nav-menu {
-        gap: 18px;
+    /* RESPONSIVE */
+    @media (max-width:1100px){
+      .nav-inner{
+        grid-template-columns:auto auto auto;
       }
-
-      .nav-logo {
-        font-size: 1.35rem;
+      .nav-menu{gap:18px}
+      .hero-grid,
+      .booking-grid{
+        grid-template-columns:1fr;
       }
-
-      .availability-pill {
-        font-size: 0.85rem;
-        padding: 8px 10px;
-      }
-    }
-
-    @media (max-width: 900px) {
-      .booking-grid,
-      .map-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        min-height: 78vh;
-      }
-
-      .hero-buttons,
-      .cta-buttons {
-        gap: 12px;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .notification-bar {
-        font-size: 0.92rem;
-        padding: 10px 12px;
-      }
-
-      .top-bar {
-        font-size: 0.85rem;
-      }
-
-      .top-bar-content {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .contact-info {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-      }
-
-      .social-links {
-        justify-content: flex-start;
-      }
-
-      .nav-container {
-        display: grid;
-        grid-template-columns: 1fr auto;
-        grid-template-areas:
-          "logo burger"
-          "availability availability";
-        align-items: center;
-        gap: 12px;
-        padding: 14px 0;
-      }
-
-      .nav-logo {
-        grid-area: logo;
-        font-size: 1.15rem;
-        gap: 10px;
-        min-width: 0;
-      }
-
-      .nav-logo span {
-        display: block;
-        white-space: normal;
-        line-height: 1.15;
-      }
-
-      .hamburger {
-        grid-area: burger;
-        display: flex;
-        justify-self: end;
-      }
-
-      .availability-pill {
-        grid-area: availability;
-        width: 100%;
-        justify-content: center;
-        white-space: normal;
-        border-radius: 14px;
-      }
-
-      .nav-menu {
-        position: fixed;
-        top: 130px;
-        left: -100%;
-        width: 100%;
-        height: calc(100vh - 130px);
-        background: var(--white);
-        flex-direction: column;
-        padding: 20px 0;
-        transition: left 0.3s;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        gap: 0;
-        overflow-y: auto;
-        z-index: 999;
-      }
-
-      .nav-menu li {
-        width: 100%;
-        text-align: center;
-        padding: 16px 0;
-        border-bottom: 1px solid #eee;
-      }
-
-      .nav-menu.active { left: 0; }
-
-      .hamburger.active span:nth-child(1) {
-        transform: rotate(45deg) translate(8px, 8px);
-      }
-
-      .hamburger.active span:nth-child(2) { opacity: 0; }
-
-      .hamburger.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -7px);
-      }
-
-      .hero {
-        min-height: auto;
-        padding: 50px 0;
-        background-position: center;
-      }
-
-      .hero-content {
-        padding: 20px 0;
-      }
-
-      .hero-availability {
-        width: 100%;
-        align-items: flex-start;
-      }
-
-      .hero-badge {
-        font-size: 0.82rem;
-        padding: 8px 14px;
-      }
-
-      .hero h1 {
-        font-size: 2.1rem;
-      }
-
-      .hero p {
-        font-size: 1rem;
-      }
-
-      .hero-buttons {
-        flex-direction: column;
-      }
-
-      .hero-buttons .btn,
-      .cta-buttons .btn {
-        width: 100%;
-      }
-
-      .section {
-        padding: 60px 0;
-      }
-
-      .section-header {
-        margin-bottom: 36px;
-      }
-
-      .section-header p {
-        font-size: 1rem;
-      }
-
-      .features-grid,
-      .gallery-grid,
+      .vehicles-grid{grid-template-columns:repeat(2,1fr)}
+      .why-grid,
+      .steps{grid-template-columns:repeat(2,1fr)}
+      .routes-grid,
       .testimonials-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
+      .contact-grid,
+      .type-grid,
+      .pop-types-grid{
+        grid-template-columns:repeat(2,1fr);
       }
-
-      .form-row {
-        grid-template-columns: 1fr;
-      }
-
-      .form-wrap,
-      .helper-box,
-      .area-list,
-      .card,
-      .contact-card,
-      .popup-card {
-        padding: 22px 18px;
-      }
-
-      .map-container {
-        min-height: 300px;
-      }
-
-      .faq-item {
-        padding: 16px;
-      }
-
-      .faq-q {
-        font-size: 0.98rem;
-        align-items: flex-start;
-      }
-
-      .popup {
-        padding: 12px;
-      }
-
-      .popup-card {
-        width: 100%;
-        max-height: 90vh;
-        border-radius: 16px;
-        padding: 22px 16px;
-      }
-
-      .admin-top {
-        align-items: stretch;
-      }
-
-      .admin-tabs {
-        width: 100%;
-      }
-
-      .tab-btn {
-        flex: 1 1 auto;
-        text-align: center;
-      }
-
-      .footer {
-        padding: 40px 0 20px;
-      }
-
-      .footer-content {
-        gap: 24px;
-      }
+      .mini-gallery{grid-template-columns:repeat(2,1fr)}
     }
 
-    @media (max-width: 520px) {
-      .container {
-        width: min(94%, 1200px);
+    @media (max-width:860px){
+      .top-strip-inner{
+        justify-content:center;
+      }
+      .nav-inner{
+        grid-template-columns:1fr auto;
+        grid-template-areas:
+          "brand menuBtn"
+          "avail avail";
+        padding:14px 0;
+      }
+      .brand{grid-area:brand}
+      .hamburger{
+        display:grid;
+        grid-area:menuBtn;
+      }
+      .nav-actions{
+        grid-area:avail;
+        justify-content:stretch;
+      }
+      .availability-pill{
+        max-width:none;
+        width:100%;
+        justify-content:center;
+      }
+      .nav-menu{
+        position:fixed;
+        top:calc(var(--nav-h) + 46px);
+        left:-100%;
+        width:100%;
+        height:calc(100vh - (var(--nav-h) + 46px));
+        background:#fff;
+        padding:26px 18px;
+        flex-direction:column;
+        align-items:flex-start;
+        justify-content:flex-start;
+        gap:6px;
+        box-shadow:0 14px 40px rgba(15,39,66,.12);
+        transition:.28s ease;
+        overflow-y:auto;
+        z-index:999;
+      }
+      .nav-menu.active{left:0}
+      .nav-menu li{width:100%}
+      .nav-menu a{
+        display:block;
+        width:100%;
+        padding:14px 8px;
+        border-bottom:1px solid #f1f5f9;
       }
 
-      .floating-buttons {
-        bottom: 15px;
-        right: 15px;
-        gap: 12px;
+      .hero{
+        padding:36px 0 24px;
+      }
+      .hero-trust{grid-template-columns:1fr}
+    }
+
+    @media (max-width:640px){
+      .section{padding:68px 0}
+      .section-head{margin-bottom:34px}
+      .container{width:min(94vw,1180px)}
+      .top-strip{display:none}
+
+      .hero-copy h2{font-size:2.35rem}
+      .hero-copy p{font-size:1rem}
+      .hero-actions,
+      .cta-actions{
+        flex-direction:column;
+      }
+      .hero-actions .btn,
+      .cta-actions .btn{
+        width:100%;
       }
 
-      .float-btn {
-        width: 50px;
-        height: 50px;
-        font-size: 1.4rem;
+      .form-row,
+      .feedback-grid,
+      .type-grid,
+      .routes-grid,
+      .vehicles-grid,
+      .why-grid,
+      .steps,
+      .testimonials-grid,
+      .contact-grid,
+      .mini-gallery,
+      .pop-types-grid,
+      .footer-grid{
+        grid-template-columns:1fr;
       }
 
-      .float-btn .tooltip {
-        display: none;
+      .booking-box,
+      .booking-help,
+      .hero-card,
+      .popup-card{
+        padding:20px;
       }
 
-      .nav-logo {
-        font-size: 1rem;
-      }
+      .gallery-item img{height:230px}
 
-      .availability-pill {
-        font-size: 0.82rem;
-        padding: 8px 10px;
+      .faq-q{
+        padding:18px 18px;
+        font-size:.96rem;
+        align-items:flex-start;
       }
+      .faq-a{padding:0 18px 18px}
 
-      .hero h1 {
-        font-size: 1.75rem;
-      }
+      .floating-cta{display:none}
+      .mobile-bottom-bar{display:flex}
 
-      .section-header h2 {
-        font-size: 1.75rem;
-      }
-
-      .cta h2 {
-        font-size: 1.8rem;
-      }
-
-      .btn {
-        padding: 13px 18px;
-        font-size: 0.95rem;
-      }
-
-      .chip {
-        width: 100%;
-        justify-content: flex-start;
-        margin-right: 0;
-      }
-
-      .gallery-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .media-container {
-        aspect-ratio: 16 / 11;
-      }
-
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .contact-card {
-        padding: 28px 18px;
-      }
-
-      .testimonial-card {
-        padding: 22px 16px;
-      }
-
-      .admin-table {
-        min-width: 640px;
-      }
-
-      .footer-bottom {
-        font-size: 0.82rem;
+      body.has-mobile-bar{
+        padding-bottom:84px;
       }
     }
   </style>
 </head>
-
-<body>
-  <!-- NOTIFICATION BAR -->
-  <div class="notification-bar">
-    <i class="fas fa-laptop-code"></i> Unlock Digital Solutions:
-    <a href="https://your-other-website-link.com" target="_blank">Custom Websites & Advanced Vehicle Tracking Systems Await!</a>
-  </div>
-
-  <!-- FLOATING BUTTONS -->
-  <div class="floating-buttons">
-    <div class="float-btn inquiry-btn" onclick="scrollToSection('#booking')">
-      <i class="fas fa-taxi"></i>
-      <span class="tooltip">Book Now</span>
-    </div>
-
-    <div class="float-btn feedback-btn" onclick="openPopup('feedbackPopup')">
-      <i class="fas fa-comment-dots"></i>
-      <span class="tooltip">Share Feedback</span>
-    </div>
-
-    <a href="#" class="float-btn whatsapp-btn" aria-label="WhatsApp" onclick="instantWhatsAppBooking(event)">
-      <i class="fab fa-whatsapp"></i>
-      <span class="tooltip">Instant WhatsApp Booking</span>
-    </a>
-
-    <div class="float-btn admin-btn" onclick="openPopup('adminPopup')">
-      <i class="fas fa-user-shield"></i>
-      <span class="tooltip">Admin</span>
-    </div>
-  </div>
-
-  <!-- TOP BAR -->
-  <div class="top-bar">
-    <div class="container top-bar-content">
-      <div class="contact-info">
-        <span><i class="fas fa-phone"></i> +91 70179 00021</span>
-        <span><i class="fas fa-envelope"></i> Kunalgujjar7584@gmail.com</span>
+<body class="has-mobile-bar">
+  <!-- TOP STRIP -->
+  <div class="top-strip">
+    <div class="container top-strip-inner">
+      <div class="top-strip-left">
+        <div class="top-chip"><i class="fas fa-phone"></i> +91 70179 00021</div>
+        <div class="top-chip"><i class="fas fa-envelope"></i> Kunalgujjar7584@gmail.com</div>
+        <div class="top-chip"><i class="fas fa-clock"></i> 24/7 Booking Support</div>
       </div>
-      <div class="social-links">
-        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-        <a href="https://wa.me/917017900021" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <div class="top-strip-right">
+        <div class="top-chip"><i class="fas fa-location-dot"></i> Rishikesh • Haridwar • Dehradun • Outstation</div>
+        <div class="top-socials">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://wa.me/917017900021" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
       </div>
     </div>
   </div>
 
   <!-- NAVBAR -->
   <nav class="navbar">
-    <div class="container nav-container">
-      <div class="nav-logo">
-        <i class="fas fa-mountain-sun"></i>
-        <span>Krishna Tour and Travels</span>
-      </div>
+    <div class="container nav-inner">
+      <a href="#home" class="brand">
+        <div class="brand-icon"><i class="fas fa-route"></i></div>
+        <div class="brand-text">
+          <h1>Krishna Tour & Travels</h1>
+          <span>Cab Booking & Local Tour Service</span>
+        </div>
+      </a>
 
-      <div class="availability-pill" title="Live Availability">
-        <span id="availabilityDot" class="dot offline"></span>
-        <span id="availabilityText">Checking availability...</span>
-      </div>
-
-      <ul class="nav-menu">
+      <ul class="nav-menu" id="navMenu">
         <li><a href="#home">Home</a></li>
-        <li><a href="#booking">Booking</a></li>
-        <li><a href="#service-area">Service Area</a></li>
-        <li><a href="#gallery">Trip Gallery</a></li>
+        <li><a href="#trip-types">Trip Types</a></li>
+        <li><a href="#popular-routes">Popular Routes</a></li>
+        <li><a href="#vehicles">Vehicles</a></li>
+        <li><a href="#booking">Book Now</a></li>
+        <li><a href="#reviews">Reviews</a></li>
         <li><a href="#faq">FAQ</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
 
-      <div class="hamburger">
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
         <span></span><span></span><span></span>
+      </button>
+
+      <div class="nav-actions">
+        <div class="availability-pill" title="Live Availability">
+          <span id="availabilityDot" class="dot offline"></span>
+          <span id="availabilityText">Checking availability...</span>
+        </div>
       </div>
     </div>
   </nav>
 
   <!-- HERO -->
-  <section id="home" class="hero">
-    <div class="container">
-      <div class="hero-content">
-        <div class="hero-availability">
-          <span id="heroAvailabilityDot" class="dot offline"></span>
-          <div>
-            <div id="heroAvailabilityText">Checking live availability…</div>
-            <small>Updated from our system</small>
-          </div>
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <div class="hero-badges">
+          <div class="hero-badge"><i class="fas fa-shield-halved"></i> Safe & Verified Drivers</div>
+          <div class="hero-badge"><i class="fas fa-bolt"></i> Quick Booking on WhatsApp</div>
+          <div class="hero-badge"><i class="fas fa-tag"></i> Clear Pricing</div>
         </div>
 
-        <div class="hero-badge">
-          <i class="fas fa-star"></i> Trusted Travel Partner Since 2010
-        </div>
-        <h1>Rishikesh, Haridwar, Agra & Jaipur Trips — Safe & Reliable Cabs</h1>
-        <p>Book your cab instantly. Transparent pricing. Professional drivers. 24/7 support.</p>
+        <h2>Reliable Cabs for Rishikesh, Haridwar, Dehradun & Outstation Trips</h2>
+        <p>
+          Book airport pickup, local sightseeing, one-way cabs, round trips, Char Dham rides, and custom travel with fast response, clean vehicles, and dependable service.
+        </p>
 
-        <div class="hero-buttons">
+        <div class="hero-actions">
           <a href="#booking" class="btn btn-primary">
-            Book Online <i class="fas fa-arrow-right"></i>
+            <i class="fas fa-taxi"></i> Book Your Cab
           </a>
-          <a href="#" class="btn btn-secondary" onclick="instantWhatsAppBooking(event)">
+          <a href="#" onclick="openTripTypePopup(event)" class="btn btn-light">
+            <i class="fas fa-layer-group"></i> Choose Trip Type
+          </a>
+          <a href="#" onclick="instantWhatsAppBooking(event)" class="btn btn-dark">
             <i class="fab fa-whatsapp"></i> Book on WhatsApp
           </a>
         </div>
+
+        <div class="hero-trust">
+          <div class="trust-card">
+            <h4>Airport Pickup & Drop</h4>
+            <p>Delhi airport, Dehradun airport, hotels, railway stations and more.</p>
+          </div>
+          <div class="trust-card">
+            <h4>Outstation & Round Trips</h4>
+            <p>Delhi, Haridwar, Rishikesh, Mussoorie, Agra, Jaipur and custom routes.</p>
+          </div>
+          <div class="trust-card">
+            <h4>Fast Confirmation</h4>
+            <p>Send trip details and get confirmation quickly without the usual circus.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-side">
+        <div class="hero-card">
+          <div class="hero-card-top">
+            <div>
+              <h3>Most Booked Routes</h3>
+              <p>Popular customer choices with quick booking support.</p>
+            </div>
+            <div class="mini-badge">
+              <span id="heroAvailabilityDot" class="dot offline"></span>
+              <span id="heroAvailabilityText">Checking...</span>
+            </div>
+          </div>
+
+          <div class="route-list">
+            <div class="route-item">
+              <div>
+                <strong>Delhi → Rishikesh</strong>
+                <span>One-way / round trip</span>
+              </div>
+              <div class="route-price">Best fare</div>
+            </div>
+            <div class="route-item">
+              <div>
+                <strong>Dehradun Airport → Rishikesh</strong>
+                <span>Pickup / drop service</span>
+              </div>
+              <div class="route-price">Fast booking</div>
+            </div>
+            <div class="route-item">
+              <div>
+                <strong>Haridwar → Mussoorie</strong>
+                <span>Family & local travel</span>
+              </div>
+              <div class="route-price">Custom quote</div>
+            </div>
+            <div class="route-item">
+              <div>
+                <strong>Char Dham Travel</strong>
+                <span>Planned route support</span>
+              </div>
+              <div class="route-price">On request</div>
+            </div>
+          </div>
+
+          <div class="hero-note">
+            <strong>Quick tip:</strong> tell us pickup, drop, date, passengers, and trip type. That’s enough for us to get the ball rolling instead of playing 20 questions.
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- FEATURES -->
-  <section class="section section-alt">
+  <!-- TRIP TYPES -->
+  <section class="section" id="trip-types">
     <div class="container">
-      <div class="section-header">
-        <div class="section-badge">Why Choose Us</div>
-        <h2>Comfort + Safety + On-Time Service</h2>
-        <p>We keep it simple: good cars, good drivers, good prices.</p>
+      <div class="section-head">
+        <div class="eyebrow"><i class="fas fa-layer-group"></i> Trip Types</div>
+        <h2>What do you want to book?</h2>
+        <p>Choose the purpose of your trip first. This makes the website clearer and makes booking faster.</p>
       </div>
 
-      <div class="features-grid">
-        <div class="card">
-          <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
-          <h3>Safe & Reliable</h3>
-          <p>Verified drivers and well-maintained vehicles.</p>
+      <div class="type-grid">
+        <div class="type-card">
+          <div class="type-icon"><i class="fas fa-plane-arrival"></i></div>
+          <h3>Airport Pickup / Drop</h3>
+          <p>Delhi airport, Dehradun airport, hotel pickup and station transfer with on-time service.</p>
+          <div class="type-meta">
+            <span>Fastest for urgent travel</span>
+            <a href="#" onclick="selectTripType('Airport Transfer', event)">Book this</a>
+          </div>
         </div>
-        <div class="card">
-          <div class="feature-icon"><i class="fas fa-hand-holding-dollar"></i></div>
+
+        <div class="type-card">
+          <div class="type-icon"><i class="fas fa-road"></i></div>
+          <h3>One-Way Cab</h3>
+          <p>Simple one-side travel when you only need drop service without return booking.</p>
+          <div class="type-meta">
+            <span>Best for direct routes</span>
+            <a href="#" onclick="selectTripType('One-Way Trip', event)">Book this</a>
+          </div>
+        </div>
+
+        <div class="type-card">
+          <div class="type-icon"><i class="fas fa-arrows-rotate"></i></div>
+          <h3>Round Trip</h3>
+          <p>Ideal for return journeys, family travel, and day plans where the cab stays with you.</p>
+          <div class="type-meta">
+            <span>Good for flexible plans</span>
+            <a href="#" onclick="selectTripType('Round Trip', event)">Book this</a>
+          </div>
+        </div>
+
+        <div class="type-card">
+          <div class="type-icon"><i class="fas fa-camera-retro"></i></div>
+          <h3>Local Sightseeing</h3>
+          <p>Visit temples, ghats, waterfalls, viewpoints and local attractions comfortably.</p>
+          <div class="type-meta">
+            <span>Best for day tours</span>
+            <a href="#" onclick="selectTripType('Local Sightseeing', event)">Book this</a>
+          </div>
+        </div>
+
+        <div class="type-card">
+          <div class="type-icon"><i class="fas fa-map-location-dot"></i></div>
+          <h3>Outstation Travel</h3>
+          <p>Travel across cities and states with comfortable vehicles for couples, families and groups.</p>
+          <div class="type-meta">
+            <span>Custom route supported</span>
+            <a href="#" onclick="selectTripType('Outstation Trip', event)">Book this</a>
+          </div>
+        </div>
+
+        <div class="type-card">
+          <div class="type-icon"><i class="fas fa-mountain-sun"></i></div>
+          <h3>Custom Tour / Char Dham</h3>
+          <p>Multi-day routes, pilgrimage plans and custom travel packages based on your itinerary.</p>
+          <div class="type-meta">
+            <span>Flexible planning</span>
+            <a href="#" onclick="selectTripType('Custom Tour', event)">Book this</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POPULAR ROUTES -->
+  <section class="section section-soft" id="popular-routes">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow"><i class="fas fa-route"></i> Popular Routes</div>
+        <h2>Frequently booked routes</h2>
+        <p>These are common booking requests. Exact fare depends on date, car type, and trip format.</p>
+      </div>
+
+      <div class="routes-grid">
+        <div class="route-card">
+          <div class="route-top">
+            <h3>Delhi to Rishikesh</h3>
+            <div class="route-chip">Top route</div>
+          </div>
+          <div class="route-info">
+            <div><i class="fas fa-clock"></i> Approx. 5–6 hours</div>
+            <div><i class="fas fa-car-side"></i> Sedan / SUV / Innova</div>
+            <div><i class="fas fa-indian-rupee-sign"></i> Starting fare available on request</div>
+          </div>
+          <div class="route-actions">
+            <a href="#booking" class="btn btn-primary">Book Route</a>
+            <a href="#" onclick="routeWhatsApp('Delhi','Rishikesh', event)" class="btn btn-outline">WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="route-card">
+          <div class="route-top">
+            <h3>Delhi Airport to Haridwar</h3>
+            <div class="route-chip">Airport</div>
+          </div>
+          <div class="route-info">
+            <div><i class="fas fa-clock"></i> Approx. 5–6 hours</div>
+            <div><i class="fas fa-plane"></i> Flight pickup coordination</div>
+            <div><i class="fas fa-phone-volume"></i> Fast confirmation support</div>
+          </div>
+          <div class="route-actions">
+            <a href="#booking" class="btn btn-primary">Book Route</a>
+            <a href="#" onclick="routeWhatsApp('Delhi Airport','Haridwar', event)" class="btn btn-outline">WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="route-card">
+          <div class="route-top">
+            <h3>Dehradun Airport to Rishikesh</h3>
+            <div class="route-chip">Quick pickup</div>
+          </div>
+          <div class="route-info">
+            <div><i class="fas fa-clock"></i> Approx. 40–60 mins</div>
+            <div><i class="fas fa-people-group"></i> Great for solo / family</div>
+            <div><i class="fas fa-bolt"></i> Ideal for instant booking</div>
+          </div>
+          <div class="route-actions">
+            <a href="#booking" class="btn btn-primary">Book Route</a>
+            <a href="#" onclick="routeWhatsApp('Dehradun Airport','Rishikesh', event)" class="btn btn-outline">WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="route-card">
+          <div class="route-top">
+            <h3>Haridwar to Mussoorie</h3>
+            <div class="route-chip">Sightseeing</div>
+          </div>
+          <div class="route-info">
+            <div><i class="fas fa-clock"></i> Approx. 3–4 hours</div>
+            <div><i class="fas fa-map"></i> Scenic travel option</div>
+            <div><i class="fas fa-suitcase"></i> Good for family trips</div>
+          </div>
+          <div class="route-actions">
+            <a href="#booking" class="btn btn-primary">Book Route</a>
+            <a href="#" onclick="routeWhatsApp('Haridwar','Mussoorie', event)" class="btn btn-outline">WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="route-card">
+          <div class="route-top">
+            <h3>Rishikesh Local Sightseeing</h3>
+            <div class="route-chip">Local</div>
+          </div>
+          <div class="route-info">
+            <div><i class="fas fa-camera"></i> Temples, ghats, viewpoints</div>
+            <div><i class="fas fa-calendar-day"></i> Half-day / full-day</div>
+            <div><i class="fas fa-location-dot"></i> Flexible stop planning</div>
+          </div>
+          <div class="route-actions">
+            <a href="#booking" class="btn btn-primary">Book Route</a>
+            <a href="#" onclick="routeWhatsApp('Rishikesh','Local Sightseeing', event)" class="btn btn-outline">WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="route-card">
+          <div class="route-top">
+            <h3>Custom Route</h3>
+            <div class="route-chip">Flexible</div>
+          </div>
+          <div class="route-info">
+            <div><i class="fas fa-map-location-dot"></i> Choose your pickup and drop</div>
+            <div><i class="fas fa-list-check"></i> Tell us your itinerary</div>
+            <div><i class="fas fa-headset"></i> We suggest best option</div>
+          </div>
+          <div class="route-actions">
+            <a href="#booking" class="btn btn-primary">Book Route</a>
+            <a href="#" onclick="instantWhatsAppBooking(event)" class="btn btn-outline">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VEHICLES -->
+  <section class="section" id="vehicles">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow"><i class="fas fa-car"></i> Vehicle Options</div>
+        <h2>Choose your vehicle type</h2>
+        <p>Different trips need different vehicles. No point dragging ten people in a tiny sedan like a clown car.</p>
+      </div>
+
+      <div class="vehicles-grid">
+        <div class="vehicle-card">
+          <div class="vehicle-icon"><i class="fas fa-car-side"></i></div>
+          <h3>Sedan</h3>
+          <p>Comfortable and budget-friendly for regular travel.</p>
+          <ul class="vehicle-features">
+            <li><i class="fas fa-check-circle"></i> Best for 1–4 passengers</li>
+            <li><i class="fas fa-check-circle"></i> Good for airport and city travel</li>
+            <li><i class="fas fa-check-circle"></i> Suitable for light luggage</li>
+          </ul>
+        </div>
+
+        <div class="vehicle-card">
+          <div class="vehicle-icon"><i class="fas fa-car"></i></div>
+          <h3>SUV</h3>
+          <p>More space and comfort for family and outstation trips.</p>
+          <ul class="vehicle-features">
+            <li><i class="fas fa-check-circle"></i> Best for 4–6 passengers</li>
+            <li><i class="fas fa-check-circle"></i> Better for hills and long drives</li>
+            <li><i class="fas fa-check-circle"></i> More luggage room</li>
+          </ul>
+        </div>
+
+        <div class="vehicle-card">
+          <div class="vehicle-icon"><i class="fas fa-van-shuttle"></i></div>
+          <h3>Innova / Crysta</h3>
+          <p>Premium comfort for families, tours and business travel.</p>
+          <ul class="vehicle-features">
+            <li><i class="fas fa-check-circle"></i> Best for 5–7 passengers</li>
+            <li><i class="fas fa-check-circle"></i> Great for premium outstation routes</li>
+            <li><i class="fas fa-check-circle"></i> Comfortable for long distance</li>
+          </ul>
+        </div>
+
+        <div class="vehicle-card">
+          <div class="vehicle-icon"><i class="fas fa-bus"></i></div>
+          <h3>Tempo Traveller</h3>
+          <p>Group travel option for events, family tours and pilgrimages.</p>
+          <ul class="vehicle-features">
+            <li><i class="fas fa-check-circle"></i> Best for 9+ passengers</li>
+            <li><i class="fas fa-check-circle"></i> Good for group packages</li>
+            <li><i class="fas fa-check-circle"></i> Spacious and tour-friendly</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="section section-soft">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow"><i class="fas fa-star"></i> Why Choose Us</div>
+        <h2>Built around trust and easy booking</h2>
+        <p>People don’t want drama while booking travel. They want clarity, response, and a cab that actually shows up.</p>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon"><i class="fas fa-user-shield"></i></div>
+          <h3>Verified Drivers</h3>
+          <p>Professional and reliable drivers focused on safe travel.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><i class="fas fa-wallet"></i></div>
           <h3>Transparent Pricing</h3>
-          <p>No hidden drama. Clear, upfront costs.</p>
+          <p>Clear discussion before trip confirmation. No nonsense surprises.</p>
         </div>
-        <div class="card">
-          <div class="feature-icon"><i class="fas fa-clock"></i></div>
-          <h3>24/7 Support</h3>
-          <p>Late-night pickup? Early morning drop? We’re on it.</p>
+        <div class="why-card">
+          <div class="why-icon"><i class="fas fa-headset"></i></div>
+          <h3>Quick Response</h3>
+          <p>Fast WhatsApp and call support for booking and trip updates.</p>
         </div>
-        <div class="card">
-          <div class="feature-icon"><i class="fas fa-map-location-dot"></i></div>
-          <h3>Local Expertise</h3>
-          <p>We know routes, timings, and best spots.</p>
+        <div class="why-card">
+          <div class="why-icon"><i class="fas fa-clock"></i></div>
+          <h3>On-Time Service</h3>
+          <p>Airport pickups, station pickups and scheduled travel support.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ONLINE BOOKING FORM -->
-  <section id="booking" class="section">
+  <!-- HOW IT WORKS -->
+  <section class="section">
     <div class="container">
-      <div class="section-header">
-        <div class="section-badge">Book Now</div>
-        <h2>Online Booking Form</h2>
-        <p>Submit booking → we confirm quickly. You’ll also get a WhatsApp message ready to send.</p>
+      <div class="section-head">
+        <div class="eyebrow"><i class="fas fa-list-ol"></i> Simple Booking Process</div>
+        <h2>How booking works</h2>
+        <p>Keep it simple. No user should need a training manual to book a cab.</p>
+      </div>
+
+      <div class="steps">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3>Choose Trip Type</h3>
+          <p>Select airport transfer, local sightseeing, one-way, round trip, or custom tour.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3>Share Trip Details</h3>
+          <p>Send pickup, drop, date, passengers and preferred vehicle if you have one.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3>Get Fare & Confirmation</h3>
+          <p>We confirm availability, final details and assign the most suitable vehicle.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <h3>Travel Comfortably</h3>
+          <p>Driver details are shared before trip and you’re ready to go.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section class="section section-soft" id="booking">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow"><i class="fas fa-calendar-check"></i> Booking Form</div>
+        <h2>Book your cab now</h2>
+        <p>Submit the form for quick confirmation. You can also send the same booking to WhatsApp in one click.</p>
       </div>
 
       <div class="booking-grid">
-        <div class="form-wrap">
-          <h3 style="color: var(--primary); margin-bottom: 14px;">Trip Details</h3>
+        <div class="booking-box">
+          <h3>Trip Details</h3>
+          <p>Fill the main details. Keep it clear and we can respond faster.</p>
 
           <form id="bookingForm">
             <div class="form-row">
@@ -1553,23 +1888,24 @@
             <div class="form-row">
               <div class="form-group">
                 <label>Pickup Location</label>
-                <input type="text" id="bkPickup" required placeholder="Delhi, Airport, Hotel...">
+                <input type="text" id="bkPickup" required placeholder="Airport, hotel, station, city...">
               </div>
               <div class="form-group">
                 <label>Drop Location</label>
-                <input type="text" id="bkDrop" required placeholder="Rishikesh, Haridwar...">
+                <input type="text" id="bkDrop" required placeholder="Rishikesh, Haridwar, Mussoorie...">
               </div>
             </div>
 
             <div class="form-row">
               <div class="form-group">
-                <label>Ride Type</label>
+                <label>Trip Type</label>
                 <select id="bkRideType" required>
-                  <option value="">Select ride type</option>
+                  <option value="">Select trip type</option>
                   <option>Airport Transfer</option>
+                  <option>One-Way Trip</option>
+                  <option>Round Trip</option>
                   <option>Local Sightseeing</option>
                   <option>Outstation Trip</option>
-                  <option>Delhi ↔ Rishikesh</option>
                   <option>Char Dham</option>
                   <option>Custom Tour</option>
                 </select>
@@ -1577,10 +1913,16 @@
               <div class="form-group">
                 <label>Passengers</label>
                 <select id="bkPassengers" required>
-                  <option value="1">1</option><option value="2">2</option><option value="3">3</option>
-                  <option value="4">4</option><option value="5">5</option><option value="6">6</option>
-                  <option value="7">7</option><option value="8">8</option><option value="9">9</option>
-                  <option value="10">10</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10+</option>
                 </select>
               </div>
             </div>
@@ -1591,86 +1933,61 @@
                 <input type="datetime-local" id="bkDateTime" required>
               </div>
               <div class="form-group">
-                <label>Extra Note (optional)</label>
-                <input type="text" id="bkNote" placeholder="Luggage / hotel / return trip...">
+                <label>Preferred Vehicle (optional)</label>
+                <select id="bkVehicle">
+                  <option value="">No preference</option>
+                  <option>Sedan</option>
+                  <option>SUV</option>
+                  <option>Innova / Crysta</option>
+                  <option>Tempo Traveller</option>
+                </select>
               </div>
             </div>
 
-            <button type="submit" class="btn btn-primary btn-full" id="bookingSubmitBtn">
+            <div class="form-group">
+              <label>Extra Note</label>
+              <textarea id="bkNote" placeholder="Flight number, return plan, luggage, hotel name, itinerary, anything useful..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block" id="bookingSubmitBtn">
               Submit Booking <i class="fas fa-paper-plane"></i>
             </button>
 
-            <div style="margin-top:10px; color:#666; font-size:0.92rem;">
-              After submit, booking is saved. You can also send instant WhatsApp message.
-            </div>
-
-            <button type="button" class="btn btn-secondary btn-full" style="margin-top:10px; color: var(--primary); border-color: var(--primary);" onclick="sendBookingToWhatsApp()">
+            <button type="button" class="btn btn-dark btn-block" style="margin-top:12px;" onclick="sendBookingToWhatsApp()">
               Send Booking on WhatsApp <i class="fab fa-whatsapp"></i>
             </button>
           </form>
         </div>
 
-        <div class="helper-box">
-          <h3>Fast Booking Tips</h3>
-          <ul>
-            <li>Write exact pickup & drop (Airport terminal / hotel name).</li>
-            <li>For outstation: mention return date (if round trip).</li>
-            <li>For big groups: write vehicle preference (Innova / Tempo Traveller).</li>
-          </ul>
+        <div class="booking-help">
+          <h3>Booking help</h3>
+          <p>These small details save time and back-and-forth messages.</p>
 
-          <div style="margin-top:18px; padding:14px; border-radius:14px; background:#f3f6fb; border:1px solid #e4ebf7;">
-            <div style="font-weight:800; color:#223;">Need immediate confirmation?</div>
-            <div style="margin-top:6px; color:#555;">
-              Tap WhatsApp and send your booking in 1 click.
+          <div class="help-stack">
+            <div class="help-card">
+              <h4><i class="fas fa-lightbulb"></i> Best way to get fast confirmation</h4>
+              <p>Share exact pickup, drop, date, time, passengers and trip type. That’s the magic formula.</p>
             </div>
-            <a href="#" onclick="instantWhatsAppBooking(event)" class="btn btn-primary" style="margin-top:12px; width:100%; justify-content:center;">
-              WhatsApp Booking <i class="fab fa-whatsapp"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- SERVICE AREA MAP -->
-  <section id="service-area" class="section section-alt">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-badge">Coverage</div>
-        <h2>Service Area Map</h2>
-        <p>We serve major routes and pickup points. Call/WhatsApp for custom route.</p>
-      </div>
+            <div class="help-card">
+              <h4><i class="fas fa-suitcase-rolling"></i> For airport and station pickup</h4>
+              <p>Add terminal, train number, hotel name or landmark so driver coordination is smoother.</p>
+            </div>
 
-      <div class="map-grid">
-        <div class="map-container">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110206.87138544779!2d78.2301768!3d30.0871682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3908d4b6b8b8b8b8%3A0x123456789!2sLaxman%20Jhula%2C%20Rishikesh!5e0!3m2!1sen!2sin!4v1234567890"
-            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
-          </iframe>
-        </div>
+            <div class="help-card">
+              <h4><i class="fas fa-users"></i> For family or group travel</h4>
+              <ul>
+                <li>Mention preferred vehicle like Innova or Tempo Traveller</li>
+                <li>Add luggage details if you have more bags</li>
+                <li>For return trips, mention return day and rough time</li>
+              </ul>
+            </div>
 
-        <div class="area-list">
-          <h3 style="color: var(--primary); margin-bottom: 10px;">We Cover</h3>
-          <div style="color:#555; margin-bottom:10px;">Common pickup/drop cities:</div>
-
-          <div>
-            <span class="chip"><i class="fas fa-map-marker-alt"></i> Delhi</span>
-            <span class="chip"><i class="fas fa-map-marker-alt"></i> Gurugram</span>
-            <span class="chip"><i class="fas fa-map-marker-alt"></i> Noida</span>
-            <span class="chip"><i class="fas fa-map-marker-alt"></i> Ghaziabad</span>
-            <span class="chip"><i class="fas fa-map-marker-alt"></i> Dehradun</span>
-            <span class="chip"><i class="fas fa-map-marker-alt"></i> Haridwar</span>
-            <span class="chip"><i class="fas fa-map-marker-alt"></i> Rishikesh</span>
-            <span class="chip"><i class="fas fa-map-marker-alt"></i> Agra</span>
-            <span class="chip"><i class="fas fa-map-marker-alt"></i> Jaipur</span>
-            <span class="chip"><i class="fas fa-map-marker-alt"></i> Mussoorie</span>
-          </div>
-
-          <div style="margin-top:16px; padding-top:14px; border-top:1px solid #eee; color:#555;">
-            <strong>Custom route?</strong> Send pickup + drop on WhatsApp, we’ll confirm quickly.
-            <div style="margin-top:12px;">
-              <a href="#" onclick="instantWhatsAppBooking(event)" class="btn btn-primary" style="width:100%; justify-content:center;">
-                WhatsApp Now <i class="fab fa-whatsapp"></i>
+            <div class="help-card">
+              <h4><i class="fas fa-bolt"></i> Need urgent booking?</h4>
+              <p>Use WhatsApp. It’s faster than waiting around staring at the screen like it owes you money.</p>
+              <a href="#" onclick="instantWhatsAppBooking(event)" class="btn btn-primary" style="margin-top:12px;width:100%;">
+                <i class="fab fa-whatsapp"></i> Instant WhatsApp Booking
               </a>
             </div>
           </div>
@@ -1679,173 +1996,150 @@
     </div>
   </section>
 
-  <!-- TRIP GALLERY -->
-  <section id="gallery" class="section">
+  <!-- GALLERY -->
+  <section class="section">
     <div class="container">
-      <div class="section-header">
-        <div class="section-badge">Memories</div>
-        <h2>Trip Gallery</h2>
-        <p>Real moments from our rides and tours.</p>
+      <div class="section-head">
+        <div class="eyebrow"><i class="fas fa-camera"></i> Customer Moments</div>
+        <h2>Real trip vibes, not stock-photo nonsense</h2>
+        <p>A smaller, cleaner gallery works better here than a giant media carnival.</p>
       </div>
 
-      <div class="gallery-grid">
+      <div class="mini-gallery">
         <div class="gallery-item">
-          <div class="media-container">
-            <img src="https://lh3.googleusercontent.com/d/1oYdqhZnmc_EDa_ksVJrizt2WXmz7KBAb" alt="Trip Photo 1" loading="lazy">
-          </div>
+          <img src="https://lh3.googleusercontent.com/d/1oYdqhZnmc_EDa_ksVJrizt2WXmz7KBAb" alt="Trip Photo 1" loading="lazy">
         </div>
         <div class="gallery-item">
-          <div class="media-container">
-            <img src="https://lh3.googleusercontent.com/d/1YDFpKN0yDqVtHjxisoesUl-DnjWNQcTy" alt="Trip Photo 2" loading="lazy">
-          </div>
+          <img src="https://lh3.googleusercontent.com/d/1YDFpKN0yDqVtHjxisoesUl-DnjWNQcTy" alt="Trip Photo 2" loading="lazy">
         </div>
         <div class="gallery-item">
-          <div class="media-container">
-            <img src="https://lh3.googleusercontent.com/d/1BMBBcnpxLHzrPUdNhuYQ3GaUWStUfffS" alt="Trip Photo 3" loading="lazy">
-          </div>
+          <img src="https://lh3.googleusercontent.com/d/1BMBBcnpxLHzrPUdNhuYQ3GaUWStUfffS" alt="Trip Photo 3" loading="lazy">
         </div>
         <div class="gallery-item">
-          <div class="media-container">
-            <img src="https://lh3.googleusercontent.com/d/1y3M_mD8xq_oSllXN-jhX0_fEoUHkTKDb" alt="Trip Photo 4" loading="lazy">
-          </div>
-        </div>
-
-        <div class="gallery-item">
-          <div class="media-container">
-            <div class="embed-container">
-              <iframe src="https://drive.google.com/file/d/1_VmAiNDhcfHzTc9QFKoHHYYblibwIwW5/preview" allow="autoplay" allowfullscreen></iframe>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-item">
-          <div class="media-container">
-            <div class="embed-container">
-              <iframe src="https://drive.google.com/file/d/16xJ0SV--p1C5zWiFJ2Y7XeE0zwVshXXg/preview" allow="autoplay" allowfullscreen></iframe>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section id="faq" class="section section-alt">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-badge">Questions</div>
-        <h2>FAQ</h2>
-        <p>Most common questions customers ask before booking.</p>
-      </div>
-
-      <div class="faq-wrap">
-        <div class="faq-item">
-          <div class="faq-q" onclick="toggleFaq(this)">
-            <span>Do you provide airport pickup & drop?</span>
-            <i class="fas fa-chevron-down chev"></i>
-          </div>
-          <div class="faq-a">Yes. We provide 24/7 airport pickup and drop from Delhi and Dehradun. Share flight timing on WhatsApp for best coordination.</div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-q" onclick="toggleFaq(this)">
-            <span>How do I confirm a booking?</span>
-            <i class="fas fa-chevron-down chev"></i>
-          </div>
-          <div class="faq-a">Submit the booking form or WhatsApp us. We confirm availability and share driver details before pickup.</div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-q" onclick="toggleFaq(this)">
-            <span>Do you do round trips for outstation?</span>
-            <i class="fas fa-chevron-down chev"></i>
-          </div>
-          <div class="faq-a">Yes. Round trips are available. Mention return date/time in the note field while booking.</div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-q" onclick="toggleFaq(this)">
-            <span>What payment methods do you accept?</span>
-            <i class="fas fa-chevron-down chev"></i>
-          </div>
-          <div class="faq-a">UPI, cash, and bank transfer. For corporate bookings, we can share invoice details.</div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-q" onclick="toggleFaq(this)">
-            <span>Can I get a custom itinerary?</span>
-            <i class="fas fa-chevron-down chev"></i>
-          </div>
-          <div class="faq-a">Absolutely. Share your trip days + places on WhatsApp, we’ll suggest a route and price.</div>
+          <img src="https://lh3.googleusercontent.com/d/1y3M_mD8xq_oSllXN-jhX0_fEoUHkTKDb" alt="Trip Photo 4" loading="lazy">
         </div>
       </div>
     </div>
   </section>
 
   <!-- TESTIMONIALS -->
-  <section id="testimonials" class="section">
+  <section class="section section-soft" id="reviews">
     <div class="container">
-      <div class="section-header">
-        <div class="section-badge">Reviews</div>
-        <h2>Customer Feedback</h2>
+      <div class="section-head">
+        <div class="eyebrow"><i class="fas fa-comments"></i> Customer Reviews</div>
+        <h2>What customers say</h2>
         <p>Only approved feedback is shown publicly.</p>
       </div>
 
       <div class="testimonials-grid" id="testimonialsGrid"></div>
 
-      <div style="text-align:center; margin-top:18px;">
-        <a href="#" class="btn btn-secondary" style="color: var(--primary); border-color: var(--primary);" onclick="openPopup('feedbackPopup')">
-          Leave Feedback <i class="fas fa-comment-dots"></i>
+      <div style="text-align:center;margin-top:18px;">
+        <a href="#" class="btn btn-light" onclick="openPopup('feedbackPopup')">
+          <i class="fas fa-comment-dots"></i> Leave Feedback
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow"><i class="fas fa-circle-question"></i> FAQ</div>
+        <h2>Common questions before booking</h2>
+        <p>These are the things people usually ask before they commit.</p>
+      </div>
+
+      <div class="faq-wrap">
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>Do you provide airport pickup and drop?</span>
+            <i class="fas fa-chevron-down chev"></i>
+          </button>
+          <div class="faq-a">Yes. We provide airport pickup and drop for Delhi and Dehradun, along with station and hotel pickup support.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>How do I confirm a booking?</span>
+            <i class="fas fa-chevron-down chev"></i>
+          </button>
+          <div class="faq-a">Submit the booking form or WhatsApp us. We confirm availability, discuss details, and share driver information before the trip.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>Do you provide round trips and sightseeing?</span>
+            <i class="fas fa-chevron-down chev"></i>
+          </button>
+          <div class="faq-a">Yes. Round trips, day tours, local sightseeing and custom itinerary plans are available based on route and timing.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>What payment methods do you accept?</span>
+            <i class="fas fa-chevron-down chev"></i>
+          </button>
+          <div class="faq-a">UPI, cash and bank transfer. For bigger or planned trips, details can be discussed during confirmation.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>Can I request a custom route or custom tour package?</span>
+            <i class="fas fa-chevron-down chev"></i>
+          </button>
+          <div class="faq-a">Absolutely. Share your travel days, route, stops and passenger count. We’ll suggest the best vehicle and travel plan.</div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- CTA -->
   <section class="cta">
-    <div class="container">
-      <div class="cta-content">
-        <h2>Need a Cab Now?</h2>
-        <p>Use WhatsApp for fastest response. Online booking is also available.</p>
-        <div class="cta-buttons">
-          <a href="#booking" class="btn btn-light"><i class="fas fa-taxi"></i> Book Online</a>
-          <a href="#" onclick="instantWhatsAppBooking(event)" class="btn btn-secondary">
-            <i class="fab fa-whatsapp"></i> WhatsApp Booking
-          </a>
-        </div>
+    <div class="container cta-inner">
+      <h2>Need a cab right now?</h2>
+      <p>For fastest response, send your trip on WhatsApp. For planned trips, use the booking form and we’ll confirm quickly.</p>
+      <div class="cta-actions">
+        <a href="#" onclick="instantWhatsAppBooking(event)" class="btn btn-primary">
+          <i class="fab fa-whatsapp"></i> WhatsApp Booking
+        </a>
+        <a href="#booking" class="btn btn-light">
+          <i class="fas fa-calendar-check"></i> Book Online
+        </a>
       </div>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="section">
+  <section class="section" id="contact">
     <div class="container">
-      <div class="section-header">
-        <div class="section-badge">Get In Touch</div>
-        <h2>Contact Us</h2>
-        <p>We’re here to help plan your perfect journey.</p>
+      <div class="section-head">
+        <div class="eyebrow"><i class="fas fa-address-book"></i> Contact</div>
+        <h2>Talk to us directly</h2>
+        <p>Keep contact options obvious. Hidden contact info is a conversion killer.</p>
       </div>
 
       <div class="contact-grid">
         <div class="contact-card">
           <div class="contact-icon"><i class="fas fa-phone-volume"></i></div>
-          <h3>Call or WhatsApp</h3>
-          <p><strong>+91 70179 00021</strong></p>
-          <p>Available 24/7</p>
+          <h3>Call Us</h3>
+          <strong>+91 70179 00021</strong>
+          <p>Available for booking support and trip discussion.</p>
         </div>
+
+        <div class="contact-card">
+          <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+          <h3>WhatsApp</h3>
+          <strong>Instant Response</strong>
+          <p>Send pickup, drop, date and passengers for quick confirmation.</p>
+        </div>
+
         <div class="contact-card">
           <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-          <h3>Email Us</h3>
-          <p><strong>Kunalgujjar7584@gmail.com</strong></p>
-          <p>Quick response guaranteed</p>
+          <h3>Email</h3>
+          <strong>Kunalgujjar7584@gmail.com</strong>
+          <p>For detailed travel plans and scheduled bookings.</p>
         </div>
-      </div>
-
-      <div class="map-container" style="margin-top:34px;">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110206.87138544779!2d78.2301768!3d30.0871682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3908d4b6b8b8b8b8%3A0x123456789!2sLaxman%20Jhula%2C%20Rishikesh!5e0!3m2!1sen!2sin!4v1234567890"
-          width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy">
-        </iframe>
       </div>
     </div>
   </section>
@@ -1853,24 +2147,27 @@
   <!-- FEEDBACK POPUP -->
   <div class="popup" id="feedbackPopup">
     <div class="popup-card">
-      <span class="close-popup" onclick="closePopup('feedbackPopup')">×</span>
-      <h3>Share Your Feedback</h3>
+      <button class="close-popup" onclick="closePopup('feedbackPopup')"><i class="fas fa-xmark"></i></button>
+      <h3>Share your feedback</h3>
+      <p>Your review appears publicly only after approval.</p>
+
       <form id="feedbackForm">
-        <div class="form-row">
+        <div class="feedback-grid">
           <div class="form-group">
             <label>Name</label>
-            <input type="text" id="feedbackName" required />
+            <input type="text" id="feedbackName" required>
           </div>
           <div class="form-group">
             <label>Phone</label>
-            <input type="tel" id="feedbackPhone" required />
+            <input type="tel" id="feedbackPhone" required>
           </div>
         </div>
-        <div class="form-row">
+
+        <div class="feedback-grid">
           <div class="form-group">
             <label>Rating</label>
             <select id="feedbackRating" required>
-              <option value="">Select Rating</option>
+              <option value="">Select rating</option>
               <option value="5">5 Stars</option>
               <option value="4">4 Stars</option>
               <option value="3">3 Stars</option>
@@ -1879,29 +2176,82 @@
             </select>
           </div>
           <div class="form-group">
-            <label>Message</label>
-            <input type="text" id="feedbackShort" placeholder="Short title (optional)">
+            <label>Short title (optional)</label>
+            <input type="text" id="feedbackShort" placeholder="Quick summary">
           </div>
         </div>
+
         <div class="form-group">
           <label>Feedback</label>
-          <textarea id="feedbackMessage" required placeholder="Share your experience..."></textarea>
+          <textarea id="feedbackMessage" required placeholder="Tell us about your experience..."></textarea>
         </div>
-        <button type="submit" class="btn btn-primary btn-full" id="feedbackSubmitBtn">
+
+        <button type="submit" class="btn btn-primary btn-block" id="feedbackSubmitBtn">
           Submit Feedback <i class="fas fa-paper-plane"></i>
         </button>
-        <div style="margin-top:10px; color:#666; font-size:0.92rem;">
-          Note: Feedback appears publicly only after approval.
-        </div>
       </form>
+    </div>
+  </div>
+
+  <!-- TRIP TYPE POPUP -->
+  <div class="popup" id="tripTypePopup">
+    <div class="popup-card">
+      <button class="close-popup" onclick="closePopup('tripTypePopup')"><i class="fas fa-xmark"></i></button>
+      <h3>Select your trip type</h3>
+      <p>This is the “pop type” section you asked for. Cleaner than shoving everything into one confusing homepage block.</p>
+
+      <div class="pop-types-grid">
+        <div class="pop-type" onclick="selectTripType('Airport Transfer')">
+          <div class="type-icon"><i class="fas fa-plane-arrival"></i></div>
+          <h4>Airport Transfer</h4>
+          <p>Airport pickup and drop with timing coordination.</p>
+          <span>Select this type</span>
+        </div>
+
+        <div class="pop-type" onclick="selectTripType('One-Way Trip')">
+          <div class="type-icon"><i class="fas fa-road"></i></div>
+          <h4>One-Way Trip</h4>
+          <p>Direct cab booking from one city or point to another.</p>
+          <span>Select this type</span>
+        </div>
+
+        <div class="pop-type" onclick="selectTripType('Round Trip')">
+          <div class="type-icon"><i class="fas fa-arrows-rotate"></i></div>
+          <h4>Round Trip</h4>
+          <p>Book return travel and keep the journey simple.</p>
+          <span>Select this type</span>
+        </div>
+
+        <div class="pop-type" onclick="selectTripType('Local Sightseeing')">
+          <div class="type-icon"><i class="fas fa-camera-retro"></i></div>
+          <h4>Local Sightseeing</h4>
+          <p>Day trips and local route planning for attractions.</p>
+          <span>Select this type</span>
+        </div>
+
+        <div class="pop-type" onclick="selectTripType('Outstation Trip')">
+          <div class="type-icon"><i class="fas fa-map-location-dot"></i></div>
+          <h4>Outstation Trip</h4>
+          <p>Long-distance travel with the right vehicle option.</p>
+          <span>Select this type</span>
+        </div>
+
+        <div class="pop-type" onclick="selectTripType('Custom Tour')">
+          <div class="type-icon"><i class="fas fa-mountain-sun"></i></div>
+          <h4>Custom Tour</h4>
+          <p>Personalized travel itinerary and route planning.</p>
+          <span>Select this type</span>
+        </div>
+      </div>
     </div>
   </div>
 
   <!-- ADMIN POPUP -->
   <div class="popup" id="adminPopup">
     <div class="popup-card">
-      <span class="close-popup" onclick="closePopup('adminPopup')">×</span>
+      <button class="close-popup" onclick="closePopup('adminPopup')"><i class="fas fa-xmark"></i></button>
       <h3>Admin Dashboard</h3>
+      <p>This is kept away from public floating clutter now. Much better.</p>
 
       <div id="adminLoggedOut">
         <div class="form-row">
@@ -1914,12 +2264,9 @@
             <input type="password" id="adminPassword" placeholder="••••••••">
           </div>
         </div>
-        <button class="btn btn-primary btn-full" onclick="adminLogin()" id="adminLoginBtn">
+        <button class="btn btn-primary btn-block" onclick="adminLogin()" id="adminLoginBtn">
           Login <i class="fas fa-right-to-bracket"></i>
         </button>
-        <div style="margin-top:10px;color:#666;font-size:0.92rem;">
-          Admin must be created in Supabase Auth → Users.
-        </div>
       </div>
 
       <div id="adminLoggedIn" style="display:none;">
@@ -1934,13 +2281,8 @@
           </button>
         </div>
 
-        <!-- Feedback Tab -->
         <div class="admin-panel active" id="tabFeedback">
-          <div style="display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:10px;">
-            <div style="font-weight:800; color:#223;">Pending feedback approvals</div>
-            <button class="mini-btn" onclick="loadAdminFeedback()">Refresh</button>
-          </div>
-          <div style="overflow:auto;">
+          <div class="table-wrap">
             <table class="admin-table">
               <thead>
                 <tr>
@@ -1956,13 +2298,8 @@
           </div>
         </div>
 
-        <!-- Bookings Tab -->
         <div class="admin-panel" id="tabBookings">
-          <div style="display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:10px;">
-            <div style="font-weight:800; color:#223;">Latest bookings (private)</div>
-            <button class="mini-btn" onclick="loadAdminBookings()">Refresh</button>
-          </div>
-          <div style="overflow:auto;">
+          <div class="table-wrap">
             <table class="admin-table">
               <thead>
                 <tr>
@@ -1978,10 +2315,7 @@
           </div>
         </div>
 
-        <!-- Availability Tab -->
         <div class="admin-panel" id="tabAvailability">
-          <div style="font-weight:800; color:#223; margin-bottom:8px;">Live availability shown on website</div>
-
           <div class="form-row">
             <div class="form-group">
               <label>Status</label>
@@ -1998,111 +2332,97 @@
             </div>
           </div>
 
-          <button class="btn btn-primary btn-full" onclick="saveAvailability()" id="admAvailSaveBtn">
+          <button class="btn btn-primary btn-block" onclick="saveAvailability()" id="admAvailSaveBtn">
             Save Availability <i class="fas fa-floppy-disk"></i>
           </button>
-
-          <div style="margin-top:10px;color:#666;font-size:0.92rem;">
-            Example messages: “Cars Available Now”, “Limited cars – book early”, “Busy – next slot 2 PM”.
-          </div>
         </div>
       </div>
     </div>
   </div>
 
+  <!-- FLOATING CTA -->
+  <div class="floating-cta">
+    <a href="#" onclick="instantWhatsAppBooking(event)" class="fab-btn fab-wa" aria-label="WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="#booking" class="fab-btn fab-book" aria-label="Book Now">
+      <i class="fas fa-taxi"></i>
+    </a>
+  </div>
+
+  <!-- MOBILE BOTTOM BAR -->
+  <div class="mobile-bottom-bar">
+    <a href="tel:+917017900021" class="mobile-call">
+      <i class="fas fa-phone"></i> Call
+    </a>
+    <button class="mobile-wa" onclick="instantWhatsAppBooking(event)">
+      <i class="fab fa-whatsapp"></i> WhatsApp
+    </button>
+  </div>
+
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3>Krishna Tour & Travel</h3>
-          <p>Your trusted travel partner in Rishikesh, Haridwar, Agra, and Jaipur. Safe, comfortable, and memorable experiences.</p>
-          <div class="social-links" style="margin-top: 16px;">
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="https://wa.me/917017900021" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-          </div>
+      <div class="footer-grid">
+        <div>
+          <h3>Krishna Tour & Travels</h3>
+          <p>
+            Reliable cab booking and local tour support for Rishikesh, Haridwar, Dehradun and outstation travel. Clean design, clear booking flow, and much less template chaos.
+          </p>
         </div>
 
-        <div class="footer-section">
+        <div>
           <h3>Quick Links</h3>
           <ul class="footer-links">
-            <li><a href="#booking"><i class="fas fa-chevron-right"></i> Booking</a></li>
-            <li><a href="#service-area"><i class="fas fa-chevron-right"></i> Service Area</a></li>
-            <li><a href="#gallery"><i class="fas fa-chevron-right"></i> Trip Gallery</a></li>
-            <li><a href="#faq"><i class="fas fa-chevron-right"></i> FAQ</a></li>
-            <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+            <li><a href="#trip-types">Trip Types</a></li>
+            <li><a href="#popular-routes">Popular Routes</a></li>
+            <li><a href="#vehicles">Vehicles</a></li>
+            <li><a href="#booking">Book Now</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
 
-        <div class="footer-section">
+        <div>
           <h3>Contact Info</h3>
           <ul class="footer-links">
-            <li><i class="fas fa-phone"></i> +91 70179 00021</li>
-            <li><i class="fas fa-envelope"></i> Kunalgujjar7584@gmail.com</li>
-            <li><i class="fas fa-map-marker-alt"></i> Near Laxman Jhula, Rishikesh</li>
-            <li><i class="fas fa-clock"></i> 24/7 Available</li>
+            <li><a href="tel:+917017900021">+91 70179 00021</a></li>
+            <li><a href="mailto:Kunalgujjar7584@gmail.com">Kunalgujjar7584@gmail.com</a></li>
+            <li><a href="#" onclick="openPopup('adminPopup'); return false;">Admin Login</a></li>
+            <li>Available 24/7 for bookings</li>
           </ul>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p>© 2025 Krishna Tour & Travel. All Rights Reserved. | Designed with <i class="fas fa-heart" style="color: #ff6b35;"></i></p>
+        © 2025 Krishna Tour & Travels. All rights reserved.
       </div>
     </div>
   </footer>
 
-  <!-- Supabase JS -->
+  <!-- Supabase -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
   <script>
     // =========================================================
-    // CONFIG: PUT YOUR SUPABASE VALUES
+    // CONFIG
     // =========================================================
     const SUPABASE_URL = "https://mjyvbozmyombhchsapae.supabase.co";
     const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1qeXZib3pteW9tYmhjaHNhcGFlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI3MDk3OTcsImV4cCI6MjA4ODI4NTc5N30.C0Z1_IIktkRl54ZO1muY7ycnavZ3z62NLSEK1vg62a4";
 
     const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-
-    const WHATSAPP_NUMBER = "917017900021"; // without + sign
+    const WHATSAPP_NUMBER = "917017900021";
 
     // =========================================================
-    // UI HELPERS
+    // BASIC UI
     // =========================================================
-    function scrollToSection(sel) {
-      const el = document.querySelector(sel);
-      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-
-    function openPopup(id) {
-      document.getElementById(id).style.display = 'flex';
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closePopup(id) {
-      document.getElementById(id).style.display = 'none';
-      document.body.style.overflow = 'auto';
-    }
-
-    window.addEventListener('click', (e) => {
-      const popups = ['feedbackPopup', 'adminPopup'];
-      popups.forEach(pid => {
-        const el = document.getElementById(pid);
-        if (el && e.target === el) closePopup(pid);
-      });
-    });
-
-    // Navbar scroll effect
     const navbar = document.querySelector('.navbar');
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) navbar.classList.add('scrolled');
+      if (window.scrollY > 30) navbar.classList.add('scrolled');
       else navbar.classList.remove('scrolled');
     });
-
-    // Mobile menu
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav-menu');
 
     hamburger.addEventListener('click', () => {
       hamburger.classList.toggle('active');
@@ -2116,7 +2436,27 @@
       });
     });
 
-    // FAQ toggle
+    function openPopup(id) {
+      const popup = document.getElementById(id);
+      if (!popup) return;
+      popup.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closePopup(id) {
+      const popup = document.getElementById(id);
+      if (!popup) return;
+      popup.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    window.addEventListener('click', (e) => {
+      ['feedbackPopup','tripTypePopup','adminPopup'].forEach(id => {
+        const popup = document.getElementById(id);
+        if (popup && e.target === popup) closePopup(id);
+      });
+    });
+
     function toggleFaq(el) {
       const item = el.closest('.faq-item');
       item.classList.toggle('open');
@@ -2131,16 +2471,46 @@
     }
 
     function instantWhatsAppBooking(e) {
-      e.preventDefault();
+      if (e) e.preventDefault();
       const text =
 `Hello! I want to book a cab.
+
+Trip Type:
 Pickup:
 Drop:
 Date & Time:
 Passengers:
-Ride Type:
+Vehicle Preference:
 Notes:`;
       openWhatsApp(text);
+    }
+
+    function routeWhatsApp(pickup, drop, e) {
+      e.preventDefault();
+      const text =
+`Hello! I want to book this route.
+
+Trip Type:
+Pickup: ${pickup}
+Drop: ${drop}
+Date & Time:
+Passengers:
+Vehicle Preference:
+Notes:`;
+      openWhatsApp(text);
+    }
+
+    function openTripTypePopup(e) {
+      e.preventDefault();
+      openPopup('tripTypePopup');
+    }
+
+    function selectTripType(type, e) {
+      if (e) e.preventDefault();
+      const rideType = document.getElementById('bkRideType');
+      if (rideType) rideType.value = type;
+      closePopup('tripTypePopup');
+      document.getElementById('booking').scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
     function sendBookingToWhatsApp() {
@@ -2149,15 +2519,17 @@ Notes:`;
 
       const text =
 `Hello! I want to book a cab.
+
 Name: ${payload.name}
 Phone: ${payload.phone}
 Pickup: ${payload.pickup}
 Drop: ${payload.dropoff}
-Ride Type: ${payload.ride_type}
+Trip Type: ${payload.ride_type}
 Passengers: ${payload.passengers}
 Travel Date/Time: ${new Date(payload.travel_datetime).toLocaleString()}
-Note: ${payload.note || '-'}
-`;
+Vehicle Preference: ${payload.vehicle || '-'}
+Note: ${payload.note || '-'}`;
+
       openWhatsApp(text);
     }
 
@@ -2170,10 +2542,10 @@ Note: ${payload.note || '-'}
       const hdot = document.getElementById('heroAvailabilityDot');
       const htext = document.getElementById('heroAvailabilityText');
 
-      dot.className = `dot ${status}`;
-      hdot.className = `dot ${status}`;
-      text.textContent = message;
-      htext.textContent = message;
+      if (dot) dot.className = `dot ${status}`;
+      if (hdot) hdot.className = `dot ${status}`;
+      if (text) text.textContent = message;
+      if (htext) htext.textContent = message;
     }
 
     async function loadAvailability() {
@@ -2212,6 +2584,34 @@ Note: ${payload.note || '-'}
       return html;
     }
 
+    function renderTestimonials(items) {
+      const grid = document.getElementById('testimonialsGrid');
+      grid.innerHTML = "";
+
+      if (!items.length) {
+        grid.innerHTML = `
+          <div class="testimonial-card">
+            <div class="testimonial-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p>Be the first to leave a review. Someone has to be the brave one.</p>
+            <div class="testimonial-author">Krishna Tour & Travels</div>
+          </div>`;
+        return;
+      }
+
+      items.forEach(f => {
+        const card = document.createElement('div');
+        card.className = 'testimonial-card';
+        card.innerHTML = `
+          <div class="testimonial-stars">${starsHTML(Number(f.rating) || 0)}</div>
+          <p>"${escapeHTML(f.message)}"</p>
+          <div class="testimonial-author">${escapeHTML(f.name)}</div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
     async function loadApprovedFeedback() {
       try {
         const { data, error } = await sb
@@ -2227,34 +2627,6 @@ Note: ${payload.note || '-'}
         console.error('Load feedback failed:', err);
         renderTestimonials([]);
       }
-    }
-
-    function renderTestimonials(items) {
-      const grid = document.getElementById('testimonialsGrid');
-      grid.innerHTML = "";
-
-      if (!items.length) {
-        grid.innerHTML = `
-          <div class="testimonial-card">
-            <p>"Be the first to leave a review!"</p>
-            <div class="testimonial-author">Krishna Tour & Travels</div>
-            <div class="testimonial-rating">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-            </div>
-          </div>`;
-        return;
-      }
-
-      items.forEach(f => {
-        const card = document.createElement('div');
-        card.className = 'testimonial-card';
-        card.innerHTML = `
-          <p>"${escapeHTML(f.message)}"</p>
-          <div class="testimonial-author">${escapeHTML(f.name)}</div>
-          <div class="testimonial-rating">${starsHTML(Number(f.rating) || 0)}</div>
-        `;
-        grid.appendChild(card);
-      });
     }
 
     document.getElementById('feedbackForm').addEventListener('submit', async (e) => {
@@ -2310,6 +2682,7 @@ Note: ${payload.note || '-'}
       const ride_type = document.getElementById('bkRideType').value;
       const passengers = parseInt(document.getElementById('bkPassengers').value, 10);
       const dtLocal = document.getElementById('bkDateTime').value;
+      const vehicle = document.getElementById('bkVehicle').value;
       const note = document.getElementById('bkNote').value.trim();
 
       if (!name || !phone || !pickup || !dropoff || !ride_type || !dtLocal) {
@@ -2318,8 +2691,7 @@ Note: ${payload.note || '-'}
       }
 
       const travel_datetime = new Date(dtLocal).toISOString();
-
-      return { name, phone, pickup, dropoff, ride_type, passengers, travel_datetime, note };
+      return { name, phone, pickup, dropoff, ride_type, passengers, travel_datetime, vehicle, note };
     }
 
     document.getElementById('bookingForm').addEventListener('submit', async (e) => {
@@ -2331,7 +2703,18 @@ Note: ${payload.note || '-'}
       btn.disabled = true;
 
       try {
-        const { error } = await sb.from('bookings').insert([payload]);
+        const insertPayload = {
+          name: payload.name,
+          phone: payload.phone,
+          pickup: payload.pickup,
+          dropoff: payload.dropoff,
+          ride_type: payload.ride_type,
+          passengers: payload.passengers,
+          travel_datetime: payload.travel_datetime,
+          note: payload.note ? `${payload.note}${payload.vehicle ? ` | Vehicle: ${payload.vehicle}` : ''}` : (payload.vehicle ? `Vehicle: ${payload.vehicle}` : '')
+        };
+
+        const { error } = await sb.from('bookings').insert([insertPayload]);
         if (error) throw error;
 
         alert('Booking submitted! We will confirm soon. You can also send it on WhatsApp.');
@@ -2345,7 +2728,7 @@ Note: ${payload.note || '-'}
     });
 
     // =========================================================
-    // ADMIN DASHBOARD
+    // ADMIN
     // =========================================================
     function switchTab(id, btn) {
       document.querySelectorAll('.admin-panel').forEach(p => p.classList.remove('active'));
@@ -2420,15 +2803,15 @@ Note: ${payload.note || '-'}
           tr.innerHTML = `
             <td>
               <div style="font-weight:800;">${escapeHTML(row.name)}</div>
-              <div style="color:#666;font-size:0.85rem;">${escapeHTML(row.phone || '')}</div>
+              <div style="color:#667085;font-size:.85rem;">${escapeHTML(row.phone || '')}</div>
             </td>
             <td>${starsHTML(row.rating)}</td>
-            <td style="max-width:360px;">${escapeHTML(row.message)}</td>
+            <td style="max-width:380px;">${escapeHTML(row.message)}</td>
             <td>${statusBadge(row.status)}</td>
             <td>
               <div class="admin-actions">
-                <button class="mini-btn approve" onclick="updateFeedbackStatus('${row.id}','approved')">Approve</button>
-                <button class="mini-btn reject" onclick="updateFeedbackStatus('${row.id}','rejected')">Reject</button>
+                <button class="mini-btn" onclick="updateFeedbackStatus('${row.id}','approved')">Approve</button>
+                <button class="mini-btn" onclick="updateFeedbackStatus('${row.id}','rejected')">Reject</button>
               </div>
             </td>
           `;
@@ -2436,17 +2819,13 @@ Note: ${payload.note || '-'}
         });
       } catch (err) {
         console.error(err);
-        alert('Failed to load admin feedback. Are you logged in?');
+        alert('Failed to load admin feedback.');
       }
     }
 
     async function updateFeedbackStatus(id, status) {
       try {
-        const { error } = await sb
-          .from('feedback')
-          .update({ status })
-          .eq('id', id);
-
+        const { error } = await sb.from('feedback').update({ status }).eq('id', id);
         if (error) throw error;
 
         await loadAdminFeedback();
@@ -2458,9 +2837,12 @@ Note: ${payload.note || '-'}
     }
 
     function bookingBadge(status) {
-      const cls = status === 'confirmed' ? 'b-approved' :
-                  status === 'completed' ? 'b-approved' :
-                  status === 'cancelled' ? 'b-rejected' : 'b-pending';
+      const cls = status === 'confirmed' || status === 'completed'
+        ? 'b-approved'
+        : status === 'cancelled'
+        ? 'b-rejected'
+        : 'b-pending';
+
       return `<span class="badge ${cls}">${status}</span>`;
     }
 
@@ -2478,23 +2860,25 @@ Note: ${payload.note || '-'}
         body.innerHTML = "";
 
         data.forEach(row => {
-          const trip = `${escapeHTML(row.pickup)} → ${escapeHTML(row.dropoff)}<br><span style="color:#666;font-size:0.85rem;">${escapeHTML(row.ride_type)} | Pax: ${row.passengers}</span>`;
-          const dt = new Date(row.travel_datetime).toLocaleString();
-
           const tr = document.createElement('tr');
           tr.innerHTML = `
             <td>
               <div style="font-weight:800;">${escapeHTML(row.name)}</div>
-              <div style="color:#666;font-size:0.85rem;">${escapeHTML(row.phone)}</div>
+              <div style="color:#667085;font-size:.85rem;">${escapeHTML(row.phone)}</div>
             </td>
-            <td>${trip}</td>
-            <td>${dt}</td>
+            <td>
+              ${escapeHTML(row.pickup)} → ${escapeHTML(row.dropoff)}
+              <div style="color:#667085;font-size:.85rem;margin-top:4px;">
+                ${escapeHTML(row.ride_type || '')} | Pax: ${row.passengers}
+              </div>
+            </td>
+            <td>${new Date(row.travel_datetime).toLocaleString()}</td>
             <td>${bookingBadge(row.status)}</td>
             <td>
               <div class="admin-actions">
-                <button class="mini-btn confirm" onclick="updateBookingStatus('${row.id}','confirmed')">Confirm</button>
+                <button class="mini-btn" onclick="updateBookingStatus('${row.id}','confirmed')">Confirm</button>
                 <button class="mini-btn" onclick="updateBookingStatus('${row.id}','completed')">Complete</button>
-                <button class="mini-btn reject" onclick="updateBookingStatus('${row.id}','cancelled')">Cancel</button>
+                <button class="mini-btn" onclick="updateBookingStatus('${row.id}','cancelled')">Cancel</button>
               </div>
             </td>
           `;
@@ -2556,7 +2940,7 @@ Note: ${payload.note || '-'}
         alert('Availability updated.');
       } catch (err) {
         console.error(err);
-        alert('Failed to save availability. Are you logged in?');
+        alert('Failed to save availability.');
       } finally {
         btn.disabled = false;
       }
