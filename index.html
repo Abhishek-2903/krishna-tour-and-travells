@@ -7,18 +7,18 @@
   <title>Affordable Cab Booking in Rishikesh, Dehradun & Haridwar | Delhi to Rishikesh Cab | Krishna Tour & Travels</title>
   <meta name="description" content="Book affordable cab services for Rishikesh, Dehradun, Haridwar and Delhi to Rishikesh routes. Airport pickup, local sightseeing, one-way trips, round trips and custom travel with Krishna Tour & Travels." />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://yourdomain.com/" />
+  <link rel="canonical" href="https://rishikeshcab.com/" />
 
   <meta property="og:title" content="Affordable Cab Booking in Rishikesh, Dehradun & Haridwar | Krishna Tour & Travels" />
   <meta property="og:description" content="Affordable cab booking for Delhi to Rishikesh, Dehradun airport transfers, local sightseeing, one-way and round-trip travel." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://yourdomain.com/" />
-  <meta property="og:image" content="https://yourdomain.com/logo.jpg" />
+  <meta property="og:url" content="https://rishikeshcab.com/" />
+  <meta property="og:image" content="https://rishikeshcab.com/logo.jpg" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Affordable Cab Booking in Rishikesh, Dehradun & Haridwar" />
   <meta name="twitter:description" content="Book affordable cabs for Rishikesh, Haridwar, Dehradun and Delhi to Rishikesh routes." />
-  <meta name="twitter:image" content="https://yourdomain.com/logo.jpg" />
+  <meta name="twitter:image" content="https://rishikeshcab.com/logo.jpg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -208,7 +208,6 @@
       transform:translateY(-2px);
     }
 
-    /* TOP STRIP */
     .top-strip{
       background:var(--primary);
       color:#fff;
@@ -254,7 +253,6 @@
       transform:translateY(-2px);
     }
 
-    /* NAVBAR */
     .navbar{
       position:sticky;
       top:0;
@@ -362,6 +360,28 @@
       text-overflow:ellipsis;
       white-space:nowrap;
     }
+    .review-pill{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:12px 16px;
+      border-radius:999px;
+      background:var(--accent-soft);
+      color:#c05608;
+      font-weight:800;
+      border:1px solid #ffd7bb;
+      transition:.25s ease;
+      box-shadow:0 8px 20px rgba(255,122,26,.12);
+      white-space:nowrap;
+    }
+    .review-pill:hover{
+      background:var(--accent);
+      color:#fff;
+      transform:translateY(-2px);
+      box-shadow:0 12px 24px rgba(255,122,26,.22);
+    }
+
     .dot{
       width:10px;height:10px;border-radius:50%;
       background:#6b7280;
@@ -394,7 +414,6 @@
     .hamburger.active span:nth-child(2){opacity:0}
     .hamburger.active span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
 
-    /* BUTTONS */
     .btn{
       display:inline-flex;
       align-items:center;
@@ -449,7 +468,6 @@
     .btn-block{width:100%}
     .btn:disabled{opacity:.7;cursor:not-allowed;transform:none}
 
-    /* HERO */
     .hero{
       position:relative;
       padding:62px 0 40px;
@@ -622,7 +640,6 @@
       z-index:1;
     }
 
-    /* TYPE CARDS */
     .type-grid{
       display:grid;
       grid-template-columns:repeat(3,1fr);
@@ -674,7 +691,6 @@
       color:#475467;
     }
 
-    /* ROUTES */
     .routes-grid{
       display:grid;
       grid-template-columns:repeat(3,1fr);
@@ -732,7 +748,6 @@
       flex-wrap:wrap;
     }
 
-    /* VEHICLES */
     .vehicles-grid{
       display:grid;
       grid-template-columns:repeat(4,1fr);
@@ -789,7 +804,6 @@
       margin-top:3px;
     }
 
-    /* WHY US */
     .why-grid{
       display:grid;
       grid-template-columns:repeat(4,1fr);
@@ -823,7 +837,6 @@
       font-size:.93rem;
     }
 
-    /* HOW IT WORKS */
     .steps{
       display:grid;
       grid-template-columns:repeat(4,1fr);
@@ -858,7 +871,6 @@
       font-size:.94rem;
     }
 
-    /* BOOKING */
     .booking-grid{
       display:grid;
       grid-template-columns:1.08fr .92fr;
@@ -950,7 +962,6 @@
       gap:6px;
     }
 
-    /* GALLERY */
     .mini-gallery{
       display:grid;
       grid-template-columns:repeat(4,1fr);
@@ -969,7 +980,53 @@
       object-fit:cover;
     }
 
-    /* TESTIMONIALS */
+    .feedback-highlight{
+      max-width:960px;
+      margin:0 auto 30px;
+      background:linear-gradient(135deg,#fff 0%, #fff7ef 100%);
+      border:1px solid #ffd8bc;
+      border-radius:26px;
+      box-shadow:var(--shadow-lg);
+      padding:26px;
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:22px;
+      align-items:center;
+    }
+    .feedback-highlight h3{
+      color:var(--primary);
+      font-size:1.45rem;
+      margin-bottom:8px;
+    }
+    .feedback-highlight p{
+      color:#556070;
+      font-size:.98rem;
+    }
+    .feedback-highlight-actions{
+      display:flex;
+      gap:12px;
+      justify-content:flex-end;
+      flex-wrap:wrap;
+    }
+    .feedback-badges{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:14px;
+    }
+    .feedback-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:9px 12px;
+      border-radius:999px;
+      background:#fff;
+      border:1px solid #ffe1cc;
+      color:#9a4e0e;
+      font-weight:700;
+      font-size:.9rem;
+    }
+
     .testimonials-grid{
       display:grid;
       grid-template-columns:repeat(3,1fr);
@@ -1008,7 +1065,6 @@
       color:var(--primary);
     }
 
-    /* FAQ */
     .faq-wrap{
       max-width:920px;
       margin:0 auto;
@@ -1047,7 +1103,6 @@
     .faq-item .chev{transition:.2s ease}
     .faq-item.open .chev{transform:rotate(180deg)}
 
-    /* CTA */
     .cta{
       background:linear-gradient(135deg,var(--primary) 0%,#1b446f 100%);
       color:#fff;
@@ -1085,7 +1140,6 @@
       flex-wrap:wrap;
     }
 
-    /* CONTACT */
     .contact-grid{
       display:grid;
       grid-template-columns:repeat(3,1fr);
@@ -1124,7 +1178,6 @@
       font-size:1rem;
     }
 
-    /* POPUP */
     .popup{
       display:none;
       position:fixed;
@@ -1171,7 +1224,6 @@
       margin-bottom:18px;
     }
 
-    /* POP TYPES */
     .pop-types-grid{
       display:grid;
       grid-template-columns:repeat(3,1fr);
@@ -1213,14 +1265,12 @@
       font-weight:800;
     }
 
-    /* FEEDBACK */
     .feedback-grid{
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:14px;
     }
 
-    /* ADMIN */
     .admin-top{
       display:flex;
       justify-content:space-between;
@@ -1305,7 +1355,6 @@
       border-color:#111827;
     }
 
-    /* FLOATING CTA */
     .floating-cta{
       position:fixed;
       right:18px;
@@ -1328,6 +1377,7 @@
     .fab-btn:hover{transform:translateY(-3px) scale(1.03)}
     .fab-wa{background:#25d366}
     .fab-book{background:var(--accent)}
+    .fab-review{background:#0f2742}
 
     .mobile-bottom-bar{
       display:none;
@@ -1355,8 +1405,8 @@
     }
     .mobile-call{background:#eef6ff;color:var(--primary)}
     .mobile-wa{background:#25d366;color:#fff}
+    .mobile-review{background:var(--primary);color:#fff}
 
-    /* FOOTER */
     .footer{
       background:#0b1724;
       color:#b6c3d1;
@@ -1393,14 +1443,14 @@
       color:#8ea0b5;
     }
 
-    /* RESPONSIVE */
     @media (max-width:1100px){
       .nav-inner{
-        grid-template-columns:auto auto auto;
+        grid-template-columns:auto 1fr auto;
       }
       .nav-menu{gap:18px}
       .hero-grid,
-      .booking-grid{
+      .booking-grid,
+      .feedback-highlight{
         grid-template-columns:1fr;
       }
       .vehicles-grid{grid-template-columns:repeat(2,1fr)}
@@ -1414,6 +1464,9 @@
         grid-template-columns:repeat(2,1fr);
       }
       .mini-gallery{grid-template-columns:repeat(2,1fr)}
+      .feedback-highlight-actions{
+        justify-content:flex-start;
+      }
     }
 
     @media (max-width:860px){
@@ -1435,8 +1488,11 @@
       .nav-actions{
         grid-area:avail;
         justify-content:stretch;
+        flex-direction:column;
+        align-items:stretch;
       }
-      .availability-pill{
+      .availability-pill,
+      .review-pill{
         max-width:none;
         width:100%;
         justify-content:center;
@@ -1482,11 +1538,13 @@
       .hero-copy h1{font-size:2.35rem}
       .hero-copy p{font-size:1rem}
       .hero-actions,
-      .cta-actions{
+      .cta-actions,
+      .feedback-highlight-actions{
         flex-direction:column;
       }
       .hero-actions .btn,
-      .cta-actions .btn{
+      .cta-actions .btn,
+      .feedback-highlight-actions .btn{
         width:100%;
       }
 
@@ -1508,7 +1566,8 @@
       .booking-box,
       .booking-help,
       .hero-card,
-      .popup-card{
+      .popup-card,
+      .feedback-highlight{
         padding:20px;
       }
 
@@ -1525,7 +1584,7 @@
       .mobile-bottom-bar{display:flex}
 
       body.has-mobile-bar{
-        padding-bottom:84px;
+        padding-bottom:90px;
       }
 
       .seo-links{
@@ -1573,6 +1632,7 @@
         <li><a href="#vehicles">Vehicles</a></li>
         <li><a href="#booking">Book Now</a></li>
         <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#" onclick="openPopup('feedbackPopup'); return false;">Leave Review</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -1586,6 +1646,9 @@
           <span id="availabilityDot" class="dot offline"></span>
           <span id="availabilityText">Checking availability...</span>
         </div>
+        <a href="#" class="review-pill" onclick="openPopup('feedbackPopup'); return false;">
+          <i class="fas fa-star"></i> Leave Review
+        </a>
       </div>
     </div>
   </nav>
@@ -1678,7 +1741,7 @@
           </div>
 
           <div class="hero-note">
-            <strong>Quick tip:</strong> tell us pickup, drop, date, passengers, and trip type. 
+            <strong>Quick tip:</strong> tell us pickup, drop, date, passengers, and trip type.
           </div>
         </div>
       </div>
@@ -1721,7 +1784,6 @@
       <div class="section-head">
         <div class="eyebrow"><i class="fas fa-layer-group"></i> Trip Types</div>
         <h2>What do you want to book?</h2>
-       
       </div>
 
       <div class="type-grid">
@@ -1959,7 +2021,6 @@
       <div class="section-head">
         <div class="eyebrow"><i class="fas fa-star"></i> Why Choose Us</div>
         <h2>Built around trust and easy booking</h2>
-        
       </div>
 
       <div class="why-grid">
@@ -1993,7 +2054,6 @@
       <div class="section-head">
         <div class="eyebrow"><i class="fas fa-list-ol"></i> Simple Booking Process</div>
         <h2>How booking works</h2>
-       
       </div>
 
       <div class="steps">
@@ -2163,8 +2223,7 @@
     <div class="container">
       <div class="section-head">
         <div class="eyebrow"><i class="fas fa-camera"></i> Customer Moments</div>
-        <h2>Real trip vibes, not stock-photo nonsense</h2>
-      
+        <h2>Travel Moments</h2>
       </div>
 
       <div class="mini-gallery">
@@ -2192,10 +2251,26 @@
         <h2>What customers say</h2>
       </div>
 
+      <div class="feedback-highlight">
+        <div>
+          <h3>Travelled with us? Leave your feedback here.</h3>
+          <p>Your review helps other customers trust the service and helps you stop shouting “where is the review button?” at the screen.</p>
+          
+        </div>
+        <div class="feedback-highlight-actions">
+          <a href="#" class="btn btn-primary" onclick="openPopup('feedbackPopup'); return false;">
+            <i class="fas fa-star"></i> Leave Feedback
+          </a>
+          <a href="#contact" class="btn btn-light">
+            <i class="fas fa-phone-volume"></i> Contact Us
+          </a>
+        </div>
+      </div>
+
       <div class="testimonials-grid" id="testimonialsGrid"></div>
 
       <div style="text-align:center;margin-top:18px;">
-        <a href="#" class="btn btn-light" onclick="openPopup('feedbackPopup')">
+        <a href="#" class="btn btn-light" onclick="openPopup('feedbackPopup'); return false;">
           <i class="fas fa-comment-dots"></i> Leave Feedback
         </a>
       </div>
@@ -2208,7 +2283,6 @@
       <div class="section-head">
         <div class="eyebrow"><i class="fas fa-circle-question"></i> FAQ</div>
         <h2>Common questions before booking</h2>
-        
       </div>
 
       <div class="faq-wrap">
@@ -2277,7 +2351,6 @@
       <div class="section-head">
         <div class="eyebrow"><i class="fas fa-address-book"></i> Contact</div>
         <h2>Talk to us directly</h2>
-        
       </div>
 
       <div class="contact-grid">
@@ -2509,6 +2582,9 @@
     <a href="#booking" class="fab-btn fab-book" aria-label="Book Now">
       <i class="fas fa-taxi"></i>
     </a>
+    <a href="#" onclick="openPopup('feedbackPopup'); return false;" class="fab-btn fab-review" aria-label="Leave Review">
+      <i class="fas fa-star"></i>
+    </a>
   </div>
 
   <!-- MOBILE BOTTOM BAR -->
@@ -2518,6 +2594,9 @@
     </a>
     <button class="mobile-wa" onclick="instantWhatsAppBooking(event)">
       <i class="fab fa-whatsapp"></i> WhatsApp
+    </button>
+    <button class="mobile-review" onclick="openPopup('feedbackPopup')">
+      <i class="fas fa-star"></i> Review
     </button>
   </div>
 
@@ -2539,6 +2618,8 @@
             <li><a href="#popular-routes">Popular Routes</a></li>
             <li><a href="#vehicles">Vehicles</a></li>
             <li><a href="#booking">Book Now</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#" onclick="openPopup('feedbackPopup'); return false;">Leave Review</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
@@ -2721,7 +2802,7 @@ Note: ${payload.note || '-'}`;
         setAvailabilityUI(data.availability_status, data.availability_message);
       } catch (err) {
         console.error('Availability load failed:', err);
-        setAvailabilityUI('online', 'Availability available');
+        setAvailabilityUI('available', 'Cars Available Now');
       }
     }
 
